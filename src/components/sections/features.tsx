@@ -107,7 +107,7 @@ export function Features() {
         </div>
       </section>
 
-      {/* Why Early Treatment Matters - Redesigned to match ref image */}
+      {/* Why Early Treatment Matters */}
       <section className="container px-4 mx-auto pb-24">
         <div className="flex flex-wrap -mx-4 items-center">
           {/* Left Side: Overlapping Images */}
@@ -144,7 +144,7 @@ export function Features() {
           <div className="w-full lg:w-1/2 px-8 lg:px-12">
             <div className="max-w-xl">
               <p className="text-[#ff6b3d] font-bold text-xl mb-4">Why Aira?</p>
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight font-headline tracking-tight">
+              <h2 className="text-4xl md:text-5xl font-medium text-slate-900 mb-8 leading-tight font-headline tracking-tight">
                 Why Early Treatment Matters?
               </h2>
               
