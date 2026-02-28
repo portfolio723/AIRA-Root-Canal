@@ -45,7 +45,7 @@ export default function Home() {
         <section className="py-24 bg-white">
           <div className="container px-4 mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Why Choose Aira Dental Clinic – Kokapet?</h2>
+              <h2 className="text-3xl md:text-4xl font-medium text-primary mb-6">Why Choose Aira Dental Clinic – Kokapet?</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 We combine expertise with a compassionate approach to provide the best dental experience.
               </p>
@@ -139,7 +139,7 @@ export default function Home() {
         {/* Final CTA */}
         <section className="py-24 text-center">
           <div className="container px-4 mx-auto max-w-3xl">
-            <h2 className="text-4xl font-bold text-primary mb-6">Ready for a Healthy, Pain-Free Smile?</h2>
+            <h2 className="text-4xl font-medium text-primary mb-6">Ready for a Healthy, Pain-Free Smile?</h2>
             <p className="text-xl text-muted-foreground mb-10">
               Get 30% OFF on Root Canal Treatment. Book your FREE consultation today and save your tooth!
             </p>

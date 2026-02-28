@@ -40,7 +40,7 @@ export function Features() {
       <section className="container px-4 mx-auto">
         <div className="flex flex-wrap -mx-4 items-center">
           <div className="w-full lg:w-1/2 px-4 mb-12 lg:mb-0">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 font-headline tracking-tight">Why Root Canal Treatment?</h2>
+            <h2 className="text-3xl md:text-4xl font-medium text-primary mb-6 font-headline tracking-tight">Why Root Canal Treatment?</h2>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
                 Root canal therapy removes infection from inside a damaged tooth and saves it from extraction. If left untreated, infections can spread, causing pain, swelling, and more complex health problems.
@@ -72,7 +72,7 @@ export function Features() {
           <div className="flex flex-wrap -mx-4 items-start">
             <div className="w-full lg:w-1/3 px-4 mb-16 lg:mb-0 text-center lg:text-left">
               <div className="max-w-sm mx-auto lg:mx-0">
-                <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 leading-tight font-headline tracking-tight">
+                <h2 className="text-4xl md:text-5xl font-medium text-primary mb-8 leading-tight font-headline tracking-tight">
                   Who Needs a Root Canal?
                 </h2>
                 <p className="text-xl text-muted-foreground mb-10 leading-relaxed">

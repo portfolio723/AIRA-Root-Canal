@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -17,7 +16,7 @@ export function Hero() {
               <Badge variant="secondary" className="mb-6 px-4 py-1.5 text-sm font-medium bg-accent/10 text-primary border-primary/20">
                 Special Offer: 30% OFF on Treatments
               </Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-primary mb-6 leading-tight">
                 Painless Root Canal Treatment in Kokapet
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">

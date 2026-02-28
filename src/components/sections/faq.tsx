@@ -49,7 +49,7 @@ export function FAQ() {
     <section className="py-24 bg-white">
       <div className="container px-4 mx-auto max-w-4xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 font-headline tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-medium text-primary mb-6 font-headline tracking-tight">
             Frequently Asked Questions
           </h2>
           <p className="text-muted-foreground text-lg">
