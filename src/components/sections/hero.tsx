@@ -8,75 +8,77 @@ export function Hero() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-dental');
 
   return (
-    <section className="relative pt-12 pb-24 lg:pt-20 lg:pb-32 overflow-hidden">
-      <div className="container px-4 mx-auto">
-        <div className="flex flex-wrap items-center -mx-4">
-          <div className="w-full lg:w-1/2 px-4 mb-16 lg:mb-0">
-            <div className="max-w-xl">
-              <Badge variant="secondary" className="mb-6 px-4 py-1.5 text-sm font-medium bg-accent/10 text-primary border-primary/20">
-                Special Offer: 30% OFF on Treatments
-              </Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-primary mb-6 leading-tight">
-                Painless Root Canal Treatment in Kokapet
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
-                Save Your Tooth with Expert Care — Comfortable & Reliable Root Canal Therapy at Aira Dental Clinic.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-14 px-8 text-base shadow-lg shadow-primary/20">
-                  Book Your Free Consultation
-                </Button>
-                <div className="flex gap-2">
-                  <Button variant="outline" size="lg" className="border-primary text-primary h-14 px-4 flex-1 sm:flex-none">
-                    <Phone className="mr-2 h-5 w-5" /> Call Now
-                  </Button>
-                  <Button variant="outline" size="lg" className="border-[#25D366] text-[#25D366] h-14 px-4 flex-1 sm:flex-none">
-                    <MessageCircle className="mr-2 h-5 w-5" /> WhatsApp
-                  </Button>
-                </div>
-              </div>
+    <section className="relative min-h-[90vh] flex items-center pt-24 pb-32 overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        {heroImage?.imageUrl && (
+          <Image
+            src={heroImage.imageUrl}
+            alt="Aira Dental Clinic professional surgery"
+            fill
+            className="object-cover"
+            priority
+            data-ai-hint="dental clinic"
+          />
+        )}
+        {/* Multi-layered overlay for ultimate readability and depth */}
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent" />
+      </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {[
-                  "Advanced Root Canal Procedure",
-                  "Gentle & Pain-Free Treatment",
-                  "Digital X-Ray & Diagnosis",
-                  "Experienced Specialists"
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2">
-                    <CheckCircle2 className="text-accent h-5 w-5 flex-shrink-0" />
-                    <span className="text-sm font-medium">{item}</span>
-                  </div>
-                ))}
-              </div>
+      <div className="container relative z-10 px-4 mx-auto">
+        <div className="max-w-4xl">
+          <Badge 
+            variant="secondary" 
+            className="mb-8 px-5 py-2 text-sm font-semibold bg-white/10 text-white border-white/20 backdrop-blur-md uppercase tracking-[0.15em]"
+          >
+            Special Offer: 30% OFF All Treatments
+          </Badge>
+          
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium text-white mb-8 leading-[1.1] font-headline">
+            Advanced & Painless <br className="hidden lg:block" /> 
+            Root Canal Treatment <br className="hidden lg:block" />
+            at Kokapet
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-2xl font-light">
+            Save your natural smile with our expert, gentle care. Experience precise root canal therapy using modern digital technology and compassionate techniques.
+          </p>
+          
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 mb-16">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-16 px-12 text-xl font-bold rounded-2xl shadow-2xl transition-all hover:scale-105">
+              Book Your Free Consultation
+            </Button>
+            <div className="flex gap-4 w-full sm:w-auto">
+              <Button variant="outline" size="lg" className="bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 h-16 px-8 rounded-2xl text-lg flex-1 sm:flex-none">
+                <Phone className="mr-2 h-5 w-5" /> Call Now
+              </Button>
+              <Button variant="outline" size="lg" className="bg-[#25D366]/10 backdrop-blur-md border-[#25D366]/30 text-[#25D366] hover:bg-[#25D366]/20 h-16 px-8 rounded-2xl text-lg flex-1 sm:flex-none">
+                <MessageCircle className="mr-2 h-5 w-5" /> WhatsApp
+              </Button>
             </div>
           </div>
-          <div className="w-full lg:w-1/2 px-4">
-            <div className="relative mx-auto max-w-lg lg:max-w-none">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                {heroImage?.imageUrl ? (
-                  <Image
-                    src={heroImage.imageUrl}
-                    alt={heroImage.description || 'Dental Hero'}
-                    width={1200}
-                    height={800}
-                    className="w-full h-full object-cover"
-                    data-ai-hint="dental clinic interior"
-                  />
-                ) : (
-                  <div className="w-full h-[500px] bg-muted animate-pulse rounded-2xl" />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent pointer-events-none" />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-12">
+            {[
+              "Specialist-Led Procedures",
+              "Advanced Digital Imaging",
+              "Painless Local Anesthesia",
+              "Expert Post-Care Support"
+            ].map((item, idx) => (
+              <div key={idx} className="flex items-center gap-4 group">
+                <div className="h-10 w-10 rounded-full bg-accent/20 flex items-center justify-center border border-accent/40 group-hover:bg-accent/30 transition-colors">
+                  <CheckCircle2 className="text-accent h-6 w-6 flex-shrink-0" />
+                </div>
+                <span className="text-white font-medium text-lg md:text-xl">{item}</span>
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl hidden sm:block">
-                <p className="text-3xl font-bold text-primary mb-1">98%</p>
-                <p className="text-sm text-muted-foreground">Success Rate</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
+
+      {/* Subtle bottom fade to transition to the next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 }
