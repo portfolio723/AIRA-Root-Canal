@@ -45,7 +45,7 @@ export default function Home() {
         <Testimonials />
 
         {/* Why Choose Us */}
-        <section className="py-24 bg-slate-50">
+        <section className="py-12 md:py-24 bg-slate-50">
           <div className="container px-4 mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-medium text-primary mb-6">Why Choose Aira Dental Clinic – Kokapet?</h2>
@@ -108,7 +108,7 @@ export default function Home() {
         <FAQ />
 
         {/* Location & Contact Section */}
-        <section className="py-24 container px-4 mx-auto">
+        <section className="py-12 md:py-24 container px-4 mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
             {/* Map on Left */}
             <div className="w-full min-h-[400px] lg:min-h-full rounded-[32px] overflow-hidden shadow-sm border border-slate-100">
@@ -146,7 +146,7 @@ export default function Home() {
         </section>
 
         {/* Final CTA */}
-        <section className="py-24 text-center">
+        <section className="py-12 md:py-24 text-center">
           <div className="container px-4 mx-auto max-w-3xl">
             <h2 className="text-4xl font-medium text-primary mb-6">Ready for a Healthy, Pain-Free Smile?</h2>
             <p className="text-xl text-muted-foreground mb-10">

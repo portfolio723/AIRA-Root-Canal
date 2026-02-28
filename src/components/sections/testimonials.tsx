@@ -1,4 +1,3 @@
-
 import {
   Carousel,
   CarouselContent,
@@ -39,7 +38,7 @@ const reviews = [
 
 export function Testimonials() {
   return (
-    <section className="py-24 bg-primary/5">
+    <section className="py-12 md:py-24 bg-primary/5">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-medium text-primary mb-6 font-headline tracking-tight">

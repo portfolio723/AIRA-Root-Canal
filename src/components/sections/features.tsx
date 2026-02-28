@@ -41,7 +41,7 @@ export function Features() {
   ];
 
   return (
-    <div className="space-y-20 py-24">
+    <div className="space-y-12 md:space-y-20 py-12 md:py-24">
       {/* Why Root Canal? */}
       <section className="container px-4 mx-auto">
         <div className="flex flex-wrap -mx-4 items-center">
@@ -78,7 +78,7 @@ export function Features() {
       </section>
 
       {/* When Do You Need Root Canal? */}
-      <section className="bg-white py-24">
+      <section className="bg-white py-12 md:py-24">
         <div className="container px-4 mx-auto">
           <div className="flex flex-wrap -mx-4 items-start">
             <div className="w-full lg:w-1/3 px-4 mb-16 lg:mb-0 text-center lg:text-left">
@@ -119,7 +119,7 @@ export function Features() {
       </section>
 
       {/* Why Early Treatment Matters */}
-      <section className="container px-4 mx-auto pb-24">
+      <section className="container px-4 mx-auto pb-12 md:pb-24">
         <div className="flex flex-wrap -mx-4 items-center">
           {/* Left Side: Overlapping Images */}
           <div className="w-full lg:w-1/2 px-4 mb-16 lg:mb-0">
