@@ -23,6 +23,36 @@
       "description": "Modern and clean dental clinic reception area",
       "imageUrl": "https://images.unsplash.com/photo-1720180244277-bcd91e87dc15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtb2Rlcm4lMjBjbGluaWMlMjBpbnRlcmlvcnxlbnwwfHx8fDE3NzIyNTUxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "modern clinic interior"
+    },
+    {
+      "id": "process-step-1",
+      "description": "Dentist examining teeth with X-ray",
+      "imageUrl": "https://images.unsplash.com/photo-1683520701490-7172fa20c8f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGVudGFsJTIwZXhhbXxlbnwwfHx8fDE3NzIyNTU3NTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dental exam"
+    },
+    {
+      "id": "process-step-2",
+      "description": "Patient being prepared for treatment",
+      "imageUrl": "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkZW50YWwlMjBjYXJlfGVufDB8fHx8MTc3MjIyMTcwNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dental care"
+    },
+    {
+      "id": "process-step-3",
+      "description": "Precision dental cleaning",
+      "imageUrl": "https://images.unsplash.com/photo-1693692258834-74c62f467cb7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkZW50YWwlMjBjbGVhbmluZ3xlbnwwfHx8fDE3NzIyNTU3NTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dental cleaning"
+    },
+    {
+      "id": "process-step-4",
+      "description": "Close up of dental restoration",
+      "imageUrl": "https://images.unsplash.com/photo-1758205308181-d52b41e00cef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkZW50YWwlMjBzZWFsaW5nfGVufDB8fHx8MTc3MjI1NTc1Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dental sealing"
+    },
+    {
+      "id": "process-step-5",
+      "description": "Final crown restoration",
+      "imageUrl": "https://images.unsplash.com/photo-1658994477988-05610aef130b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkZW50YWwlMjBjcm93bnxlbnwwfHx8fDE3NzIxNTUxNzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dental crown"
     }
   ]
 }
