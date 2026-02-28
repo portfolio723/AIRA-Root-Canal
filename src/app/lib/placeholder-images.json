@@ -4,26 +4,50 @@
     {
       "id": "hero-dental",
       "description": "Professional dental surgery room with modern equipment",
-      "imageUrl": "https://picsum.photos/seed/aira-hero/1200/800",
+      "imageUrl": "https://images.unsplash.com/photo-1660732205525-eb180e4d29f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkZW50YWwlMjBjbGluaWMlMjBzdXJnZXJ5fGVufDB8fHx8MTc3MjI1NTEwMHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "dental clinic surgery"
     },
     {
       "id": "root-canal-procedure",
       "description": "Dentist performing a precise procedure",
-      "imageUrl": "https://picsum.photos/seed/aira-proc/800/600",
+      "imageUrl": "https://images.unsplash.com/photo-1766338390573-ec092d69cdcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkZW50aXN0JTIwcHJvY2VkdXJlfGVufDB8fHx8MTc3MjI1NTEwMHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "dentist procedure"
     },
     {
       "id": "patient-smile",
       "description": "Happy patient showing a healthy smile",
-      "imageUrl": "https://picsum.photos/seed/aira-smile/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1569003376670-596a186b90f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aGFwcHklMjBzbWlsZXxlbnwwfHx8fDE3NzIyNTUxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "happy smile"
     },
     {
       "id": "clinic-interior",
       "description": "Modern and clean dental clinic reception area",
-      "imageUrl": "https://picsum.photos/seed/aira-interior/800/600",
+      "imageUrl": "https://images.unsplash.com/photo-1720180244277-bcd91e87dc15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtb2Rlcm4lMjBjbGluaWMlMjBpbnRlcmlvcnxlbnwwfHx8fDE3NzIyNTUxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "modern clinic interior"
+    },
+    {
+      "id": "process-step-1",
+      "description": "Dentist consulting with a patient looking at X-rays",
+      "imageUrl": "https://picsum.photos/seed/step1/400/400",
+      "imageHint": "dental consultation"
+    },
+    {
+      "id": "process-step-2",
+      "description": "Specialized tools cleaning a tooth canal",
+      "imageUrl": "https://picsum.photos/seed/step2/400/400",
+      "imageHint": "dental cleaning"
+    },
+    {
+      "id": "process-step-3",
+      "description": "Cross section of a tooth being filled",
+      "imageUrl": "https://picsum.photos/seed/step3/400/400",
+      "imageHint": "tooth filling"
+    },
+    {
+      "id": "process-step-4",
+      "description": "A dental crown being placed on a tooth model",
+      "imageUrl": "https://picsum.photos/seed/step4/400/400",
+      "imageHint": "dental crown"
     }
   ]
 }

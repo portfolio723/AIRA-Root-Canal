@@ -1,61 +1,88 @@
 
-import { Search, Zap, Trash2, Shield, Crown } from 'lucide-react';
+import Image from 'next/image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const steps = [
   {
-    icon: Search,
-    title: "Detailed Exam & Digital X-Ray",
-    description: "We assess the tooth and root canals precisely using digital imaging."
+    stepId: "process-step-1",
+    title: "Consultation & X-Ray",
+    description: "We assess the tooth, identify infection depth, and plan your personalized treatment.",
+    number: "1"
   },
   {
-    icon: Zap,
-    title: "Anesthesia for Comfort",
-    description: "Local anesthesia ensures a completely painless experience."
+    stepId: "process-step-2",
+    title: "Cleaning & Preparation",
+    description: "The infected pulp is removed, and the canal is cleaned thoroughly under magnification.",
+    number: "2"
   },
   {
-    icon: Trash2,
-    title: "Removal of Infection",
-    description: "We clean out the infected pulp and sanitize the entire canal."
+    stepId: "process-step-3",
+    title: "Sealing the Tooth",
+    description: "The canal is filled with a safe, long-lasting material to prevent reinfection.",
+    number: "3"
   },
   {
-    icon: Shield,
-    title: "Filling & Sealing",
-    description: "The canal is sealed with biocompatible material to prevent reinfection."
-  },
-  {
-    icon: Crown,
-    title: "Final Restoration",
-    description: "A crown or filling is placed to restore full strength and function."
+    stepId: "process-step-4",
+    title: "Crown Placement",
+    description: "A custom crown is placed to restore strength, function, and natural appearance.",
+    number: "4"
   }
 ];
 
+const ToothIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7 3C4 3 3 5 3 8C3 11 5 12 5 15C5 18 4 21 7 21C10 21 11 19 12 17C13 19 14 21 17 21C20 21 19 18 19 15C19 12 21 11 21 8C21 5 20 3 17 3C14 3 13 4 12 6C11 4 10 3 7 3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
 export function Process() {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-white">
       <div className="container px-4 mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Our Root Canal Treatment Process</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Experience a systematic and gentle approach designed for your comfort and long-term success.
-          </p>
+        <div className="text-center mb-20">
+          <p className="text-[#ff6b3d] font-bold uppercase tracking-wider mb-4">How it works</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 max-w-4xl mx-auto leading-tight">
+            4 Step Process for Root Canal Treatment in Hyderabad
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
-          {/* Connector line for desktop */}
-          <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-primary/10 -z-10" />
-          
-          {steps.map((step, idx) => (
-            <div key={idx} className="flex flex-col items-center text-center">
-              <div className="h-20 w-20 rounded-2xl bg-white border-2 border-primary/20 flex items-center justify-center mb-6 shadow-sm relative group hover:border-primary transition-colors">
-                <div className="absolute -top-3 -right-3 h-8 w-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center">
-                  {idx + 1}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-12 max-w-6xl mx-auto">
+          {steps.map((step, idx) => {
+            const stepImage = PlaceHolderImages.find(img => img.id === step.stepId);
+            return (
+              <div key={idx} className="bg-white rounded-[32px] p-8 md:p-10 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-shadow flex flex-col md:flex-row items-center gap-8 group">
+                {/* Image Container */}
+                <div className="relative h-44 w-44 flex-shrink-0">
+                  <div className="h-full w-full rounded-full overflow-hidden border-8 border-white shadow-xl">
+                    {stepImage?.imageUrl && (
+                      <Image
+                        src={stepImage.imageUrl}
+                        alt={step.title}
+                        width={400}
+                        height={400}
+                        className="h-full w-full object-cover transition-transform group-hover:scale-110 duration-500"
+                        data-ai-hint={stepImage.imageHint}
+                      />
+                    )}
+                  </div>
+                  {/* Icon Badge */}
+                  <div className="absolute top-2 right-2 h-12 w-12 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-900 border border-slate-50">
+                    <ToothIcon />
+                  </div>
                 </div>
-                <step.icon className="h-10 w-10 text-primary group-hover:scale-110 transition-transform" />
+
+                {/* Content */}
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-2xl font-bold text-[#ff6b3d] mb-4">
+                    Step {step.number}: {step.title}
+                  </h3>
+                  <p className="text-slate-500 text-lg leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
               </div>
-              <h3 className="font-bold text-primary mb-3 px-2 leading-tight">{step.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
