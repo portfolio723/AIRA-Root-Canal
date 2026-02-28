@@ -1,5 +1,4 @@
 import { Button } from '@/components/ui/button';
-import { Phone } from 'lucide-react';
 import Image from 'next/image';
 
 export function Header() {
@@ -18,10 +17,6 @@ export function Header() {
         </div>
         
         <div className="flex items-center gap-4">
-          <a href="tel:+919100123666" className="hidden md:flex items-center gap-2 text-primary font-bold hover:text-primary/80 transition-colors">
-            <Phone className="h-5 w-5" />
-            <span>Kokapet</span>
-          </a>
           <Button className="bg-primary hover:bg-primary/90 text-white shadow-md">
             Book Free Consultation
           </Button>
