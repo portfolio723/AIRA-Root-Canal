@@ -5,9 +5,9 @@ import { CheckCircle2, Phone } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-24 pb-32 overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
+    <section className="relative min-h-screen flex items-center pt-24 pb-20 lg:py-32 overflow-hidden bg-primary lg:bg-transparent">
+      {/* Desktop Background Image with Overlay */}
+      <div className="absolute inset-0 z-0 hidden lg:block">
         <Image
           src="/hero.jpg"
           alt="Aira Dental Clinic professional surgery"
@@ -15,13 +15,24 @@ export function Hero() {
           className="object-cover"
           priority
         />
-        {/* Simple gradient overlay for readability without "foggy" effect */}
+        {/* Professional gradient overlay for desktop readability */}
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent" />
       </div>
 
       <div className="container relative z-10 px-4 mx-auto">
         <div className="max-w-4xl">
+          {/* Mobile Hero Image - Medium Height and Separate */}
+          <div className="lg:hidden w-full h-72 relative mb-10 rounded-[32px] overflow-hidden shadow-2xl border-4 border-white/10">
+            <Image
+              src="/hero.jpg"
+              alt="Aira Dental Clinic professional surgery"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+
           <Badge 
             variant="secondary" 
             className="mb-8 px-5 py-2 text-sm font-semibold bg-white/10 text-white border-white/20 backdrop-blur-md uppercase tracking-[0.15em]"
@@ -39,12 +50,16 @@ export function Hero() {
             Save your natural smile with our expert, gentle care. Experience precise root canal therapy using modern digital technology and compassionate techniques.
           </p>
           
-          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 mb-16">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-14 sm:h-16 px-6 sm:px-8 text-lg sm:text-xl font-medium rounded-2xl shadow-2xl transition-all hover:scale-105">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-6 mb-16">
+            {/* Primary Button: Inverted on mobile (White bg, Green text) as requested */}
+            <Button 
+              size="lg" 
+              className="bg-white text-primary hover:bg-white/90 lg:bg-primary lg:text-white lg:hover:bg-primary/90 h-14 sm:h-16 px-8 text-xl font-medium rounded-2xl shadow-2xl transition-all hover:scale-105"
+            >
               Book Your Free Consultation
             </Button>
-            <div className="flex gap-4 w-full sm:w-auto">
-              <Button variant="outline" size="lg" className="bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 h-14 sm:h-16 px-6 sm:px-8 rounded-2xl text-base sm:text-lg flex-1 sm:flex-none">
+            <div className="flex gap-4">
+              <Button variant="outline" size="lg" className="bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 h-14 sm:h-16 px-8 rounded-2xl text-lg flex-1 sm:flex-none">
                 <Phone className="mr-2 h-5 w-5" /> Call Now
               </Button>
             </div>
@@ -58,8 +73,8 @@ export function Hero() {
               "Expert Post-Care Support"
             ].map((item, idx) => (
               <div key={idx} className="flex items-center gap-4 group">
-                <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center border border-primary/40 group-hover:bg-primary/30 transition-colors">
-                  <CheckCircle2 className="text-primary h-6 w-6 flex-shrink-0" />
+                <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-colors">
+                  <CheckCircle2 className="text-white h-6 w-6 flex-shrink-0" />
                 </div>
                 <span className="text-white font-medium text-lg md:text-xl">{item}</span>
               </div>
