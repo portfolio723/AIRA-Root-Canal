@@ -88,7 +88,7 @@ export default function Home() {
                   <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                     <item.icon className="h-6 w-6 text-primary group-hover:text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-primary mb-4">{item.title}</h3>
+                  <h3 className="text-xl font-medium text-primary mb-4">{item.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
                 </div>
               ))}
