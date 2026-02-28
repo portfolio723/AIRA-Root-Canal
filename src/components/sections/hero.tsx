@@ -40,11 +40,11 @@ export function Hero() {
           </p>
           
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 mb-16">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-16 px-8 text-xl font-medium rounded-2xl shadow-2xl transition-all hover:scale-105">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-14 sm:h-16 px-6 sm:px-8 text-lg sm:text-xl font-medium rounded-2xl shadow-2xl transition-all hover:scale-105">
               Book Your Free Consultation
             </Button>
             <div className="flex gap-4 w-full sm:w-auto">
-              <Button variant="outline" size="lg" className="bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 h-16 px-8 rounded-2xl text-lg flex-1 sm:flex-none">
+              <Button variant="outline" size="lg" className="bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 h-14 sm:h-16 px-6 sm:px-8 rounded-2xl text-base sm:text-lg flex-1 sm:flex-none">
                 <Phone className="mr-2 h-5 w-5" /> Call Now
               </Button>
             </div>
