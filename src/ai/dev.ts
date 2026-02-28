@@ -1,4 +1,3 @@
-import { config } from 'dotenv';
-config();
 
-import '@/ai/flows/ai-symptom-assessment.ts';
+// AI features removed
+export {};
