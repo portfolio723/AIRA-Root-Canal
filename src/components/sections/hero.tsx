@@ -58,8 +58,8 @@ export function Hero() {
               "Expert Post-Care Support"
             ].map((item, idx) => (
               <div key={idx} className="flex items-center gap-4 group">
-                <div className="h-10 w-10 rounded-full bg-accent/20 flex items-center justify-center border border-accent/40 group-hover:bg-accent/30 transition-colors">
-                  <CheckCircle2 className="text-accent h-6 w-6 flex-shrink-0" />
+                <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center border border-primary/40 group-hover:bg-primary/30 transition-colors">
+                  <CheckCircle2 className="text-primary h-6 w-6 flex-shrink-0" />
                 </div>
                 <span className="text-white font-medium text-lg md:text-xl">{item}</span>
               </div>
