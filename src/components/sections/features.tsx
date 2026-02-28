@@ -115,27 +115,21 @@ export function Features() {
             <div className="relative h-[400px] md:h-[500px]">
               {/* Main Image (Top Left) */}
               <div className="absolute top-0 left-0 w-[75%] h-[75%] rounded-[32px] overflow-hidden shadow-2xl border-4 border-white">
-                {toolImage?.imageUrl && (
-                  <Image
-                    src={toolImage.imageUrl}
-                    alt="Dental procedure cleaning"
-                    fill
-                    className="object-cover"
-                    data-ai-hint="dental treatment"
-                  />
-                )}
+                <Image
+                  src="/ref.jpg"
+                  alt="Professional dental care at Aira Clinic"
+                  fill
+                  className="object-cover"
+                />
               </div>
               {/* Secondary Image (Bottom Right) */}
               <div className="absolute bottom-0 right-0 w-[60%] h-[60%] rounded-[32px] overflow-hidden shadow-2xl border-4 border-white">
-                {clinicImage?.imageUrl && (
-                  <Image
-                    src={clinicImage.imageUrl}
-                    alt="Modern dental clinic"
-                    fill
-                    className="object-cover"
-                    data-ai-hint="modern clinic"
-                  />
-                )}
+                <Image
+                  src="/ref.jpg"
+                  alt="Modern dental equipment at Aira Clinic"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>
