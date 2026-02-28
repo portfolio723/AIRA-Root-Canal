@@ -4,9 +4,32 @@ import { Features } from '@/components/sections/features';
 import { Process } from '@/components/sections/process';
 import { FAQ } from '@/components/sections/faq';
 import { Button } from '@/components/ui/button';
-import { MapPin, ShieldCheck, Users, Smile, Clock } from 'lucide-react';
+import { MapPin, ShieldCheck, Users, Smile, Clock, Mail, Phone } from 'lucide-react';
 
 export default function Home() {
+  const contactInfo = [
+    {
+      icon: Mail,
+      title: "Email Address",
+      content: "airadentalstudio@gmail.com"
+    },
+    {
+      icon: Phone,
+      title: "Phone Number",
+      content: "+91 9100123666"
+    },
+    {
+      icon: MapPin,
+      title: "Address",
+      content: "AIRA Dental Clinic, Kokapet, Hyderabad, Telangana 500075"
+    },
+    {
+      icon: Clock,
+      title: "Working Hours",
+      content: "Monday — Sunday\n10:00 AM — 8:00 PM"
+    }
+  ];
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -75,28 +98,11 @@ export default function Home() {
 
         <FAQ />
 
-        {/* Location Section */}
+        {/* Location & Contact Section */}
         <section className="py-24 container px-4 mx-auto">
-          <div className="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-wrap">
-            <div className="w-full lg:w-1/2 p-8 md:p-16">
-              <h2 className="text-3xl font-bold text-primary mb-6">Our Location</h2>
-              <div className="flex items-start gap-4 mb-8">
-                <MapPin className="h-6 w-6 text-primary mt-1" />
-                <div>
-                  <h3 className="font-bold text-lg mb-1">Aira Dental Clinic, Kokapet</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Plot No. 45, Golden Heights Colony,<br />
-                    Beside Kokapet Lake, Kokapet,<br />
-                    Hyderabad, Telangana 500075
-                  </p>
-                </div>
-              </div>
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white w-full sm:w-auto h-14 px-8">
-                Get Directions
-              </Button>
-            </div>
-            <div className="w-full lg:w-1/2 h-80 lg:h-auto bg-muted">
-              {/* Google Maps Embed */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+            {/* Map on Left */}
+            <div className="w-full min-h-[400px] lg:min-h-full rounded-[32px] overflow-hidden shadow-sm border border-slate-100">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.567768560029!2d78.32439137575238!3d17.384451702844855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb94567475f49d%3A0x705c1d6832629815!2sKokapet%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1716300000000!5m2!1sen!2sin" 
                 width="100%" 
@@ -107,6 +113,25 @@ export default function Home() {
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Aira Dental Clinic Kokapet Location"
               ></iframe>
+            </div>
+
+            {/* Contact Cards on Right */}
+            <div className="flex flex-col gap-6 justify-center">
+              {contactInfo.map((item, idx) => (
+                <div key={idx} className="bg-white rounded-[32px] p-8 border border-slate-200 flex items-center gap-6">
+                  <div className="flex-shrink-0">
+                    <item.icon className="h-8 w-8 text-black" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-normal text-black mb-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-slate-500 text-lg whitespace-pre-line">
+                      {item.content}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
