@@ -47,13 +47,18 @@ export function Features() {
         <div className="flex flex-wrap -mx-4 items-center">
           <div className="w-full lg:w-1/2 px-4 mb-12 lg:mb-0">
             <h2 className="text-3xl md:text-4xl font-medium text-primary mb-6 font-headline tracking-tight">Why Root Canal Treatment?</h2>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed mb-8">
               <p>
                 Root canal therapy removes infection from inside a damaged tooth and saves it from extraction. If left untreated, infections can spread, causing pain, swelling, and more complex health problems.
               </p>
               <p>
                 Aira Dental Clinic offers precise and comfortable root canal treatment in Kokapet to protect your natural teeth and restore dental health using modern techniques.
               </p>
+            </div>
+            <div className="flex justify-center lg:justify-start">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-14 px-8 text-lg font-medium rounded-2xl shadow-xl transition-all hover:scale-105">
+                Book Your Free Consultation
+              </Button>
             </div>
           </div>
           <div className="w-full lg:w-1/2 px-4">

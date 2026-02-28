@@ -55,7 +55,7 @@ export default function Home() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               {[
                 {
                   icon: Users,
@@ -96,6 +96,12 @@ export default function Home() {
                   <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
                 </div>
               ))}
+            </div>
+
+            <div className="flex justify-center">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-14 px-8 text-lg font-medium rounded-2xl shadow-xl transition-all hover:scale-105">
+                Book Your Free Consultation
+              </Button>
             </div>
           </div>
         </section>

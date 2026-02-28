@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { Button } from '@/components/ui/button';
 
 const steps = [
   {
@@ -43,7 +44,7 @@ export function Process() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4 max-w-[1400px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4 max-w-[1400px] mx-auto mb-16">
           {steps.map((step, idx) => (
             <div 
               key={idx} 
@@ -77,6 +78,12 @@ export function Process() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="flex justify-center">
+          <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-14 px-8 text-lg font-medium rounded-2xl shadow-xl transition-all hover:scale-105">
+            Book Your Free Consultation
+          </Button>
         </div>
       </div>
     </section>
