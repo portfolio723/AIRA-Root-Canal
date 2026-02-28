@@ -49,40 +49,40 @@ export function Process() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4 max-w-[1400px] mx-auto">
           {steps.map((step, idx) => {
             const stepImage = PlaceHolderImages.find(img => img.id === step.stepId);
             return (
               <div 
                 key={idx} 
-                className={`bg-white rounded-[32px] p-8 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group ${idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''}`}
+                className="bg-white rounded-[32px] p-6 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group h-full"
               >
                 {/* Image Container */}
-                <div className="relative h-40 w-40 mb-8">
-                  <div className="h-full w-full rounded-full overflow-hidden border-8 border-white shadow-xl">
+                <div className="relative h-32 w-32 mb-6">
+                  <div className="h-full w-full rounded-full overflow-hidden border-4 border-white shadow-lg">
                     {stepImage?.imageUrl && (
                       <Image
                         src={stepImage.imageUrl}
                         alt={step.title}
-                        width={400}
-                        height={400}
+                        width={300}
+                        height={300}
                         className="h-full w-full object-cover transition-transform group-hover:scale-110 duration-500"
                         data-ai-hint={stepImage.imageHint}
                       />
                     )}
                   </div>
                   {/* Icon Badge */}
-                  <div className="absolute top-1 right-1 h-12 w-12 bg-white rounded-full shadow-lg flex items-center justify-center text-[#ff6b3d] border border-slate-50">
-                    <span className="font-bold text-xl">{step.number}</span>
+                  <div className="absolute -top-1 -right-1 h-10 w-10 bg-white rounded-full shadow-md flex items-center justify-center text-primary border border-slate-50">
+                    <span className="font-bold text-lg">{step.number}</span>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="text-center">
-                  <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-[#ff6b3d] transition-colors">
+                <div className="text-center flex-grow flex flex-col">
+                  <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors leading-snug">
                     {step.title}
                   </h3>
-                  <p className="text-slate-500 text-base leading-relaxed">
+                  <p className="text-slate-500 text-sm leading-relaxed">
                     {step.description}
                   </p>
                 </div>
