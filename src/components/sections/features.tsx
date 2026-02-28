@@ -1,11 +1,37 @@
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, ThermometerSnowflake, Activity, Droplets, Zap, AlertCircle, ShieldAlert } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Features() {
   const procImage = PlaceHolderImages.find(img => img.id === 'root-canal-procedure');
-  const smileImage = PlaceHolderImages.find(img => img.id === 'patient-smile');
+
+  const symptoms = [
+    {
+      icon: ThermometerSnowflake,
+      text: "Persistent toothache or sensitivity to hot/cold"
+    },
+    {
+      icon: Activity,
+      text: "Swelling or tenderness in the gums"
+    },
+    {
+      icon: Droplets,
+      text: "Deep decay or dark discoloration of the tooth"
+    },
+    {
+      icon: ShieldAlert,
+      text: "Pain while chewing or touching the tooth"
+    },
+    {
+      icon: Zap,
+      text: "A cracked or injured tooth exposing the nerve"
+    },
+    {
+      icon: AlertCircle,
+      text: "Chronic pressure or discomfort in the jaw"
+    }
+  ];
 
   return (
     <div className="space-y-20 py-24">
@@ -39,62 +65,36 @@ export function Features() {
         </div>
       </section>
 
-      {/* Who Needs it? - Redesigned section with image layout and vertical list */}
-      <section className="bg-white py-24 overflow-hidden">
+      {/* Redesigned: When Do You Need Root Canal? */}
+      <section className="bg-white py-24">
         <div className="container px-4 mx-auto">
-          <div className="flex flex-wrap -mx-4 items-center">
-            <div className="w-full lg:w-1/2 px-4 mb-12 lg:mb-0 lg:order-1 order-2">
-              <div className="relative rounded-[40px] overflow-hidden shadow-2xl aspect-[4/5] bg-muted">
-                {smileImage?.imageUrl && (
-                  <Image
-                    src={smileImage.imageUrl}
-                    alt={smileImage.description}
-                    fill
-                    className="object-cover"
-                    data-ai-hint="happy patient"
-                  />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent pointer-events-none" />
+          <div className="flex flex-wrap -mx-4 items-start">
+            <div className="w-full lg:w-1/3 px-4 mb-16 lg:mb-0">
+              <div className="max-w-sm">
+                <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 leading-tight font-headline">
+                  When Do You Need Root Canal Treatment?
+                </h2>
+                <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
+                  You might need a root canal if you experience any of these symptoms:
+                </p>
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-16 px-10 text-lg font-bold rounded-2xl shadow-xl transition-all hover:scale-105">
+                  Talk to a Dental Specialist
+                </Button>
               </div>
             </div>
             
-            <div className="w-full lg:w-1/2 px-4 lg:order-2 order-1">
-              <div className="lg:pl-12">
-                <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 leading-tight font-headline">
-                  Who Needs a Root Canal?
-                </h2>
-                <p className="text-xl text-muted-foreground mb-10">
-                  You might benefit from a root canal if you have:
-                </p>
-
-                <ul className="space-y-5 mb-12">
-                  {[
-                    "Severe toothache",
-                    "Pain when chewing",
-                    "Sensitivity to hot or cold",
-                    "Swollen gums",
-                    "Deep decay or cavity",
-                    "Darkening of the tooth"
-                  ].map((symptom, i) => (
-                    <li key={i} className="flex items-center gap-4 group">
-                      <div className="h-6 w-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 group-hover:bg-accent transition-colors">
-                        <CheckCircle2 className="h-4 w-4 text-primary" />
-                      </div>
-                      <span className="text-xl font-medium text-primary/80 group-hover:text-primary transition-colors">
-                        {symptom}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="bg-primary/5 rounded-[32px] p-8 border border-primary/10">
-                  <p className="text-lg text-primary/80 mb-8 font-medium leading-relaxed">
-                    Don’t ignore the pain — early treatment saves your tooth and prevents complications.
-                  </p>
-                  <Button size="lg" className="bg-[#ff6b3d] hover:bg-[#e85a2d] text-white h-16 px-10 text-xl font-bold rounded-2xl shadow-xl transition-all hover:scale-105">
-                    Book Your Free Consultation
-                  </Button>
-                </div>
+            <div className="w-full lg:w-2/3 px-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
+                {symptoms.map((item, i) => (
+                  <div key={i} className="flex flex-col items-center text-center group">
+                    <div className="h-20 w-20 rounded-2xl bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary transition-all duration-300">
+                      <item.icon className="h-10 w-10 text-primary group-hover:text-white transition-colors" />
+                    </div>
+                    <p className="text-base font-semibold text-primary/80 leading-relaxed max-w-[200px]">
+                      {item.text}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
