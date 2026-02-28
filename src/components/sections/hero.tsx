@@ -2,25 +2,19 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle2, Phone, MessageCircle } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Hero() {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-dental');
-
   return (
     <section className="relative min-h-[90vh] flex items-center pt-24 pb-32 overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        {heroImage?.imageUrl && (
-          <Image
-            src={heroImage.imageUrl}
-            alt="Aira Dental Clinic professional surgery"
-            fill
-            className="object-cover"
-            priority
-            data-ai-hint="dental clinic"
-          />
-        )}
+        <Image
+          src="/hero.jpg"
+          alt="Aira Dental Clinic professional surgery"
+          fill
+          className="object-cover"
+          priority
+        />
         {/* Multi-layered overlay for ultimate readability and depth */}
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent" />
