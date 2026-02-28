@@ -143,7 +143,7 @@ export function Features() {
           {/* Right Side: Content */}
           <div className="w-full lg:w-1/2 px-8 lg:px-12">
             <div className="max-w-xl">
-              <p className="text-[#ff6b3d] font-bold text-xl mb-4">Why Aira?</p>
+              <p className="text-primary font-bold text-xl mb-4">Why Aira?</p>
               <h2 className="text-4xl md:text-5xl font-medium text-slate-900 mb-8 leading-tight font-headline tracking-tight">
                 Why Early Treatment Matters?
               </h2>
@@ -168,7 +168,7 @@ export function Features() {
                 Root canal treatment prevents these complications and restores your complete oral health.
               </p>
 
-              <Button size="lg" className="bg-[#ff6b3d] hover:bg-[#e85a2d] text-white h-16 px-10 text-lg font-bold rounded-2xl shadow-xl transition-all hover:scale-105">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-16 px-10 text-lg font-bold rounded-2xl shadow-xl transition-all hover:scale-105">
                 Get Pain-Free Root Canal
               </Button>
             </div>
