@@ -15,9 +15,9 @@ export function Hero() {
           className="object-cover"
           priority
         />
-        {/* Multi-layered overlay for ultimate readability and depth */}
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent" />
+        {/* Simple gradient overlay for readability without "foggy" effect */}
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent" />
       </div>
 
       <div className="container relative z-10 px-4 mx-auto">
@@ -67,9 +67,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-
-      {/* Subtle bottom fade to transition to the next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 }
