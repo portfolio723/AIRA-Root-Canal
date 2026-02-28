@@ -4,7 +4,6 @@ import { Features } from '@/components/sections/features';
 import { Process } from '@/components/sections/process';
 import { FAQ } from '@/components/sections/faq';
 import { Testimonials } from '@/components/sections/testimonials';
-import { Footer } from '@/components/layout/footer';
 import { Button } from '@/components/ui/button';
 import { MapPin, ShieldCheck, Users, Smile, Clock, Mail, Phone } from 'lucide-react';
 
@@ -161,7 +160,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 }
