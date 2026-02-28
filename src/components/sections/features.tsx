@@ -1,4 +1,4 @@
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, ShieldAlert, Activity, Zap, TrendingUp, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -22,9 +22,7 @@ const ToothIcon = ({ className }: { className?: string }) => (
 
 export function Features() {
   const procImage = PlaceHolderImages.find(img => img.id === 'root-canal-procedure');
-  const clinicImage = PlaceHolderImages.find(img => img.id === 'clinic-interior');
-  const toolImage = PlaceHolderImages.find(img => img.id === 'process-step-3');
-
+  
   const symptoms = [
     { text: "Severe toothache" },
     { text: "Pain when chewing" },
@@ -32,6 +30,14 @@ export function Features() {
     { text: "Swollen gums" },
     { text: "Deep decay or cavity" },
     { text: "Darkening of the tooth" }
+  ];
+
+  const complications = [
+    { text: "Abscess formation", icon: ShieldAlert },
+    { text: "Bone loss around root", icon: Activity },
+    { text: "Spread of infection", icon: Zap },
+    { text: "Severe persistent pain", icon: AlertCircle },
+    { text: "Higher treatment costs", icon: TrendingUp }
   ];
 
   return (
@@ -145,15 +151,12 @@ export function Features() {
               <p className="text-lg font-medium text-slate-900 mb-6">Ignoring tooth pain leads to:</p>
               
               <ul className="space-y-4 mb-10">
-                {[
-                  "Abscess formation",
-                  "Bone loss",
-                  "Spread of infection",
-                  "Higher treatment costs"
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3">
-                    <div className="h-1.5 w-1.5 rounded-full bg-black shrink-0" />
-                    <span className="text-lg text-slate-700">{item}</span>
+                {complications.map((item, idx) => (
+                  <li key={idx} className="flex items-center gap-4">
+                    <div className="h-10 w-10 rounded-full bg-primary/5 flex items-center justify-center shrink-0">
+                      <item.icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <span className="text-lg text-slate-700">{item.text}</span>
                   </li>
                 ))}
               </ul>
