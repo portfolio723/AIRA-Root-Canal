@@ -3,7 +3,6 @@ import { Hero } from '@/components/sections/hero';
 import { Features } from '@/components/sections/features';
 import { Process } from '@/components/sections/process';
 import { FAQ } from '@/components/sections/faq';
-import { Footer } from '@/components/layout/footer';
 import { Button } from '@/components/ui/button';
 import { MapPin, ShieldCheck, Users, Smile, Clock } from 'lucide-react';
 
@@ -127,8 +126,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   );
 }
