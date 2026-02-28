@@ -1,9 +1,7 @@
-
 import { Header } from '@/components/layout/header';
 import { Hero } from '@/components/sections/hero';
 import { Features } from '@/components/sections/features';
 import { Process } from '@/components/sections/process';
-import { Testimonials } from '@/components/sections/testimonials';
 import { FAQ } from '@/components/sections/faq';
 import { Footer } from '@/components/layout/footer';
 import { Button } from '@/components/ui/button';
@@ -75,8 +73,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        <Testimonials />
 
         <FAQ />
 
