@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle2, Phone, MessageCircle } from 'lucide-react';
+import { CheckCircle2, Phone } from 'lucide-react';
 
 export function Hero() {
   return (
@@ -46,9 +46,6 @@ export function Hero() {
             <div className="flex gap-4 w-full sm:w-auto">
               <Button variant="outline" size="lg" className="bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 h-16 px-8 rounded-2xl text-lg flex-1 sm:flex-none">
                 <Phone className="mr-2 h-5 w-5" /> Call Now
-              </Button>
-              <Button variant="outline" size="lg" className="bg-[#25D366]/10 backdrop-blur-md border-[#25D366]/30 text-[#25D366] hover:bg-[#25D366]/20 h-16 px-8 rounded-2xl text-lg flex-1 sm:flex-none">
-                <MessageCircle className="mr-2 h-5 w-5" /> WhatsApp
               </Button>
             </div>
           </div>
