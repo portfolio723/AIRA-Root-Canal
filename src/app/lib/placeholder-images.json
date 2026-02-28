@@ -1,0 +1,29 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-dental",
+      "description": "Professional dental surgery room with modern equipment",
+      "imageUrl": "https://picsum.photos/seed/aira-hero/1200/800",
+      "imageHint": "dental clinic surgery"
+    },
+    {
+      "id": "root-canal-procedure",
+      "description": "Dentist performing a precise procedure",
+      "imageUrl": "https://picsum.photos/seed/aira-proc/800/600",
+      "imageHint": "dentist procedure"
+    },
+    {
+      "id": "patient-smile",
+      "description": "Happy patient showing a healthy smile",
+      "imageUrl": "https://picsum.photos/seed/aira-smile/600/400",
+      "imageHint": "happy smile"
+    },
+    {
+      "id": "clinic-interior",
+      "description": "Modern and clean dental clinic reception area",
+      "imageUrl": "https://picsum.photos/seed/aira-interior/800/600",
+      "imageHint": "modern clinic interior"
+    }
+  ]
+}
