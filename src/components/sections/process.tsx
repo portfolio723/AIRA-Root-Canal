@@ -60,8 +60,8 @@ export function Process() {
                     className="h-full w-full object-cover transition-transform group-hover:scale-110 duration-500"
                   />
                 </div>
-                {/* Icon Badge */}
-                <div className="absolute -top-1 -right-1 h-10 w-10 bg-white rounded-full shadow-md flex items-center justify-center text-primary border border-slate-50">
+                {/* Icon Badge - Updated to Primary Green Color */}
+                <div className="absolute -top-1 -right-1 h-10 w-10 bg-primary rounded-full shadow-md flex items-center justify-center text-white border border-white">
                   <span className="font-bold text-lg">{step.number}</span>
                 </div>
               </div>

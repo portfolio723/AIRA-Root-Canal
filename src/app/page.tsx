@@ -3,6 +3,9 @@ import { Hero } from '@/components/sections/hero';
 import { Features } from '@/components/sections/features';
 import { Process } from '@/components/sections/process';
 import { FAQ } from '@/components/sections/faq';
+import { SymptomChecker } from '@/components/sections/symptom-checker';
+import { Testimonials } from '@/components/sections/testimonials';
+import { Footer } from '@/components/layout/footer';
 import { Button } from '@/components/ui/button';
 import { MapPin, ShieldCheck, Users, Smile, Clock, Mail, Phone } from 'lucide-react';
 
@@ -41,8 +44,12 @@ export default function Home() {
 
         <Process />
 
+        <SymptomChecker />
+
+        <Testimonials />
+
         {/* Why Choose Us */}
-        <section className="py-24 bg-slate-50">
+        <section className="py-24 bg-white">
           <div className="container px-4 mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-medium text-primary mb-6">Why Choose Aira Dental Clinic – Kokapet?</h2>
@@ -84,7 +91,7 @@ export default function Home() {
                   desc: "We value your time. Experience minimal waiting periods and streamlined procedure times."
                 }
               ].map((item, i) => (
-                <div key={i} className="p-8 rounded-2xl border border-primary/5 bg-white hover:shadow-xl transition-all group">
+                <div key={i} className="p-8 rounded-2xl border border-primary/5 bg-slate-50 hover:shadow-xl transition-all group">
                   <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                     <item.icon className="h-6 w-6 text-primary group-hover:text-white" />
                   </div>
@@ -151,6 +158,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }
