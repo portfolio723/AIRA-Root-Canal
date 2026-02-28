@@ -1,8 +1,11 @@
-
 import { CheckCircle2, AlertCircle, Sparkles, ShieldCheck, HeartPulse } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Features() {
+  const procImage = PlaceHolderImages.find(img => img.id === 'root-canal-procedure');
+
   return (
     <div className="space-y-20 py-24">
       {/* Why Root Canal? */}
@@ -20,19 +23,16 @@ export function Features() {
             </div>
           </div>
           <div className="w-full lg:w-1/2 px-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {[
-                { title: "Save Natural Tooth", icon: ShieldCheck, desc: "Avoid extraction and keep your real smile." },
-                { title: "Pain Relief", icon: HeartPulse, desc: "Stop chronic aches and sensitivity for good." },
-                { title: "Prevent Infection", icon: AlertCircle, desc: "Stop bacteria from spreading to the jaw bone." },
-                { title: "Restore Function", icon: Sparkles, desc: "Chew comfortably and speak clearly again." }
-              ].map((feature, i) => (
-                <div key={i} className="bg-white p-6 rounded-xl shadow-md border border-primary/10">
-                  <feature.icon className="h-10 w-10 text-accent mb-4" />
-                  <h3 className="text-lg font-bold text-primary mb-2">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">{feature.desc}</p>
-                </div>
-              ))}
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] bg-muted">
+              {procImage?.imageUrl && (
+                <Image
+                  src={procImage.imageUrl}
+                  alt={procImage.description}
+                  fill
+                  className="object-cover"
+                  data-ai-hint="dentist procedure"
+                />
+              )}
             </div>
           </div>
         </div>
