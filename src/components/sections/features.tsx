@@ -89,7 +89,7 @@ export function Features() {
                     <div className="h-24 w-24 rounded-full bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-all duration-300 border border-primary/10">
                       <ToothIcon className="h-12 w-12 text-primary" />
                     </div>
-                    <p className="text-base font-bold text-primary/90 leading-relaxed max-w-[160px]">
+                    <p className="text-base font-medium text-black leading-relaxed max-w-[160px]">
                       {item.text}
                     </p>
                   </div>
