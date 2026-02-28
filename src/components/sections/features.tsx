@@ -22,6 +22,8 @@ const ToothIcon = ({ className }: { className?: string }) => (
 
 export function Features() {
   const procImage = PlaceHolderImages.find(img => img.id === 'root-canal-procedure');
+  const clinicImage = PlaceHolderImages.find(img => img.id === 'clinic-interior');
+  const toolImage = PlaceHolderImages.find(img => img.id === 'process-step-3');
 
   const symptoms = [
     { text: "Severe toothache" },
@@ -38,7 +40,7 @@ export function Features() {
       <section className="container px-4 mx-auto">
         <div className="flex flex-wrap -mx-4 items-center">
           <div className="w-full lg:w-1/2 px-4 mb-12 lg:mb-0">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 font-headline">Why Root Canal Treatment?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 font-headline tracking-tight">Why Root Canal Treatment?</h2>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
                 Root canal therapy removes infection from inside a damaged tooth and saves it from extraction. If left untreated, infections can spread, causing pain, swelling, and more complex health problems.
@@ -64,13 +66,13 @@ export function Features() {
         </div>
       </section>
 
-      {/* Redesigned: When Do You Need Root Canal? */}
+      {/* When Do You Need Root Canal? */}
       <section className="bg-white py-24">
         <div className="container px-4 mx-auto">
           <div className="flex flex-wrap -mx-4 items-start">
             <div className="w-full lg:w-1/3 px-4 mb-16 lg:mb-0 text-center lg:text-left">
               <div className="max-w-sm mx-auto lg:mx-0">
-                <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 leading-tight font-headline">
+                <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 leading-tight font-headline tracking-tight">
                   Who Needs a Root Canal?
                 </h2>
                 <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
@@ -105,27 +107,72 @@ export function Features() {
         </div>
       </section>
 
-      {/* Why Early Treatment Matters */}
+      {/* Why Early Treatment Matters - Redesigned to match ref image */}
       <section className="container px-4 mx-auto pb-24">
-        <div className="bg-primary text-white rounded-[40px] p-8 md:p-16 overflow-hidden relative">
-          <div className="relative z-10 max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 font-headline">Why Early Treatment Matters</h2>
-            <p className="text-xl text-primary-foreground/90 mb-10 leading-relaxed">
-              Ignoring tooth pain leads to abscess formation, bone loss, and spread of infection. It also results in higher treatment costs later. Root canal treatment restores oral health before it's too late.
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-              {["No Abscess", "Save Bone", "Halt Infection", "Lower Cost"].map((point, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-accent" />
-                  <span className="text-sm font-medium">{point}</span>
-                </div>
-              ))}
+        <div className="flex flex-wrap -mx-4 items-center">
+          {/* Left Side: Overlapping Images */}
+          <div className="w-full lg:w-1/2 px-4 mb-16 lg:mb-0">
+            <div className="relative h-[400px] md:h-[500px]">
+              {/* Main Image (Top Left) */}
+              <div className="absolute top-0 left-0 w-[75%] h-[75%] rounded-[32px] overflow-hidden shadow-2xl border-4 border-white">
+                {toolImage?.imageUrl && (
+                  <Image
+                    src={toolImage.imageUrl}
+                    alt="Dental procedure cleaning"
+                    fill
+                    className="object-cover"
+                    data-ai-hint="dental treatment"
+                  />
+                )}
+              </div>
+              {/* Secondary Image (Bottom Right) */}
+              <div className="absolute bottom-0 right-0 w-[60%] h-[60%] rounded-[32px] overflow-hidden shadow-2xl border-4 border-white">
+                {clinicImage?.imageUrl && (
+                  <Image
+                    src={clinicImage.imageUrl}
+                    alt="Modern dental clinic"
+                    fill
+                    className="object-cover"
+                    data-ai-hint="modern clinic"
+                  />
+                )}
+              </div>
             </div>
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-primary h-14 px-8 font-bold border-none">
-              Save My Tooth Now
-            </Button>
           </div>
-          <div className="absolute right-0 top-0 h-full w-1/3 bg-white/5 skew-x-12 transform origin-top pointer-events-none" />
+
+          {/* Right Side: Content */}
+          <div className="w-full lg:w-1/2 px-8 lg:px-12">
+            <div className="max-w-xl">
+              <p className="text-[#ff6b3d] font-bold text-xl mb-4">Why Aira?</p>
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight font-headline tracking-tight">
+                Why Early Treatment Matters?
+              </h2>
+              
+              <p className="text-lg font-medium text-slate-900 mb-6">Ignoring tooth pain leads to:</p>
+              
+              <ul className="space-y-4 mb-10">
+                {[
+                  "Abscess formation",
+                  "Bone loss",
+                  "Spread of infection",
+                  "Higher treatment costs"
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-center gap-3">
+                    <div className="h-1.5 w-1.5 rounded-full bg-black shrink-0" />
+                    <span className="text-lg text-slate-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <p className="text-lg text-slate-600 mb-10 leading-relaxed">
+                Root canal treatment prevents these complications and restores your complete oral health.
+              </p>
+
+              <Button size="lg" className="bg-[#ff6b3d] hover:bg-[#e85a2d] text-white h-16 px-10 text-lg font-bold rounded-2xl shadow-xl transition-all hover:scale-105">
+                Get Pain-Free Root Canal
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
     </div>
