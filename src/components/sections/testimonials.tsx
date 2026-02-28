@@ -42,8 +42,10 @@ export function Testimonials() {
     <section className="py-24 bg-primary/5">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">What Patients Say</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-medium text-primary mb-6 font-headline tracking-tight">
+            What Patients Say
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Trust is built on results. Here are some experiences from our patients at Kokapet.
           </p>
         </div>
@@ -60,7 +62,7 @@ export function Testimonials() {
               {reviews.map((item, index) => (
                 <CarouselItem key={index} className="md:basis-1/2">
                   <div className="p-1">
-                    <Card className="border-none shadow-lg">
+                    <Card className="border-none shadow-lg rounded-[24px] bg-white">
                       <CardContent className="p-8">
                         <div className="flex gap-1 mb-4">
                           {Array.from({ length: item.rating }).map((_, i) => (
@@ -68,7 +70,7 @@ export function Testimonials() {
                           ))}
                         </div>
                         <Quote className="h-8 w-8 text-primary/10 mb-4" />
-                        <p className="text-muted-foreground mb-6 italic">"{item.review}"</p>
+                        <p className="text-muted-foreground mb-6 italic leading-relaxed">"{item.review}"</p>
                         <div className="flex items-center gap-4">
                           <Avatar>
                             <AvatarFallback className="bg-primary/10 text-primary font-bold">
