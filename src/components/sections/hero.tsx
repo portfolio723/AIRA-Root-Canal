@@ -56,14 +56,18 @@ export function Hero() {
           <div className="w-full lg:w-1/2 px-4">
             <div className="relative mx-auto max-w-lg lg:max-w-none">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <Image
-                  src={heroImage?.imageUrl || ''}
-                  alt={heroImage?.description || 'Dental Hero'}
-                  width={1200}
-                  height={800}
-                  className="w-full h-full object-cover"
-                  data-ai-hint="dental clinic interior"
-                />
+                {heroImage?.imageUrl ? (
+                  <Image
+                    src={heroImage.imageUrl}
+                    alt={heroImage.description || 'Dental Hero'}
+                    width={1200}
+                    height={800}
+                    className="w-full h-full object-cover"
+                    data-ai-hint="dental clinic interior"
+                  />
+                ) : (
+                  <div className="w-full h-[500px] bg-muted animate-pulse rounded-2xl" />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent pointer-events-none" />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl hidden sm:block">
