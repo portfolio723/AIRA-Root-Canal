@@ -37,18 +37,11 @@ const steps = [
   }
 ];
 
-const ToothIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M7 3C4 3 3 5 3 8C3 11 5 12 5 15C5 18 4 21 7 21C10 21 11 19 12 17C13 19 14 21 17 21C20 21 19 18 19 15C19 12 21 11 21 8C21 5 20 3 17 3C14 3 13 4 12 6C11 4 10 3 7 3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
 export function Process() {
   return (
     <section className="py-24 bg-white">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-20">
-          <p className="text-[#ff6b3d] font-bold uppercase tracking-wider mb-4">How it works</p>
           <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 max-w-4xl mx-auto leading-tight font-headline">
             Our Root Canal Treatment Process
           </h2>
