@@ -89,9 +89,14 @@ export function Features() {
                 <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
                   You might benefit from a root canal if you have any of these symptoms:
                 </p>
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-16 px-8 text-lg font-medium rounded-2xl shadow-xl transition-all hover:scale-105 w-full sm:w-auto">
-                  Book Your Free Consultation
-                </Button>
+                <div className="space-y-4">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-16 px-8 text-lg font-medium rounded-2xl shadow-xl transition-all hover:scale-105 w-full sm:w-auto">
+                    Book Your Free Consultation
+                  </Button>
+                  <p className="text-base text-muted-foreground italic">
+                    Don’t ignore the pain — early treatment saves your tooth and prevents complications.
+                  </p>
+                </div>
               </div>
             </div>
             
@@ -109,11 +114,6 @@ export function Features() {
                 ))}
               </div>
             </div>
-          </div>
-          <div className="mt-20 text-center">
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Don’t ignore the pain — early treatment saves your tooth and prevents complications.
-            </p>
           </div>
         </div>
       </section>
