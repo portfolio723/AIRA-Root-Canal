@@ -144,7 +144,7 @@ export default function Home() {
               Get 30% OFF on Root Canal Treatment. Book your FREE consultation today and save your tooth!
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-16 px-10 text-xl font-bold rounded-full shadow-2xl">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-16 px-10 text-xl font-medium rounded-full shadow-2xl">
                 Book Your Free Consultation
               </Button>
             </div>

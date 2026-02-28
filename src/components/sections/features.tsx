@@ -78,7 +78,7 @@ export function Features() {
                 <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
                   You might benefit from a root canal if you have any of these symptoms:
                 </p>
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-16 px-10 text-lg font-bold rounded-2xl shadow-xl transition-all hover:scale-105 w-full sm:w-auto">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-16 px-10 text-lg font-medium rounded-2xl shadow-xl transition-all hover:scale-105 w-full sm:w-auto">
                   Book Your Free Consultation
                 </Button>
               </div>
@@ -168,7 +168,7 @@ export function Features() {
                 Root canal treatment prevents these complications and restores your complete oral health.
               </p>
 
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-16 px-10 text-lg font-bold rounded-2xl shadow-xl transition-all hover:scale-105">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-16 px-10 text-lg font-medium rounded-2xl shadow-xl transition-all hover:scale-105">
                 Get Pain-Free Root Canal
               </Button>
             </div>

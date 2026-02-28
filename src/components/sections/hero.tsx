@@ -46,7 +46,7 @@ export function Hero() {
           </p>
           
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 mb-16">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-16 px-12 text-xl font-bold rounded-2xl shadow-2xl transition-all hover:scale-105">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-16 px-12 text-xl font-medium rounded-2xl shadow-2xl transition-all hover:scale-105">
               Book Your Free Consultation
             </Button>
             <div className="flex gap-4 w-full sm:w-auto">
