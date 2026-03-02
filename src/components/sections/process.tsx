@@ -7,27 +7,32 @@ const steps = [
   {
     title: "Detailed Dental Exam & Digital X-Ray",
     description: "We assess the tooth and root canals precisely.",
-    number: "1"
+    number: "1",
+    image: "/4.1.jpg"
   },
   {
     title: "Anesthesia for Comfort",
     description: "Local anesthesia ensures a painless experience.",
-    number: "2"
+    number: "2",
+    image: "/4.2.jpg"
   },
   {
     title: "Removal of Infection",
     description: "We clean out the infected pulp and sanitize the canal.",
-    number: "3"
+    number: "3",
+    image: "/4.3.jpg"
   },
   {
     title: "Filling & Sealing",
     description: "The canal is sealed to prevent reinfection.",
-    number: "4"
+    number: "4",
+    image: "/4.4.jpg"
   },
   {
     title: "Final Restoration",
     description: "A crown or filling is placed to restore strength and function.",
-    number: "5"
+    number: "5",
+    image: "/4.5.jpg"
   }
 ];
 
@@ -35,7 +40,7 @@ export function Process() {
   return (
     <section className="py-12 md:py-24 bg-white">
       <div className="container px-4 mx-auto">
-        <div className="text-center mb-20">
+        <div className="text-center mb-16 md:mb-20">
           <h2 className="text-3xl md:text-5xl font-medium text-slate-900 mb-6 max-w-4xl mx-auto leading-tight font-headline">
             Our Root Canal Treatment Process
           </h2>
@@ -54,14 +59,14 @@ export function Process() {
               <div className="relative h-32 w-32 mb-6">
                 <div className="h-full w-full rounded-full overflow-hidden border-4 border-white shadow-lg">
                   <Image
-                    src="/ref.jpg"
+                    src={step.image}
                     alt={step.title}
                     width={300}
                     height={300}
                     className="h-full w-full object-cover transition-transform group-hover:scale-110 duration-500"
                   />
                 </div>
-                {/* Icon Badge - Updated to Primary Green Color */}
+                {/* Icon Badge */}
                 <div className="absolute -top-1 -right-1 h-10 w-10 bg-primary rounded-full shadow-md flex items-center justify-center text-white border border-white">
                   <span className="font-bold text-lg">{step.number}</span>
                 </div>
