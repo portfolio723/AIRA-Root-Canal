@@ -87,12 +87,12 @@ export function Features() {
               <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8">
                 {symptoms.map((item, i) => (
                   <div key={i} className="flex flex-col items-center text-center group">
-                    <div className="h-24 w-24 rounded-full bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-all duration-300 border border-primary/10 overflow-hidden relative">
+                    <div className="h-28 w-28 md:h-32 md:w-32 rounded-full mb-6 group-hover:scale-105 transition-all duration-300 border border-primary/10 overflow-hidden relative shadow-md">
                       <Image 
                         src={item.image}
                         alt={item.text}
                         fill
-                        className="object-contain p-4"
+                        className="object-cover"
                       />
                     </div>
                     <p className="text-base font-medium text-black leading-relaxed max-w-[160px]">
