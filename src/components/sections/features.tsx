@@ -85,7 +85,7 @@ export function Features() {
                     Book Your Free Consultation
                   </Button>
                   <p className="text-base text-muted-foreground italic">
-                    Don’t ignore the pain — early treatment saves your tooth and prevents complications.
+                    Don’t ignore the pain early treatment saves your tooth and prevents complications.
                   </p>
                 </div>
               </div>
@@ -117,7 +117,7 @@ export function Features() {
               Book Your Free Consultation
             </Button>
             <p className="text-base text-muted-foreground italic text-center">
-              Don’t ignore the pain — early treatment saves your tooth and prevents complications.
+              Don’t ignore the pain early treatment saves your tooth and prevents complications.
             </p>
           </div>
         </div>
