@@ -106,7 +106,7 @@ export function Features() {
         </div>
       </section>
 
-      {/* Why Early Treatment Matters */}
+      {/* Why Early Treatment Matters? */}
       <section className="container px-4 mx-auto pb-12 md:pb-24">
         <div className="flex flex-wrap -mx-4 items-center">
           {/* Left Side: Overlapping Images */}
@@ -115,7 +115,7 @@ export function Features() {
               {/* Main Image (Top Left) */}
               <div className="absolute top-0 left-0 w-[75%] h-[75%] rounded-[32px] overflow-hidden shadow-2xl border-4 border-white">
                 <Image
-                  src="/ref.jpg"
+                  src="/3.1.jpg"
                   alt="Professional dental care at Aira Clinic"
                   fill
                   className="object-cover"
@@ -124,7 +124,7 @@ export function Features() {
               {/* Secondary Image (Bottom Right) */}
               <div className="absolute bottom-0 right-0 w-[60%] h-[60%] rounded-[32px] overflow-hidden shadow-2xl border-4 border-white">
                 <Image
-                  src="/ref.jpg"
+                  src="/3.2.jpg"
                   alt="Modern dental equipment at Aira Clinic"
                   fill
                   className="object-cover"
