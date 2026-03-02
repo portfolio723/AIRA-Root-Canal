@@ -45,7 +45,7 @@ export default function Home() {
         <Testimonials />
 
         {/* Why Choose Us */}
-        <section className="py-12 md:py-24 bg-slate-50">
+        <section className="py-8 md:py-24 bg-slate-50">
           <div className="container px-4 mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-medium text-primary mb-6">Why Choose Aira Dental Clinic – Kokapet?</h2>
@@ -108,7 +108,7 @@ export default function Home() {
         <FAQ />
 
         {/* Location & Contact Section */}
-        <section className="py-12 md:py-24 container px-4 mx-auto">
+        <section className="py-8 md:py-24 container px-4 mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
             {/* Map on Left */}
             <div className="w-full min-h-[400px] lg:min-h-full rounded-[32px] overflow-hidden shadow-sm border border-slate-100">
@@ -125,17 +125,17 @@ export default function Home() {
             </div>
 
             {/* Contact Cards on Right */}
-            <div className="flex flex-col gap-6 justify-center">
+            <div className="flex flex-col gap-4 justify-center">
               {contactInfo.map((item, idx) => (
-                <div key={idx} className="bg-white rounded-[32px] p-8 border border-slate-200 flex items-center gap-6">
-                  <div className="flex-shrink-0">
-                    <item.icon className="h-8 w-8 text-black" />
+                <div key={idx} className="bg-white rounded-[24px] p-6 border border-slate-200 flex items-center gap-5">
+                  <div className="flex-shrink-0 h-12 w-12 rounded-full bg-slate-50 flex items-center justify-center">
+                    <item.icon className="h-6 w-6 text-black" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-normal text-black mb-1">
+                    <h3 className="text-xl font-medium text-black mb-0.5">
                       {item.title}
                     </h3>
-                    <p className="text-slate-500 text-lg whitespace-pre-line">
+                    <p className="text-slate-500 text-base whitespace-pre-line leading-snug">
                       {item.content}
                     </p>
                   </div>
@@ -146,7 +146,7 @@ export default function Home() {
         </section>
 
         {/* Final CTA */}
-        <section className="py-12 md:py-24 text-center">
+        <section className="py-8 md:py-24 text-center">
           <div className="container px-4 mx-auto max-w-3xl">
             <h2 className="text-4xl font-medium text-primary mb-6">Ready for a Healthy, Pain-Free Smile?</h2>
             <p className="text-xl text-muted-foreground mb-10">
