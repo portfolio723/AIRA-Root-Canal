@@ -35,9 +35,9 @@ export function Hero() {
 
           <Badge 
             variant="secondary" 
-            className="mb-8 px-5 py-2 text-sm font-semibold bg-white text-primary border-white/20 backdrop-blur-md uppercase tracking-[0.15em]"
+            className="mb-8 px-4 sm:px-5 py-2 text-[10px] sm:text-sm font-semibold bg-white text-primary border-white/20 backdrop-blur-md tracking-[0.05em] whitespace-nowrap inline-flex"
           >
-            Special Offer: 30% OFF All Treatments
+            Special Offer: 30% Off On All Treatments
           </Badge>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium text-white mb-8 leading-[1.1] font-headline">
