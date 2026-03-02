@@ -146,7 +146,7 @@ export default function Home() {
         </section>
 
         {/* Final CTA */}
-        <section className="py-8 md:py-24 text-center">
+        <section className="pt-2 pb-12 md:py-24 text-center">
           <div className="container px-4 mx-auto max-w-3xl">
             <h2 className="text-4xl font-medium text-primary mb-6">Ready for a Healthy, Pain-Free Smile?</h2>
             <p className="text-xl text-muted-foreground mb-10">
