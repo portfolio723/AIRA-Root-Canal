@@ -27,7 +27,7 @@ export function Features() {
     <div className="space-y-12 md:space-y-20 py-12 md:py-24">
       {/* Why Root Canal? */}
       <section className="container px-4 mx-auto">
-        <div className="flex flex-wrap -mx-4 items-center">
+        <div className="flex flex-wrap -mx-4 items-center mb-8">
           <div className="w-full lg:w-1/2 px-4 mb-12 lg:mb-0">
             <h2 className="text-3xl md:text-4xl font-medium text-primary mb-6 font-headline tracking-tight">Why Root Canal Treatment?</h2>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed mb-8">
@@ -38,7 +38,8 @@ export function Features() {
                 Aira Dental Clinic offers precise and comfortable root canal treatment in Kokapet to protect your natural teeth and restore dental health using modern techniques.
               </p>
             </div>
-            <div className="flex justify-center lg:justify-start">
+            {/* Desktop Button */}
+            <div className="hidden lg:flex justify-start">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-14 px-8 text-lg font-medium rounded-2xl shadow-xl transition-all hover:scale-105">
                 Book Your Free Consultation
               </Button>
@@ -58,12 +59,18 @@ export function Features() {
             </div>
           </div>
         </div>
+        {/* Mobile Button - At the bottom of the section */}
+        <div className="flex lg:hidden justify-center mt-12">
+          <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-14 px-8 text-lg font-medium rounded-2xl shadow-xl transition-all hover:scale-105 w-full sm:w-auto">
+            Book Your Free Consultation
+          </Button>
+        </div>
       </section>
 
       {/* When Do You Need Root Canal? */}
       <section className="bg-white py-12 md:py-24">
         <div className="container px-4 mx-auto">
-          <div className="flex flex-wrap -mx-4 items-start">
+          <div className="flex flex-wrap -mx-4 items-start mb-12">
             <div className="w-full lg:w-1/3 px-4 mb-16 lg:mb-0 text-center lg:text-left">
               <div className="max-w-sm mx-auto lg:mx-0">
                 <h2 className="text-4xl md:text-5xl font-medium text-primary mb-8 leading-tight font-headline tracking-tight">
@@ -72,7 +79,8 @@ export function Features() {
                 <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
                   You might benefit from a root canal if you have any of these symptoms:
                 </p>
-                <div className="space-y-4">
+                {/* Desktop Button Group */}
+                <div className="hidden lg:block space-y-4">
                   <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-16 px-8 text-lg font-medium rounded-2xl shadow-xl transition-all hover:scale-105 w-full sm:w-auto">
                     Book Your Free Consultation
                   </Button>
@@ -102,6 +110,15 @@ export function Features() {
                 ))}
               </div>
             </div>
+          </div>
+          {/* Mobile Button Group - At the bottom of the section */}
+          <div className="lg:hidden flex flex-col items-center space-y-4 mt-12">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-16 px-8 text-lg font-medium rounded-2xl shadow-xl transition-all hover:scale-105 w-full sm:w-auto">
+              Book Your Free Consultation
+            </Button>
+            <p className="text-base text-muted-foreground italic text-center">
+              Don’t ignore the pain — early treatment saves your tooth and prevents complications.
+            </p>
           </div>
         </div>
       </section>
@@ -157,9 +174,11 @@ export function Features() {
                 Root canal treatment prevents these complications and restores your complete oral health.
               </p>
 
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-16 px-8 text-lg font-medium rounded-2xl shadow-xl transition-all hover:scale-105">
-                Get Pain-Free Root Canal
-              </Button>
+              <div className="flex justify-center lg:justify-start">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-16 px-8 text-lg font-medium rounded-2xl shadow-xl transition-all hover:scale-105 w-full sm:w-auto">
+                  Get Pain-Free Root Canal
+                </Button>
+              </div>
             </div>
           </div>
         </div>
