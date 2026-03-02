@@ -3,33 +3,16 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
-const ToothIcon = ({ className }: { className?: string }) => (
-  <svg 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-  >
-    <path 
-      d="M7 3C4 3 3 5 3 8C3 11 5 12 5 15C5 18 4 21 7 21C10 21 11 19 12 17C13 19 14 21 17 21C20 21 19 18 19 15C19 12 21 11 21 8C21 5 20 3 17 3C14 3 13 4 12 6C11 4 10 3 7 3Z" 
-      stroke="currentColor" 
-      strokeWidth="1.5" 
-      strokeLinecap="round" 
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-
 export function Features() {
   const procImage = PlaceHolderImages.find(img => img.id === 'root-canal-procedure');
   
   const symptoms = [
-    { text: "Severe toothache" },
-    { text: "Pain when chewing" },
-    { text: "Sensitivity to hot or cold" },
-    { text: "Swollen gums" },
-    { text: "Deep decay or cavity" },
-    { text: "Darkening of the tooth" }
+    { text: "Severe toothache", image: "/2.1.png" },
+    { text: "Pain when chewing", image: "/2.2.jpg" },
+    { text: "Sensitivity to hot or cold", image: "/2.3.jpg" },
+    { text: "Swollen gums", image: "/2.4.jpg" },
+    { text: "Deep decay or cavity", image: "/2.5.jpg" },
+    { text: "Darkening of the tooth", image: "/2.6.webp" }
   ];
 
   const complications = [
@@ -104,8 +87,13 @@ export function Features() {
               <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8">
                 {symptoms.map((item, i) => (
                   <div key={i} className="flex flex-col items-center text-center group">
-                    <div className="h-24 w-24 rounded-full bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-all duration-300 border border-primary/10">
-                      <ToothIcon className="h-12 w-12 text-primary" />
+                    <div className="h-24 w-24 rounded-full bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-all duration-300 border border-primary/10 overflow-hidden relative">
+                      <Image 
+                        src={item.image}
+                        alt={item.text}
+                        fill
+                        className="object-contain p-4"
+                      />
                     </div>
                     <p className="text-base font-medium text-black leading-relaxed max-w-[160px]">
                       {item.text}
