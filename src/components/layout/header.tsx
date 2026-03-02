@@ -9,9 +9,9 @@ export function Header() {
           <Image 
             src="/e4WTcKUAllwMp9EAprhDEkwwqTQ.png" 
             alt="Aira Dental Clinic Logo" 
-            width={260} 
-            height={70} 
-            className="h-16 md:h-20 w-auto object-contain"
+            width={300} 
+            height={80} 
+            className="h-20 md:h-24 w-auto object-contain"
             priority
           />
         </div>
