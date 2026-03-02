@@ -35,7 +35,7 @@ export function Hero() {
 
           <Badge 
             variant="secondary" 
-            className="mb-8 px-4 sm:px-5 py-2 text-xs sm:text-sm font-semibold bg-white text-primary border-white/20 backdrop-blur-md tracking-[0.05em] whitespace-nowrap inline-flex"
+            className="mb-8 px-8 sm:px-12 py-3 sm:py-4 text-sm sm:text-lg font-bold bg-white text-primary border-white/20 shadow-2xl backdrop-blur-md tracking-[0.02em] whitespace-nowrap inline-flex rounded-full justify-center"
           >
             Special Offer: 30% Off On All Treatments
           </Badge>
