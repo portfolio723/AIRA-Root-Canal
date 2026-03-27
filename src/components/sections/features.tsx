@@ -24,12 +24,12 @@ export function Features() {
   ];
 
   return (
-    <div className="space-y-12 md:space-y-20 py-12 md:py-24">
+    <div className="space-y-12 md:space-y-20 py-8 md:py-24">
       {/* Why Root Canal? */}
       <section className="container px-4 mx-auto">
         <div className="flex flex-wrap -mx-4 items-center mb-8">
           <div className="w-full lg:w-1/2 px-4 mb-12 lg:mb-0">
-            <h2 className="text-3xl md:text-4xl font-medium text-primary mb-6 font-headline tracking-tight">Why Root Canal Treatment?</h2>
+            <h2 className="text-3xl md:text-4xl font-medium text-blue-700 mb-6 font-headline tracking-tight">Why Root Canal Treatment?</h2>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed mb-8">
               <p>
                 Root canal therapy removes infection from inside a damaged tooth and saves it from extraction. If left untreated, infections can spread, causing pain, swelling, and more complex health problems.
@@ -68,7 +68,7 @@ export function Features() {
       </section>
 
       {/* When Do You Need Root Canal? */}
-      <section className="bg-white py-12 md:py-24">
+      <section className="bg-white py-8 md:py-24">
         <div className="container px-4 mx-auto">
           <div className="flex flex-wrap -mx-4 items-start mb-12">
             <div className="w-full lg:w-1/3 px-4 mb-16 lg:mb-0 text-center lg:text-left">
@@ -85,7 +85,7 @@ export function Features() {
                     Book Your Free Consultation
                   </Button>
                   <p className="text-base text-muted-foreground italic">
-                    Don’t ignore the pain early treatment saves your tooth and prevents complications.
+                    Don’t ignore the pain — early treatment saves your tooth and prevents complications.
                   </p>
                 </div>
               </div>
@@ -124,7 +124,7 @@ export function Features() {
       </section>
 
       {/* Why Early Treatment Matters? */}
-      <section className="container px-4 mx-auto pb-12 md:pb-24">
+      <section className="container px-4 mx-auto pb-8 md:pb-24">
         <div className="flex flex-wrap -mx-4 items-center">
           {/* Left Side: Overlapping Images */}
           <div className="w-full lg:w-1/2 px-4 mb-16 lg:mb-0">
