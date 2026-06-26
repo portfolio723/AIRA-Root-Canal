@@ -15,7 +15,7 @@ export function Impact() {
               <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-3 font-headline group-hover:text-secondary transition-colors duration-300">
                 {stat.value}
               </div>
-              <div className="text-lg font-bold text-primary uppercase tracking-tight mb-1">
+              <div className="text-lg md:text-xl font-bold text-primary mb-1">
                 {stat.label}
               </div>
               <div className="text-sm text-muted-foreground">
