@@ -89,7 +89,7 @@ export function Hero() {
                 
                 <div className="space-y-2">
                   <p className="text-xs font-semibold text-white/40 uppercase tracking-widest">Enterprise Solutions</p>
-                  <p className="text-secondary font-semibold text-lg uppercase tracking-tight">
+                  <p className="text-white font-semibold text-lg uppercase tracking-tight">
                     FREE FEASIBILITY AUDIT & SITE VISIT
                   </p>
                 </div>
@@ -131,7 +131,7 @@ export function Hero() {
                 </div>
                 
                 <div className="flex justify-start">
-                  <Button className="bg-secondary hover:bg-secondary/90 text-white h-14 px-12 text-sm font-medium uppercase tracking-widest rounded-full shadow-xl transition-all flex items-center justify-center gap-2 w-full lg:w-auto">
+                  <Button className="bg-white text-black hover:text-primary h-14 px-12 text-sm font-medium uppercase tracking-widest rounded-full shadow-xl transition-all flex items-center justify-center gap-2 w-full lg:w-auto border-none">
                     Request Feasibility Audit 
                     <span className="text-xl">→</span>
                   </Button>
