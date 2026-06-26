@@ -1,5 +1,6 @@
 import { Building2, Banknote, Activity, Zap, Leaf, Gauge } from 'lucide-react';
 import Image from 'next/image';
+import { Badge } from '@/components/ui/badge';
 import {
   Carousel,
   CarouselContent,
@@ -58,6 +59,9 @@ export function WhyChooseUs() {
     <section className="py-24 bg-[#F7F8FA]">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-16">
+          <Badge className="bg-primary/5 text-primary border-none mb-6 px-4 py-1.5 rounded-full text-sm font-medium">
+            🛡️ Industrial Excellence
+          </Badge>
           <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-6 font-headline tracking-tighter">
             Why Businesses Choose Zenith Energy
           </h2>

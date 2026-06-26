@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
@@ -40,6 +41,9 @@ export function Reviews() {
     <section id="reviews" className="py-24 bg-[#F7F8FA]">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-16">
+          <Badge className="bg-primary/5 text-primary border-none mb-6 px-4 py-1.5 rounded-full text-sm font-medium">
+            💬 Client Success
+          </Badge>
           <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-6 font-headline tracking-tighter">
             What Our Customers Say
           </h2>

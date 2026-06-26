@@ -1,4 +1,5 @@
 'use client';
+import { Badge } from '@/components/ui/badge';
 
 export function Process() {
   const steps = [
@@ -33,6 +34,9 @@ export function Process() {
     <section className="py-24 bg-white">
       <div className="container px-4 mx-auto">
         <div className="text-center max-w-4xl mx-auto mb-20">
+          <Badge className="bg-primary/5 text-primary border-none mb-6 px-4 py-1.5 rounded-full text-sm font-medium">
+            🔄 Our Workflow
+          </Badge>
           <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-6 font-headline tracking-tight leading-tight">
             From inquiry to first savings — in 30 to 45 days
           </h2>

@@ -54,10 +54,10 @@ export function Calculator() {
     <section id="calculator" className="py-24 bg-white relative overflow-hidden">
       <div className="container px-4 mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-16">
-          <Badge className="bg-[#01153C]/5 text-[#01153C] border-none mb-6 px-4 py-1.5 rounded-full text-sm font-medium">
+          <Badge className="bg-primary/5 text-primary border-none mb-6 px-4 py-1.5 rounded-full text-sm font-medium">
             ⚡ Instant Savings Calculator
           </Badge>
-          <h2 className="text-2xl md:text-4xl font-semibold text-[#01153C] mb-6 font-headline tracking-tight">
+          <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-6 font-headline tracking-tight">
             Calculate Your Solar Savings
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto font-body">

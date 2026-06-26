@@ -1,4 +1,5 @@
 import { Play } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 
 export function InstallationVideos() {
   const videos = [
@@ -11,9 +12,9 @@ export function InstallationVideos() {
     <section className="py-24 bg-[#F7F8FA]">
       <div className="container px-4 mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-secondary text-xs font-bold uppercase tracking-[0.2em] mb-4 block">
-            SEE IT IN ACTION
-          </span>
+          <Badge className="bg-primary/5 text-primary border-none mb-6 px-4 py-1.5 rounded-full text-sm font-medium">
+            🎬 See it in Action
+          </Badge>
           <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-6 font-headline tracking-tighter">
             Watch a Zenith Energy Installation
           </h2>

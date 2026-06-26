@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { MapPin, Calendar, Zap } from 'lucide-react';
 import {
   Carousel,
@@ -38,6 +39,9 @@ export function Installations() {
     <section id="projects" className="py-24 bg-white">
       <div className="container px-4 mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
+          <Badge className="bg-primary/5 text-primary border-none mb-6 px-4 py-1.5 rounded-full text-sm font-medium">
+            🏗️ Project Showcase
+          </Badge>
           <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-6 font-headline tracking-tighter">
             Recent Solar Installations
           </h2>

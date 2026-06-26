@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 
 export function NetZero() {
   return (
@@ -21,6 +22,9 @@ export function NetZero() {
           </div>
 
           <div className="text-center lg:text-left text-white max-w-xl mx-auto lg:mx-0">
+            <Badge className="bg-white/10 text-white border-none mb-8 px-4 py-1.5 rounded-full text-sm font-medium">
+              🌱 Sustainability
+            </Badge>
             <h2 className="text-2xl md:text-4xl font-semibold mb-8 font-headline leading-tight">
               Move Towards Net Zero Operations
             </h2>
