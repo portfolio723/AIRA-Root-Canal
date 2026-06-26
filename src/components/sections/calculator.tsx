@@ -5,37 +5,19 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { 
-  Zap, 
   Wallet, 
   Leaf, 
   RefreshCcw, 
-  Building2, 
-  Factory, 
-  Warehouse, 
-  Hospital, 
-  School, 
-  ShoppingBag,
   TrendingDown,
   ArrowRight,
   ShieldCheck
 } from 'lucide-react';
-import { cn } from '@/lib/utils';
-
-const propertyTypes = [
-  { id: 'factory', label: 'Factory', icon: Factory },
-  { id: 'warehouse', label: 'Warehouse', icon: Warehouse },
-  { id: 'hospital', label: 'Hospital', icon: Hospital },
-  { id: 'apartment', label: 'Apartment', icon: Building2 },
-  { id: 'commercial', label: 'Commercial', icon: ShoppingBag },
-  { id: 'institution', label: 'Institution', icon: School },
-];
 
 export function Calculator() {
   const [bill, setBill] = useState([250000]);
   const [units, setUnits] = useState([12000]);
-  const [selectedProperty, setSelectedProperty] = useState('factory');
 
   const stats = useMemo(() => {
     const monthlyBill = bill[0];
@@ -45,7 +27,7 @@ export function Calculator() {
     const monthlySavings = monthlyBill * 0.85;
     const annualSavings = monthlySavings * 12;
     
-    // Payback calculation (estimated cost at 60k/kW, 1kW produces 120 units)
+    // Payback calculation (estimated cost at 65k/kW, 1kW produces 120 units)
     const systemSize = monthlyUnits / 120;
     const estimatedCost = systemSize * 65000;
     const paybackYears = (estimatedCost / annualSavings).toFixed(1);
@@ -135,28 +117,6 @@ export function Calculator() {
                   <div className="flex justify-between text-xs font-bold text-slate-400 uppercase tracking-widest">
                     <span>500 kWh</span>
                     <span>50,000 kWh</span>
-                  </div>
-                </div>
-
-                {/* Property Type Grid */}
-                <div className="space-y-6">
-                  <Label className="text-lg font-bold text-[#01153C]">Property Type</Label>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                    {propertyTypes.map((type) => (
-                      <button
-                        key={type.id}
-                        onClick={() => setSelectedProperty(type.id)}
-                        className={cn(
-                          "flex flex-col items-center justify-center p-4 rounded-2xl border transition-all duration-300 gap-3",
-                          selectedProperty === type.id
-                            ? "bg-[#01153C] border-[#01153C] text-white shadow-lg"
-                            : "bg-white border-slate-100 text-slate-600 hover:border-[#01153C]/20 hover:bg-slate-50"
-                        )}
-                      >
-                        <type.icon className={cn("h-6 w-6", selectedProperty === type.id ? "text-white" : "text-[#01153C]")} />
-                        <span className="text-sm font-bold">{type.label}</span>
-                      </button>
-                    ))}
                   </div>
                 </div>
               </div>
