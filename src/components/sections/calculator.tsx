@@ -210,7 +210,7 @@ export function Calculator() {
               <div className="space-y-4 pt-4">
                 <Button 
                   size="lg"
-                  className="w-full bg-[#F0153C] hover:bg-[#F0153C]/90 text-white h-16 text-lg font-bold rounded-full shadow-xl transition-all hover:scale-[1.02] flex items-center justify-center gap-3"
+                  className="w-full bg-[#F0153C] hover:bg-[#F0153C]/90 text-white h-14 text-lg font-bold rounded-full shadow-xl transition-all hover:scale-[1.02] flex items-center justify-center gap-3"
                 >
                   Get Detailed Savings Report
                   <ArrowRight className="h-5 w-5" />

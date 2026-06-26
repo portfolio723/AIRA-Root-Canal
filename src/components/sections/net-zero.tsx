@@ -29,7 +29,7 @@ export function NetZero() {
             </p>
             <Button 
               size="lg"
-              className="bg-secondary hover:bg-secondary/90 text-white h-16 px-10 text-xl font-bold rounded-full shadow-2xl hover:scale-105 transition-all"
+              className="bg-secondary hover:bg-secondary/90 text-white h-14 px-10 text-xl font-bold rounded-full shadow-2xl hover:scale-105 transition-all"
             >
               Start Your Solar Journey
             </Button>

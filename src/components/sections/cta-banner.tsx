@@ -18,14 +18,14 @@ export function CTABanner() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Button 
               size="lg" 
-              className="bg-secondary hover:bg-secondary/90 text-white h-16 px-10 text-xl font-bold rounded-full shadow-2xl hover:scale-105 transition-all w-full sm:w-auto"
+              className="bg-secondary hover:bg-secondary/90 text-white h-14 px-10 text-xl font-bold rounded-full shadow-2xl hover:scale-105 transition-all w-full sm:w-auto"
             >
               Get Free Quote
             </Button>
             <Button 
               variant="outline" 
               size="lg" 
-              className="bg-white border-white text-primary hover:text-secondary h-16 px-10 rounded-full text-xl transition-all w-full sm:w-auto"
+              className="bg-white border-white text-primary hover:text-secondary h-14 px-10 rounded-full text-xl transition-all w-full sm:w-auto"
             >
               <Phone className="mr-3 h-5 w-5" /> Call Now
             </Button>
