@@ -1,18 +1,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { CheckCircle2, Star, ShieldCheck, Users, Zap, Clock, Award } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { cn } from '@/lib/utils';
+import { CheckCircle2, Star, ShieldCheck, Users, Award } from 'lucide-react';
 
 export function Hero() {
-  const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-solar');
   const [bill, setBill] = useState(5000);
   const [mounted, setMounted] = useState(false);
 
@@ -82,40 +78,6 @@ export function Hero() {
               <div className="flex items-center gap-3">
                 <ShieldCheck className="h-5 w-5 text-secondary" />
                 <span className="text-sm font-bold text-primary">25 Year Warranty</span>
-              </div>
-            </div>
-
-            {/* Hero Image & Stats */}
-            <div className="relative w-full h-[400px] md:h-[500px] rounded-[40px] overflow-hidden shadow-2xl group">
-              {heroImage?.imageUrl && (
-                <div className="relative w-full h-full animate-reflective-sweep">
-                  <Image
-                    src={heroImage.imageUrl}
-                    alt={heroImage.description}
-                    fill
-                    className="object-cover animate-ken-burns"
-                    priority
-                    data-ai-hint="luxury solar house"
-                  />
-                </div>
-              )}
-              
-              {/* Stats Strip */}
-              <div className="absolute bottom-6 left-6 right-6 lg:left-10 lg:right-10 glass-blue p-6 rounded-[24px] shadow-xl">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-white">
-                  {[
-                    { val: "10+", label: "Years Exp.", icon: Clock },
-                    { val: "2500+", label: "Homes Powered", icon: Zap },
-                    { val: "30 MW+", label: "Solar Installed", icon: ShieldCheck },
-                    { val: "98%", label: "Satisfaction", icon: Star },
-                  ].map((stat, i) => (
-                    <div key={i} className="flex flex-col items-center text-center">
-                      <stat.icon className="h-5 w-5 mb-2 text-white/60" />
-                      <div className="text-2xl font-bold font-headline">{stat.val}</div>
-                      <div className="text-xs font-medium text-white/80 uppercase tracking-wider">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
               </div>
             </div>
           </div>
