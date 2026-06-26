@@ -38,7 +38,7 @@ export function Hero() {
           <span className="text-white text-sm font-semibold uppercase tracking-[0.2em] mb-6 block border-l-4 border-secondary pl-4">
             Commercial & Industrial Solar
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-white leading-[1.05] font-headline mb-8">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-[1.05] font-headline mb-8">
             Decarbonize Your <br />
             Business Operations
           </h1>
