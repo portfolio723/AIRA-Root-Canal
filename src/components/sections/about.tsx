@@ -23,7 +23,7 @@ export function About() {
             <span className="text-secondary text-xs font-bold uppercase tracking-[0.2em] mb-4 block text-center lg:text-left">
               THE COMMERCIAL REALITY
             </span>
-            <h2 className="text-3xl md:text-5xl font-semibold text-primary font-headline tracking-tight leading-tight text-center lg:text-left">
+            <h2 className="text-2xl md:text-4xl font-semibold text-primary font-headline tracking-tight leading-tight text-center lg:text-left">
               What businesses with ₹3–20 lakh <br className="hidden md:block" /> monthly bills actually face
             </h2>
           </div>

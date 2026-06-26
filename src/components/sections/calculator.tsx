@@ -57,7 +57,7 @@ export function Calculator() {
           <Badge className="bg-[#01153C]/5 text-[#01153C] border-none mb-6 px-4 py-1.5 rounded-full text-sm font-medium">
             ⚡ Instant Savings Calculator
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#01153C] mb-6 font-headline tracking-tight">
+          <h2 className="text-2xl md:text-4xl font-semibold text-[#01153C] mb-6 font-headline tracking-tight">
             Calculate Your Solar Savings
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto font-body">

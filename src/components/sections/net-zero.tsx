@@ -13,20 +13,19 @@ export function NetZero() {
           <div className="relative aspect-square rounded-[32px] overflow-hidden shadow-2xl">
             <Image 
               src="/nz.jpg"
-              alt="Move Towards Net Zero Living"
+              alt="Move Towards Net Zero Business Operations"
               fill
               className="object-cover"
             />
-            {/* Visual elements could be added here to represent "House Solar Battery Trees" */}
             <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
           </div>
 
           <div className="text-center lg:text-left text-white max-w-xl mx-auto lg:mx-0">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-headline leading-tight">
-              Move Towards Net Zero Living
+            <h2 className="text-2xl md:text-4xl font-semibold mb-8 font-headline leading-tight">
+              Move Towards Net Zero Operations
             </h2>
             <p className="text-xl text-white/80 mb-10 leading-relaxed font-light">
-              Generate clean energy, reduce carbon emissions, and build a sustainable future for your family with Zenith Energy's smart ecosystem.
+              Future-proof your business by achieving ESG goals and reducing carbon emissions with Zenith Energy's industrial solar ecosystems.
             </p>
             <Button 
               size="lg"
