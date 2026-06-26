@@ -22,12 +22,12 @@ export default function Home() {
       <main className="flex-grow">
         <Hero />
         <About />
+        <Calculator />
         <WhyChooseUs />
         <Installations />
         <InstallationVideos />
         <Process />
         <NetZero />
-        <Calculator />
         <Impact />
         <Reviews />
         <CTABanner />
