@@ -5,12 +5,10 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { CheckCircle2 } from 'lucide-react';
 
 export function Hero() {
   const [mounted, setMounted] = useState(false);
-  const heroImg = PlaceHolderImages.find(img => img.id === 'hero-solar');
 
   useEffect(() => {
     setMounted(true);
@@ -22,16 +20,13 @@ export function Hero() {
     <section className="relative min-h-[90vh] flex flex-col justify-center overflow-visible">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        {heroImg && (
-          <Image
-            src={heroImg.imageUrl}
-            alt={heroImg.description}
-            fill
-            className="object-cover"
-            priority
-            data-ai-hint="solar house"
-          />
-        )}
+        <Image
+          src="/hero.png"
+          alt="Premium Residential Solar Installation"
+          fill
+          className="object-cover"
+          priority
+        />
         <div className="absolute inset-0 bg-black/65" />
       </div>
 
