@@ -32,7 +32,8 @@ export function Hero() {
         <div className="absolute inset-0 bg-black/70" />
       </div>
 
-      <div className="container relative z-10 px-4 mx-auto pt-32 pb-[500px] lg:pb-64">
+      {/* Hero Content with responsive padding to accommodate overlapping form */}
+      <div className="container relative z-10 px-4 mx-auto pt-32 pb-[580px] md:pb-[620px] lg:pb-64">
         <div className="max-w-4xl animate-in fade-in slide-in-from-left-8 duration-700">
           <span className="text-white text-sm font-semibold uppercase tracking-[0.2em] mb-6 block border-l-4 border-secondary pl-4">
             Commercial & Industrial Solar
@@ -75,7 +76,7 @@ export function Hero() {
       <div className="absolute left-0 right-0 bottom-0 translate-y-1/2 z-20 px-4">
         <div className="container mx-auto">
           <div className="bg-[#111111] p-8 md:p-12 rounded-[24px] shadow-2xl border border-white/5">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
               
               <div className="lg:col-span-4 space-y-8">
                 <div>
@@ -130,7 +131,7 @@ export function Hero() {
                 </div>
                 
                 <div className="flex justify-start">
-                  <Button className="bg-secondary hover:bg-secondary/90 text-white h-16 px-12 text-sm font-medium uppercase tracking-widest rounded-xl shadow-xl transition-all flex items-center gap-2">
+                  <Button className="bg-secondary hover:bg-secondary/90 text-white h-16 px-12 text-sm font-medium uppercase tracking-widest rounded-xl shadow-xl transition-all flex items-center justify-center gap-2 w-full lg:w-auto">
                     Request Feasibility Audit 
                     <span className="text-xl">→</span>
                   </Button>
