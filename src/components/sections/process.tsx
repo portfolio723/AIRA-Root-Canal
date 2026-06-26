@@ -30,7 +30,7 @@ export function Process() {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-12 md:py-24 bg-white">
       <div className="container px-4 mx-auto">
         <div className="text-center max-w-4xl mx-auto mb-20">
           <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-6 font-headline tracking-tight leading-tight">

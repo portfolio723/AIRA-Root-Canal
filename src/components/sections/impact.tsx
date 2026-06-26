@@ -7,7 +7,7 @@ export function Impact() {
   ];
 
   return (
-    <section className="py-20 bg-[#F7F8FA] border-y border-[#E7E9EE]">
+    <section className="py-10 md:py-20 bg-[#F7F8FA] border-y border-[#E7E9EE]">
       <div className="container px-4 mx-auto">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, idx) => (

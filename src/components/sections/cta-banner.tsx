@@ -3,7 +3,7 @@ import { Phone } from 'lucide-react';
 
 export function CTABanner() {
   return (
-    <section className="py-24 bg-primary relative overflow-hidden">
+    <section className="py-12 md:py-24 bg-primary relative overflow-hidden">
       {/* Dynamic light rays / gradients */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-secondary/20 to-transparent z-0" />
       

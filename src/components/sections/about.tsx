@@ -16,7 +16,7 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="bg-white pt-80 md:pt-96 lg:pt-24 pb-24">
+    <section id="about" className="bg-white pt-64 md:pt-80 lg:pt-24 pb-12 md:pb-24">
       <div className="container px-4 mx-auto">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16 text-center">

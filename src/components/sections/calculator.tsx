@@ -50,7 +50,7 @@ export function Calculator() {
   }, [bill, units]);
 
   return (
-    <section id="calculator" className="py-24 bg-white relative overflow-hidden">
+    <section id="calculator" className="py-12 md:py-24 bg-white relative overflow-hidden">
       <div className="container px-4 mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-6 font-headline tracking-tight">

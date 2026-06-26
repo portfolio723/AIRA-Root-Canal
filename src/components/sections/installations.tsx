@@ -34,7 +34,7 @@ export function Installations() {
   ];
 
   return (
-    <section id="projects" className="py-24 bg-white">
+    <section id="projects" className="py-12 md:py-24 bg-white">
       <div className="container px-4 mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-6 font-headline tracking-tighter">

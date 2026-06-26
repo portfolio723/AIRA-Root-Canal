@@ -37,7 +37,7 @@ export function Reviews() {
   const customerImg = PlaceHolderImages.find(img => img.id === 'customer-1');
 
   return (
-    <section id="reviews" className="py-24 bg-[#F7F8FA]">
+    <section id="reviews" className="py-12 md:py-24 bg-[#F7F8FA]">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-6 font-headline tracking-tighter">

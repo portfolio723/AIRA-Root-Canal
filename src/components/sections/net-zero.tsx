@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 
 export function NetZero() {
   return (
-    <section className="py-24 bg-primary overflow-hidden relative">
+    <section className="py-12 md:py-24 bg-primary overflow-hidden relative">
       {/* Abstract Shapes */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-400/10 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2" />
