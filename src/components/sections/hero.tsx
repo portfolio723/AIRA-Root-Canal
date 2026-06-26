@@ -85,13 +85,6 @@ export function Hero() {
           {/* Right Floating Card (40%) */}
           <div className="w-full lg:w-[40%] lg:sticky lg:top-32 animate-in fade-in slide-in-from-right-8 duration-700 delay-200">
             <div className="relative">
-              {/* Floating Badge */}
-              <div className="absolute -top-4 -right-4 z-20 bg-secondary text-white px-6 py-3 rounded-2xl shadow-xl rotate-6 animate-bounce">
-                <div className="text-xs font-bold uppercase tracking-tight">Save up to</div>
-                <div className="text-xl font-bold">₹78,000</div>
-                <div className="text-[10px] uppercase font-bold text-white/80 tracking-tighter">With Govt. Subsidy</div>
-              </div>
-
               <div className="bg-white p-8 md:p-10 rounded-[32px] shadow-premium border border-[#E7E9EE] relative z-10">
                 <div className="space-y-2 mb-8 text-center">
                   <h2 className="text-3xl font-bold text-primary font-headline">Book Your FREE Solar Consultation</h2>
