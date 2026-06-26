@@ -1,94 +1,73 @@
 'use client';
 
-import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-
-const steps = [
-  {
-    title: "Detailed Dental Exam & Digital X-Ray",
-    description: "We assess the tooth and root canals precisely.",
-    number: "1",
-    image: "/4.1.jpg"
-  },
-  {
-    title: "Anesthesia for Comfort",
-    description: "Local anesthesia ensures a painless experience.",
-    number: "2",
-    image: "/4.2.jpg"
-  },
-  {
-    title: "Removal of Infection",
-    description: "We clean out the infected pulp and sanitize the canal.",
-    number: "3",
-    image: "/4.3.jpg"
-  },
-  {
-    title: "Filling & Sealing",
-    description: "The canal is sealed to prevent reinfection.",
-    number: "4",
-    image: "/4.4.jpg"
-  },
-  {
-    title: "Final Restoration",
-    description: "A crown or filling is placed to restore strength and function.",
-    number: "5",
-    image: "/4.5.jpg"
-  }
-];
-
 export function Process() {
+  const steps = [
+    {
+      step: "01",
+      title: "Free site visit",
+      desc: "Engineer assesses your roof, load profile, and DISCOM connection point."
+    },
+    {
+      step: "02",
+      title: "Detailed proposal",
+      desc: "You receive a full techno-commercial report with ROI model within 48 hours."
+    },
+    {
+      step: "03",
+      title: "Approvals & design",
+      desc: "We file DISCOM net metering and structural drawings on your behalf."
+    },
+    {
+      step: "04",
+      title: "Installation",
+      desc: "In-house certified crew. Work scheduled to avoid disrupting your operations."
+    },
+    {
+      step: "05",
+      title: "Live & supported",
+      desc: "Commissioning, DISCOM sync, and our team is available for all post-install support."
+    }
+  ];
+
   return (
-    <section className="py-12 md:py-24 bg-white">
+    <section className="py-24 bg-[#0A0A0A] text-white">
       <div className="container px-4 mx-auto">
-        <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-3xl md:text-5xl font-medium text-slate-900 mb-6 max-w-4xl mx-auto leading-tight font-headline">
-            Our Root Canal Treatment Process
+        <div className="text-center max-w-4xl mx-auto mb-20">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 font-headline tracking-tight leading-tight">
+            From inquiry to first savings — in 30 to 45 days
           </h2>
-          <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-            A precise, painless, and thorough approach to saving your natural smile.
+          <p className="text-white/50 text-xl font-light">
+            Every step is handled by our team. Your involvement is limited to approvals and decisions.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4 max-w-[1400px] mx-auto mb-16">
-          {steps.map((step, idx) => (
-            <div 
-              key={idx} 
-              className="bg-white rounded-[32px] p-6 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group h-full"
-            >
-              {/* Image Container */}
-              <div className="relative h-32 w-32 mb-6">
-                <div className="h-full w-full rounded-full overflow-hidden border-4 border-white shadow-lg">
-                  <Image
-                    src={step.image}
-                    alt={step.title}
-                    width={300}
-                    height={300}
-                    className="h-full w-full object-cover transition-transform group-hover:scale-110 duration-500"
-                  />
+        <div className="max-w-[1400px] mx-auto">
+          <div className="bg-[#111111] rounded-[32px] border border-white/5 p-4 lg:p-0">
+            <div className="grid grid-cols-1 lg:grid-cols-5">
+              {steps.map((item, idx) => (
+                <div 
+                  key={idx} 
+                  className={`p-8 lg:p-12 relative ${
+                    idx !== steps.length - 1 ? 'lg:border-r border-white/5' : ''
+                  } ${
+                    idx !== steps.length - 1 ? 'border-b lg:border-b-0 border-white/5' : ''
+                  }`}
+                >
+                  <div className="space-y-6">
+                    <span className="text-[#D4FF4D] text-xs font-bold uppercase tracking-[0.2em]">
+                      STEP {item.step}
+                    </span>
+                    <h3 className="text-xl font-bold text-white leading-snug">
+                      {item.title}
+                    </h3>
+                    <p className="text-white/40 text-sm leading-relaxed font-light">
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
-                {/* Icon Badge */}
-                <div className="absolute -top-1 -right-1 h-10 w-10 bg-primary rounded-full shadow-md flex items-center justify-center text-white border border-white">
-                  <span className="font-bold text-lg">{step.number}</span>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="text-center flex-grow flex flex-col">
-                <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors leading-snug">
-                  {step.title}
-                </h3>
-                <p className="text-slate-500 text-sm leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
-
-        <div className="flex justify-center">
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-14 px-8 text-lg font-medium rounded-2xl shadow-xl transition-all hover:scale-105">
-            Book Your Free Consultation
-          </Button>
+          </div>
         </div>
       </div>
     </section>
