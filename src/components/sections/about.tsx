@@ -31,7 +31,7 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="bg-white py-32 pt-56 md:pt-64">
+    <section id="about" className="bg-white py-32 pt-[450px] lg:pt-64">
       <div className="container px-4 mx-auto">
         <div className="max-w-4xl mx-auto text-center mb-24">
           <h2 className="text-3xl md:text-5xl font-bold text-primary mb-8 font-headline leading-tight">

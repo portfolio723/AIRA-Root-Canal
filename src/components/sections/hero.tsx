@@ -30,7 +30,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-black/65" />
       </div>
 
-      <div className="container relative z-10 px-4 mx-auto pt-32 pb-56 md:pb-64">
+      <div className="container relative z-10 px-4 mx-auto pt-32 pb-[500px] lg:pb-64">
         <div className="max-w-4xl animate-in fade-in slide-in-from-left-8 duration-700">
           <span className="text-white text-sm font-bold uppercase tracking-[0.2em] mb-6 block border-l-4 border-secondary pl-4">
             Residential Solar Solutions
