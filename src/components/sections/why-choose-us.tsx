@@ -1,49 +1,49 @@
-import { Sun, Banknote, Monitor, Wrench, Leaf, Gauge } from 'lucide-react';
+import { Home, Banknote, Activity, Zap, Leaf, Gauge } from 'lucide-react';
 import Image from 'next/image';
 
 export function WhyChooseUs() {
   const features = [
     {
-      title: "Lower Electricity Bills",
-      desc: "Reduce monthly power costs significantly with efficient rooftop solar.",
-      icon: Banknote,
-      imageUrl: "https://picsum.photos/seed/solar-savings/600/400",
-      imageHint: "money savings"
-    },
-    {
-      title: "High Quality Products",
-      desc: "We use only tier-1 solar panels and top-rated inverters for longevity.",
-      icon: Sun,
-      imageUrl: "https://picsum.photos/seed/solar-quality/600/400",
-      imageHint: "solar panels"
-    },
-    {
-      title: "Fast Installation",
-      desc: "Hassle-free setup by our certified engineering team in record time.",
-      icon: Wrench,
-      imageUrl: "https://picsum.photos/seed/solar-install/600/400",
+      title: "Home Solar Installation",
+      desc: "Custom rooftop solar systems designed for maximum energy production.",
+      icon: Home,
+      imageUrl: "https://picsum.photos/seed/solar-install-why/600/400",
       imageHint: "solar installation"
     },
     {
-      title: "Government Subsidy",
-      desc: "Complete assistance with Central and State solar subsidy applications.",
-      icon: Monitor,
-      imageUrl: "https://picsum.photos/seed/solar-subsidy/600/400",
-      imageHint: "government subsidy"
+      title: "Cost Savings",
+      desc: "Enjoy up to 70% savings on energy bills with solar panels and smart storage.",
+      icon: Banknote,
+      imageUrl: "https://picsum.photos/seed/solar-savings-why/600/400",
+      imageHint: "money savings"
     },
     {
-      title: "Long Warranty",
-      desc: "Enjoy up to 25 years of performance warranty for complete peace of mind.",
+      title: "Smart Monitoring",
+      desc: "Smart monitoring and AI optimization keep your system performing 24/7.",
+      icon: Activity,
+      imageUrl: "https://picsum.photos/seed/solar-monitor-why/600/400",
+      imageHint: "smart monitoring"
+    },
+    {
+      title: "Quick Installation",
+      desc: "Professional installation completed by certified technicians.",
+      icon: Zap,
+      imageUrl: "https://picsum.photos/seed/solar-quick-why/600/400",
+      imageHint: "quick installation"
+    },
+    {
+      title: "Sustainability",
+      desc: "Clean renewable energy for a cleaner, greener and sustainable future.",
       icon: Leaf,
-      imageUrl: "https://picsum.photos/seed/solar-warranty/600/400",
-      imageHint: "solar reliability"
+      imageUrl: "https://picsum.photos/seed/solar-green-why/600/400",
+      imageHint: "sustainability"
     },
     {
-      title: "Dedicated Support",
-      desc: "24/7 monitoring and lifelong maintenance support for your system.",
+      title: "Energy Efficiency",
+      desc: "Optimize your home energy consumption with smart solar systems.",
       icon: Gauge,
-      imageUrl: "https://picsum.photos/seed/solar-support/600/400",
-      imageHint: "customer support"
+      imageUrl: "https://picsum.photos/seed/solar-efficiency-why/600/400",
+      imageHint: "energy efficiency"
     }
   ];
 
@@ -63,29 +63,35 @@ export function WhyChooseUs() {
           {features.map((feature, idx) => (
             <div 
               key={idx} 
-              className="group p-8 rounded-[24px] border border-[#E7E9EE] bg-white hover:shadow-soft transition-all duration-300 flex flex-col h-full overflow-hidden"
+              className="group p-8 rounded-[24px] border border-[#E5E7EB] bg-white shadow-sm hover:shadow-soft transition-all duration-300 flex flex-col h-full overflow-hidden"
             >
-              <div className="flex flex-col flex-grow">
-                <div className="h-10 w-10 rounded-lg bg-primary/5 flex items-center justify-center mb-6 text-primary shadow-sm group-hover:bg-secondary group-hover:text-white transition-colors">
-                  <feature.icon className="h-5 w-5" />
+              <div className="flex flex-col h-full">
+                {/* Top Left Icon */}
+                <div className="h-12 w-12 rounded-xl bg-primary/5 flex items-center justify-center mb-8 text-primary group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+                  <feature.icon className="h-6 w-6" />
                 </div>
 
-                <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-6 shadow-sm">
+                {/* Content Container */}
+                <div className="flex-grow">
+                  <h3 className="text-2xl md:text-[28px] font-bold text-primary mb-4 font-headline leading-tight">
+                    {feature.title}
+                  </h3>
+                  <p className="text-[#64748B] text-lg leading-relaxed mb-8 line-clamp-3">
+                    {feature.desc}
+                  </p>
+                </div>
+
+                {/* Minimal Illustration at Bottom */}
+                <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden mt-auto grayscale hover:grayscale-0 transition-all duration-500 opacity-80 group-hover:opacity-100">
                   <Image
                     src={feature.imageUrl}
                     alt={feature.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                     data-ai-hint={feature.imageHint}
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent" />
                 </div>
-
-                <h3 className="text-xl font-bold text-primary mb-3 font-headline">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed text-sm">
-                  {feature.desc}
-                </p>
               </div>
             </div>
           ))}
