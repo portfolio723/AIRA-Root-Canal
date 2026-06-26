@@ -13,7 +13,7 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -31,18 +31,26 @@ export function Header() {
   return (
     <header 
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-white/90 backdrop-blur-md shadow-soft py-4" : "bg-white/50 backdrop-blur-sm py-6"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        isScrolled 
+          ? "bg-white shadow-soft py-4" 
+          : "bg-transparent py-0"
       )}
     >
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+      <div className={cn(
+        "container mx-auto px-4 md:px-6 flex items-center justify-between transition-all duration-500",
+        !isScrolled && "pt-6 pb-2"
+      )}>
         <Link href="/" className="flex items-center">
           <Image 
             src="/logo-1.png" 
             alt="Zenith Energy Logo" 
             width={280} 
             height={70} 
-            className="h-14 md:h-16 w-auto object-contain" 
+            className={cn(
+              "w-auto object-contain transition-all duration-500",
+              isScrolled ? "h-12 md:h-14" : "h-16 md:h-20 drop-shadow-lg"
+            )} 
             priority 
           />
         </Link>
@@ -53,13 +61,23 @@ export function Header() {
             <Link 
               key={link.name} 
               href={link.href}
-              className="text-sm font-medium transition-colors text-muted-foreground hover:text-secondary"
+              className={cn(
+                "text-sm font-bold uppercase tracking-wider transition-colors",
+                isScrolled 
+                  ? "text-primary hover:text-secondary" 
+                  : "text-white hover:text-secondary drop-shadow-md"
+              )}
             >
               {link.name}
             </Link>
           ))}
           <Button 
-            className="bg-secondary hover:bg-secondary/90 text-white rounded-[12px] px-6"
+            className={cn(
+              "rounded-[12px] px-8 font-bold transition-all",
+              isScrolled 
+                ? "bg-secondary hover:bg-secondary/90 text-white" 
+                : "bg-white text-primary hover:bg-secondary hover:text-white"
+            )}
           >
             Get Free Quote
           </Button>
@@ -67,10 +85,13 @@ export function Header() {
 
         {/* Mobile Toggle */}
         <button 
-          className="lg:hidden p-2 text-primary"
+          className={cn(
+            "lg:hidden p-2 transition-colors",
+            isScrolled ? "text-primary" : "text-white"
+          )}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X /> : <Menu />}
+          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
@@ -83,12 +104,12 @@ export function Header() {
                 key={link.name} 
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg font-medium text-primary hover:text-secondary py-2"
+                className="text-lg font-bold text-primary hover:text-secondary py-2 border-b border-slate-50"
               >
                 {link.name}
               </Link>
             ))}
-            <Button className="bg-secondary hover:bg-secondary/90 text-white w-full h-12 mt-4">
+            <Button className="bg-secondary hover:bg-secondary/90 text-white w-full h-14 mt-4 font-bold rounded-xl">
               Get Free Quote
             </Button>
           </nav>
