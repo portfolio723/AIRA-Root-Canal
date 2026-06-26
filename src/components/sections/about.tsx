@@ -16,12 +16,12 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="bg-white py-24">
+    <section id="about" className="bg-white pt-80 md:pt-96 lg:pt-24 pb-24">
       <div className="container px-4 mx-auto">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16 text-center">
             <h2 className="text-2xl md:text-4xl font-semibold text-primary font-headline tracking-tight leading-tight max-w-3xl mx-auto">
-              What businesses with ₹3–20 lakh <br className="hidden md:block" /> monthly bills actually face
+              What businesses with ₹3–20 lakh monthly bills actually face
             </h2>
           </div>
 
