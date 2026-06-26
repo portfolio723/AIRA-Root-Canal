@@ -16,7 +16,7 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="bg-white py-32 pt-[450px] lg:pt-72">
+    <section id="about" className="bg-white py-24">
       <div className="container px-4 mx-auto">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16 text-center">
@@ -27,7 +27,7 @@ export function About() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Before Solar */}
-            <div className="bg-[#111111] p-10 md:p-12 rounded-[24px] border border-white/5 shadow-2xl relative overflow-hidden group">
+            <div className="bg-primary p-10 md:p-12 rounded-[24px] border border-white/10 shadow-2xl relative overflow-hidden group">
               <h3 className="text-secondary text-sm font-bold uppercase tracking-widest mb-10 border-b border-white/10 pb-6">
                 BEFORE SOLAR
               </h3>
