@@ -20,10 +20,10 @@ export function About() {
       <div className="container px-4 mx-auto">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
-            <span className="text-secondary text-xs font-bold uppercase tracking-[0.2em] mb-4 block">
+            <span className="text-secondary text-xs font-bold uppercase tracking-[0.2em] mb-4 block text-center lg:text-left">
               THE COMMERCIAL REALITY
             </span>
-            <h2 className="text-3xl md:text-5xl font-semibold text-primary font-headline tracking-tight leading-tight">
+            <h2 className="text-3xl md:text-5xl font-semibold text-primary font-headline tracking-tight leading-tight text-center lg:text-left">
               What businesses with ₹3–20 lakh <br className="hidden md:block" /> monthly bills actually face
             </h2>
           </div>
@@ -31,9 +31,6 @@ export function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Before Solar */}
             <div className="bg-[#111111] p-10 md:p-12 rounded-[24px] border border-white/5 shadow-2xl relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-8 opacity-5">
-                <X className="h-32 w-32 text-secondary" />
-              </div>
               <h3 className="text-secondary text-sm font-bold uppercase tracking-widest mb-10 border-b border-white/10 pb-6">
                 BEFORE SOLAR
               </h3>
@@ -51,9 +48,6 @@ export function About() {
 
             {/* After Solar */}
             <div className="bg-[#F7F8FA] p-10 md:p-12 rounded-[24px] border border-primary/5 shadow-soft relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-8 opacity-5">
-                <CheckCircle2 className="h-32 w-32 text-primary" />
-              </div>
               <h3 className="text-primary text-sm font-bold uppercase tracking-widest mb-10 border-b border-primary/10 pb-6">
                 AFTER ZENITH ENERGY SOLAR
               </h3>
