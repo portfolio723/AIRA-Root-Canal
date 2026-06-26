@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 
@@ -35,13 +36,15 @@ export function Header() {
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="h-10 w-10 bg-primary rounded-xl flex items-center justify-center overflow-hidden">
-            <span className="text-white font-bold text-2xl">Z</span>
-          </div>
-          <span className="text-xl font-bold font-headline tracking-tighter text-primary">
-            ZENITH ENERGY
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image 
+            src="/logo-1.png" 
+            alt="Zenith Energy Logo" 
+            width={200} 
+            height={48} 
+            className="h-10 md:h-12 w-auto object-contain" 
+            priority 
+          />
         </Link>
         
         {/* Desktop Nav */}

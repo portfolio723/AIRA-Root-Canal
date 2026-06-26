@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Facebook, Instagram, Linkedin, Youtube, Phone, Mail, MapPin } from 'lucide-react';
 
 export function Footer() {
@@ -8,11 +9,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Column 1: Company */}
           <div className="space-y-6">
-            <div className="flex items-center gap-2">
-              <div className="h-10 w-10 bg-primary rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-2xl">Z</span>
-              </div>
-              <span className="text-xl font-bold font-headline text-primary tracking-tighter">ZENITH ENERGY</span>
+            <div className="flex items-center">
+              <Image 
+                src="/logo-1.png" 
+                alt="Zenith Energy Logo" 
+                width={200} 
+                height={48} 
+                className="h-10 w-auto object-contain" 
+              />
             </div>
             <p className="text-muted-foreground leading-relaxed">
               Leading the way in clean, sustainable energy solutions for homeowners across Hyderabad.
