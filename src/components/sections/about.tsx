@@ -51,10 +51,6 @@ export function About() {
               {cards.map((card, idx) => (
                 <CarouselItem key={idx} className="pl-4 md:basis-1/2 lg:basis-1/3">
                   <div className="bg-[#F7F8FA] p-8 rounded-[20px] hover:shadow-soft transition-all duration-300 flex flex-col h-full group border border-border">
-                    <div className="h-14 w-14 rounded-full bg-secondary flex items-center justify-center mb-6 text-white shadow-md">
-                      <card.icon className="h-7 w-7" />
-                    </div>
-
                     <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 shadow-sm border border-white">
                       {card.imageUrl && (
                         <Image
