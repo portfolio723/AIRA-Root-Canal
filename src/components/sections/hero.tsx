@@ -48,7 +48,7 @@ export function Hero() {
 
           <div className="flex flex-col gap-8 mb-12">
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-secondary hover:bg-secondary/90 text-white h-12 px-8 text-base font-medium rounded-full shadow-2xl hover:scale-105 transition-all">
+              <Button className="bg-white text-black hover:text-primary h-12 px-8 text-base font-medium rounded-full shadow-2xl hover:scale-105 transition-all border-none">
                 Get Commercial Quote
               </Button>
               <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary h-12 px-8 text-base font-medium rounded-full transition-all">
