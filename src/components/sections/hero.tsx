@@ -1,79 +1,204 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { CheckCircle2 } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Slider } from '@/components/ui/slider';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { CheckCircle2, Star, ShieldCheck, Users, Zap, Clock, Award } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { cn } from '@/lib/utils';
 
 export function Hero() {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-solar');
+  const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-solar');
+  const [bill, setBill] = useState(5000);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden bg-white">
-      {/* Decorative Background Elements */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-[#01153C]/5 -skew-x-12 translate-x-1/4 z-0 hidden lg:block" />
-      <div className="absolute top-1/2 left-0 w-64 h-64 bg-[#F0153C]/5 rounded-full blur-3xl -translate-x-1/2 z-0" />
+    <section className="relative min-h-screen pt-24 pb-12 overflow-hidden bg-white solar-pattern">
+      {/* Background Gradients */}
+      <div className="absolute top-0 right-0 w-full lg:w-3/4 h-full bg-gradient-to-br from-[#F4F8FF] to-transparent z-0 opacity-70" />
+      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 z-0" />
 
-      <div className="container relative z-10 px-4 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div className="max-w-xl text-center lg:text-left mx-auto lg:mx-0">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <span className="h-2 w-2 rounded-full bg-secondary animate-pulse" />
-            <span className="text-xs font-bold uppercase tracking-wider text-primary">Now Serving All Hyderabad</span>
-          </div>
+      <div className="container relative z-10 px-4 mx-auto">
+        <div className="flex flex-col lg:flex-row gap-12 items-start">
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-8 leading-[1.1] font-headline">
-            Power Your Home with <span className="text-secondary">Clean Solar</span> Energy
-          </h1>
-          
-          <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-lg mx-auto lg:mx-0 font-light">
-            Save more on electricity with reliable solar solutions for homes and apartments across Hyderabad.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4 mb-12">
-            <Button 
-              size="lg" 
-              className="bg-secondary hover:bg-secondary/90 text-white h-14 sm:h-16 px-8 text-lg font-bold rounded-[12px] shadow-xl hover:scale-105 transition-all"
-            >
-              Get Free Quote
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-primary text-primary hover:bg-primary hover:text-white h-14 sm:h-16 px-8 rounded-[12px] text-lg transition-all"
-            >
-              Calculate Savings
-            </Button>
+          {/* Left Content (60%) */}
+          <div className="w-full lg:w-[60%] space-y-8 animate-in fade-in slide-in-from-left-8 duration-700">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/10 bg-white shadow-sm">
+              <span className="h-2 w-2 rounded-full bg-secondary animate-pulse" />
+              <span className="text-sm font-semibold text-primary tracking-wide uppercase">
+                ☀ Hyderabad's Trusted Residential Solar Partner
+              </span>
+            </div>
+
+            <h1 className="text-5xl md:text-7xl font-bold text-primary leading-[1.05] font-headline">
+              Power Your Home <br />
+              <span className="text-secondary">Save More Every Month</span> <br />
+              <span className="text-primary/90">with Smart Solar Solutions</span>
+            </h1>
+
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl font-body">
+              Install premium rooftop solar systems for your home or apartment. 
+              Lower electricity bills, increase property value, and enjoy clean energy with expert installation across Hyderabad.
+            </p>
+
+            <div className="flex flex-wrap items-center gap-4">
+              <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white h-16 px-10 text-lg font-bold rounded-xl shadow-xl transition-all hover:scale-105">
+                Get Free Solar Consultation
+              </Button>
+              <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-white h-16 px-10 rounded-xl text-lg transition-all">
+                Calculate My Savings
+              </Button>
+            </div>
+
+            {/* Trust Row */}
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 pt-4">
+              <div className="flex flex-col">
+                <div className="flex gap-0.5 mb-1">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Star key={i} className="h-4 w-4 fill-secondary text-secondary" />
+                  ))}
+                </div>
+                <span className="text-sm font-bold text-primary">4.9 Rating (Google Reviews)</span>
+              </div>
+              <div className="h-10 w-px bg-border hidden sm:block" />
+              <div className="flex items-center gap-3">
+                <Users className="h-5 w-5 text-secondary" />
+                <span className="text-sm font-bold text-primary">1000+ Happy Families</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Award className="h-5 w-5 text-secondary" />
+                <span className="text-sm font-bold text-primary">Govt. Approved Vendor</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <ShieldCheck className="h-5 w-5 text-secondary" />
+                <span className="text-sm font-bold text-primary">25 Year Warranty</span>
+              </div>
+            </div>
+
+            {/* Hero Image & Stats */}
+            <div className="relative w-full h-[400px] md:h-[500px] rounded-[40px] overflow-hidden shadow-2xl group">
+              {heroImage?.imageUrl && (
+                <div className="relative w-full h-full animate-reflective-sweep">
+                  <Image
+                    src={heroImage.imageUrl}
+                    alt={heroImage.description}
+                    fill
+                    className="object-cover animate-ken-burns"
+                    priority
+                    data-ai-hint="luxury solar house"
+                  />
+                </div>
+              )}
+              
+              {/* Stats Strip */}
+              <div className="absolute bottom-6 left-6 right-6 lg:left-10 lg:right-10 glass-blue p-6 rounded-[24px] shadow-xl">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-white">
+                  {[
+                    { val: "10+", label: "Years Exp.", icon: Clock },
+                    { val: "2500+", label: "Homes Powered", icon: Zap },
+                    { val: "30 MW+", label: "Solar Installed", icon: ShieldCheck },
+                    { val: "98%", label: "Satisfaction", icon: Star },
+                  ].map((stat, i) => (
+                    <div key={i} className="flex flex-col items-center text-center">
+                      <stat.icon className="h-5 w-5 mb-2 text-white/60" />
+                      <div className="text-2xl font-bold font-headline">{stat.val}</div>
+                      <div className="text-xs font-medium text-white/80 uppercase tracking-wider">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-8 gap-y-4">
-            {["Government Approved", "Quality Installation", "Fast Support"].map((tag, idx) => (
-              <div key={idx} className="flex items-center gap-2 group">
-                <CheckCircle2 className="text-secondary h-5 w-5" />
-                <span className="text-primary font-medium text-sm sm:text-base">{tag}</span>
+          {/* Right Floating Card (40%) */}
+          <div className="w-full lg:w-[40%] lg:sticky lg:top-32 animate-in fade-in slide-in-from-right-8 duration-700 delay-200">
+            <div className="relative">
+              {/* Floating Badge */}
+              <div className="absolute -top-4 -right-4 z-20 bg-secondary text-white px-6 py-3 rounded-2xl shadow-xl rotate-6 animate-bounce">
+                <div className="text-xs font-bold uppercase tracking-tight">Save up to</div>
+                <div className="text-xl font-bold">₹78,000</div>
+                <div className="text-[10px] uppercase font-bold text-white/80 tracking-tighter">With Govt. Subsidy</div>
               </div>
-            ))}
-          </div>
-        </div>
 
-        <div className="relative w-full aspect-[4/3] lg:aspect-square rounded-[40px] overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-700 delay-200">
-          {heroImage?.imageUrl && (
-            <Image
-              src={heroImage.imageUrl}
-              alt={heroImage.description}
-              fill
-              className="object-cover"
-              priority
-              data-ai-hint="solar house"
-            />
-          )}
-          {/* Accent Badge on Image */}
-          <div className="absolute bottom-8 left-8 right-8 glass-card p-6 rounded-[24px] shadow-xl animate-in slide-in-from-bottom-10 duration-1000 delay-500">
-            <div className="flex items-center gap-4">
-              <div className="h-12 w-12 rounded-full bg-secondary flex items-center justify-center shrink-0">
-                <span className="text-white font-bold">15+</span>
+              <div className="bg-white p-8 md:p-10 rounded-[32px] shadow-premium border border-[#E7E9EE] relative z-10">
+                <div className="space-y-2 mb-8 text-center">
+                  <h2 className="text-3xl font-bold text-primary font-headline">Book Your FREE Solar Consultation</h2>
+                  <p className="text-muted-foreground">Know your savings in just 30 seconds.</p>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Full Name</Label>
+                      <Input id="name" placeholder="John Doe" className="h-12 rounded-xl" />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Phone Number</Label>
+                      <Input id="phone" placeholder="+91 98765 43210" className="h-12 rounded-xl" />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label>Property Type</Label>
+                    <Select defaultValue="independent">
+                      <SelectTrigger className="h-12 rounded-xl">
+                        <SelectValue placeholder="Select type" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="independent">Independent House</SelectItem>
+                        <SelectItem value="apartment">Apartment / Penthouse</SelectItem>
+                        <SelectItem value="villa">Villa</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="space-y-6 bg-slate-50 p-6 rounded-2xl border border-border">
+                    <div className="flex justify-between items-center mb-2">
+                      <Label className="text-primary font-bold">Monthly Electricity Bill</Label>
+                      <span className="text-xl font-bold text-secondary">₹{bill.toLocaleString()}{bill >= 10000 ? '+' : ''}</span>
+                    </div>
+                    <Slider 
+                      defaultValue={[5000]} 
+                      max={10000} 
+                      step={500} 
+                      onValueChange={(val) => setBill(val[0])}
+                    />
+                    <div className="flex justify-between text-xs font-bold text-muted-foreground">
+                      <span>₹500</span>
+                      <span>₹10,000+</span>
+                    </div>
+                  </div>
+
+                  <Button className="w-full bg-secondary hover:bg-secondary/90 text-white h-16 text-xl font-bold rounded-2xl shadow-xl transition-all">
+                    Check My Savings
+                  </Button>
+
+                  <div className="flex justify-center gap-6 pt-2">
+                    {["No Spam", "Free Site Visit", "Quick Response"].map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-1.5 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+                        <CheckCircle2 className="h-3 w-3 text-secondary" />
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <div>
-                <p className="text-primary font-bold leading-tight">Years of Expertise</p>
-                <p className="text-muted-foreground text-sm">Trusted by 500+ Homeowners</p>
-              </div>
+            </div>
+            
+            {/* Scroll Indicator (Desktop only) */}
+            <div className="hidden lg:flex flex-col items-center mt-12 gap-2 text-muted-foreground">
+              <div className="h-12 w-[1px] bg-gradient-to-b from-primary/20 to-transparent animate-pulse" />
+              <span className="text-xs font-bold uppercase tracking-widest">Discover More</span>
             </div>
           </div>
         </div>
