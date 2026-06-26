@@ -80,7 +80,7 @@ export function WhyChooseUs() {
                   <feature.icon className="h-6 w-6" />
                 </div>
                 <div className="flex-grow">
-                  <h3 className="text-[24px] font-semibold text-[#01153C] mb-4 font-headline leading-tight">
+                  <h3 className="text-lg md:text-xl font-semibold text-[#01153C] mb-4 font-headline leading-tight">
                     {feature.title}
                   </h3>
                   <p className="text-[#64748B] text-[18px] leading-[1.7] font-normal mb-8">
@@ -123,7 +123,7 @@ export function WhyChooseUs() {
                         <feature.icon className="h-6 w-6" />
                       </div>
                       <div className="flex-grow">
-                        <h3 className="text-[24px] font-semibold text-[#01153C] mb-4 font-headline tracking-tight">
+                        <h3 className="text-lg md:text-xl font-semibold text-[#01153C] mb-4 font-headline tracking-tight">
                           {feature.title}
                         </h3>
                         <p className="text-[#64748B] text-[18px] leading-[1.7] font-normal mb-8">

@@ -57,7 +57,7 @@ export function Process() {
                     <span className="text-secondary text-xs font-bold uppercase tracking-[0.2em]">
                       STEP {item.step}
                     </span>
-                    <h3 className="text-xl font-bold text-primary leading-snug font-headline">
+                    <h3 className="text-lg md:text-xl font-bold text-primary leading-snug font-headline">
                       {item.title}
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed font-normal">
