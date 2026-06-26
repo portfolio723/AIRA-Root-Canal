@@ -31,7 +31,7 @@ export function Hero() {
             data-ai-hint="solar house"
           />
         )}
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       <div className="container relative z-10 px-4 mx-auto pt-20 pb-32">
@@ -53,7 +53,7 @@ export function Hero() {
       <div className="absolute left-0 right-0 bottom-0 translate-y-1/2 z-20 px-4">
         <div className="container mx-auto">
           <div className="bg-[#111111] p-8 md:p-12 rounded-[12px] shadow-2xl border border-white/5">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-start">
               
               {/* Left Text */}
               <div className="lg:col-span-4 space-y-8">
