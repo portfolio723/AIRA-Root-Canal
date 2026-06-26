@@ -1,84 +1,80 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { CheckCircle2, Phone } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Hero() {
-  return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-20 lg:py-32 overflow-hidden bg-primary lg:bg-transparent">
-      {/* Desktop Background Image with Overlay */}
-      <div className="absolute inset-0 z-0 hidden lg:block">
-        <Image
-          src="/hero.jpg"
-          alt="Aira Dental Clinic professional surgery"
-          fill
-          className="object-cover"
-          priority
-        />
-        {/* Professional gradient overlay for desktop readability */}
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent" />
-      </div>
+  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-solar');
 
-      <div className="container relative z-10 px-4 mx-auto">
-        <div className="max-w-4xl">
-          {/* Mobile Hero Image - Medium Height and Separate */}
-          <div className="lg:hidden w-full h-72 relative mb-10 rounded-[32px] overflow-hidden shadow-2xl border-4 border-white/10">
+  return (
+    <section className="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden bg-white">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-[#01153C]/5 -skew-x-12 translate-x-1/4 z-0 hidden lg:block" />
+      <div className="absolute top-1/2 left-0 w-64 h-64 bg-[#F0153C]/5 rounded-full blur-3xl -translate-x-1/2 z-0" />
+
+      <div className="container relative z-10 px-4 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-xl text-center lg:text-left mx-auto lg:mx-0">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <span className="h-2 w-2 rounded-full bg-secondary animate-pulse" />
+            <span className="text-xs font-bold uppercase tracking-wider text-primary">Now Serving All Hyderabad</span>
+          </div>
+          
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-8 leading-[1.1] font-headline">
+            Power Your Home with <span className="text-secondary">Clean Solar</span> Energy
+          </h1>
+          
+          <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-lg mx-auto lg:mx-0 font-light">
+            Save more on electricity with reliable solar solutions for homes and apartments across Hyderabad.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4 mb-12">
+            <Button 
+              size="lg" 
+              className="bg-secondary hover:bg-secondary/90 text-white h-14 sm:h-16 px-8 text-lg font-bold rounded-[12px] shadow-xl hover:scale-105 transition-all"
+            >
+              Get Free Quote
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-primary text-primary hover:bg-primary hover:text-white h-14 sm:h-16 px-8 rounded-[12px] text-lg transition-all"
+            >
+              Calculate Savings
+            </Button>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-8 gap-y-4">
+            {["Government Approved", "Quality Installation", "Fast Support"].map((tag, idx) => (
+              <div key={idx} className="flex items-center gap-2 group">
+                <CheckCircle2 className="text-secondary h-5 w-5" />
+                <span className="text-primary font-medium text-sm sm:text-base">{tag}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="relative w-full aspect-[4/3] lg:aspect-square rounded-[40px] overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-700 delay-200">
+          {heroImage?.imageUrl && (
             <Image
-              src="/hero.jpg"
-              alt="Aira Dental Clinic professional surgery"
+              src={heroImage.imageUrl}
+              alt={heroImage.description}
               fill
               className="object-cover"
               priority
+              data-ai-hint="solar house"
             />
-          </div>
-
-          <Badge 
-            variant="secondary" 
-            className="mb-8 px-8 sm:px-12 py-3 sm:py-4 text-sm sm:text-lg font-bold bg-white text-primary border-white/20 shadow-2xl backdrop-blur-md tracking-[0.02em] whitespace-nowrap inline-flex rounded-full justify-center"
-          >
-            Special Offer: 30% Off On All Treatments
-          </Badge>
-          
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium text-white mb-8 leading-[1.1] font-headline">
-            Advanced & Painless <br className="hidden lg:block" /> 
-            Root Canal Treatment <br className="hidden lg:block" />
-            at Kokapet
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-2xl font-light">
-            Save your natural smile with our expert, gentle care. Experience precise root canal therapy using modern digital technology and compassionate techniques.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-6 mb-16">
-            {/* Primary Button: Inverted on mobile (White bg, Green text) as requested */}
-            <Button 
-              size="lg" 
-              className="bg-white text-primary hover:bg-white/90 lg:bg-primary lg:text-white lg:hover:bg-primary/90 h-14 sm:h-16 px-8 text-xl font-medium rounded-2xl shadow-2xl transition-all hover:scale-105"
-            >
-              Book Your Free Consultation
-            </Button>
-            <div className="flex gap-4">
-              <Button variant="outline" size="lg" className="bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 h-14 sm:h-16 px-8 rounded-2xl text-lg flex-1 sm:flex-none">
-                <Phone className="mr-2 h-5 w-5" /> Call Now
-              </Button>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-12">
-            {[
-              "Specialist-Led Procedures",
-              "Advanced Digital Imaging",
-              "Painless Local Anesthesia",
-              "Expert Post-Care Support"
-            ].map((item, idx) => (
-              <div key={idx} className="flex items-center gap-4 group">
-                <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-colors">
-                  <CheckCircle2 className="text-white h-6 w-6 flex-shrink-0" />
-                </div>
-                <span className="text-white font-medium text-lg md:text-xl">{item}</span>
+          )}
+          {/* Accent Badge on Image */}
+          <div className="absolute bottom-8 left-8 right-8 glass-card p-6 rounded-[24px] shadow-xl animate-in slide-in-from-bottom-10 duration-1000 delay-500">
+            <div className="flex items-center gap-4">
+              <div className="h-12 w-12 rounded-full bg-secondary flex items-center justify-center shrink-0">
+                <span className="text-white font-bold">15+</span>
               </div>
-            ))}
+              <div>
+                <p className="text-primary font-bold leading-tight">Years of Expertise</p>
+                <p className="text-muted-foreground text-sm">Trusted by 500+ Homeowners</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

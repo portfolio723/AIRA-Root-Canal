@@ -1,68 +1,85 @@
-
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
+import Link from 'next/link';
+import { Facebook, Instagram, Linkedin, Youtube, Phone, Mail, MapPin } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-white pt-20 pb-10">
+    <footer className="bg-white border-t pt-20 pb-10">
       <div className="container px-4 mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-          <div>
-            <div className="flex items-center gap-2 mb-6">
-              <div className="h-10 w-10 bg-white rounded-lg flex items-center justify-center">
-                <span className="text-primary font-bold text-xl">A</span>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Column 1: Company */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-2">
+              <div className="h-10 w-10 bg-primary rounded-xl flex items-center justify-center">
+                <span className="text-white font-bold text-2xl">Z</span>
               </div>
-              <span className="text-xl font-bold">Aira Dental Clinic</span>
+              <span className="text-xl font-bold font-headline text-primary tracking-tighter">ZENITH ENERGY</span>
             </div>
-            <p className="text-primary-foreground/80 mb-6 leading-relaxed">
-              Your trusted partner for expert dental care in Kokapet. Specializing in painless treatments and high-quality restorations.
+            <p className="text-muted-foreground leading-relaxed">
+              Leading the way in clean, sustainable energy solutions for homeowners across Hyderabad.
             </p>
             <div className="flex gap-4">
-              <Facebook className="h-6 w-6 cursor-pointer hover:text-accent" />
-              <Instagram className="h-6 w-6 cursor-pointer hover:text-accent" />
-              <Twitter className="h-6 w-6 cursor-pointer hover:text-accent" />
+              {[Linkedin, Instagram, Facebook, Youtube].map((Icon, i) => (
+                <Link key={i} href="#" className="h-10 w-10 rounded-full border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all">
+                  <Icon className="h-5 w-5" />
+                </Link>
+              ))}
             </div>
           </div>
-          
+
+          {/* Column 2: Navigation */}
           <div>
-            <h3 className="text-lg font-bold mb-6">Contact Us</h3>
+            <h3 className="text-lg font-bold text-primary mb-8 font-headline">Company</h3>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-accent flex-shrink-0 mt-1" />
-                <span className="text-primary-foreground/80">Main Road, Kokapet, Hyderabad - 500075</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-accent flex-shrink-0" />
-                <span className="text-primary-foreground/80">+91 98765 43210</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-accent flex-shrink-0" />
-                <span className="text-primary-foreground/80">info@airadental.com</span>
-              </li>
+              {['About', 'Projects', 'Reviews', 'FAQ'].map((item) => (
+                <li key={item}>
+                  <Link href={`#${item.toLowerCase()}`} className="text-muted-foreground hover:text-secondary transition-colors">
+                    {item}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Column 3: Services */}
           <div>
-            <h3 className="text-lg font-bold mb-6">Clinic Hours</h3>
-            <ul className="space-y-2">
-              <li className="flex justify-between">
-                <span className="text-primary-foreground/80">Mon - Sat:</span>
-                <span className="font-medium text-accent">10:00 AM - 8:00 PM</span>
+            <h3 className="text-lg font-bold text-primary mb-8 font-headline">Services</h3>
+            <ul className="space-y-4">
+              {['Residential Solar', 'Apartment Solar', 'Maintenance', 'Consultation'].map((item) => (
+                <li key={item}>
+                  <Link href="#" className="text-muted-foreground hover:text-secondary transition-colors">
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Contact */}
+          <div id="contact">
+            <h3 className="text-lg font-bold text-primary mb-8 font-headline">Contact</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <Phone className="h-5 w-5 text-secondary flex-shrink-0 mt-1" />
+                <span className="text-muted-foreground">+91 91001 23456</span>
               </li>
-              <li className="flex justify-between">
-                <span className="text-primary-foreground/80">Sunday:</span>
-                <span className="font-medium text-accent">10:00 AM - 1:00 PM</span>
+              <li className="flex items-start gap-3">
+                <Mail className="h-5 w-5 text-secondary flex-shrink-0 mt-1" />
+                <span className="text-muted-foreground">hello@zenithenergy.in</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 text-secondary flex-shrink-0 mt-1" />
+                <span className="text-muted-foreground">Kokapet, Hyderabad, Telangana 500075</span>
               </li>
             </ul>
-            <div className="mt-8 p-4 bg-white/10 rounded-lg border border-white/10">
-              <p className="text-sm font-bold text-accent mb-1 uppercase">Limited Offer</p>
-              <p className="text-sm">30% OFF on all root canal treatments this month!</p>
-            </div>
           </div>
         </div>
         
-        <div className="pt-8 border-t border-white/10 text-center">
-          <p className="text-sm text-primary-foreground/60">
-            &copy; {new Date().getFullYear()} Aira Dental Clinic. All rights reserved. Professional Dental Services in Kokapet.
+        <div className="pt-8 border-t flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+          <p className="text-sm text-muted-foreground">
+            &copy; {new Date().getFullYear()} Zenith Energy. All rights reserved.
+          </p>
+          <p className="text-sm text-muted-foreground font-medium">
+            Powered by Clean Energy.
           </p>
         </div>
       </div>

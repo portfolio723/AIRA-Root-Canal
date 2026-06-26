@@ -1,10 +1,9 @@
-
-import type {Metadata} from 'next';
+import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Aira Dental Clinic | Painless Root Canal Treatment Kokapet',
-  description: 'Expert, comfortable and reliable root canal therapy in Kokapet. Save your natural tooth with our painless procedure.',
+  title: 'Zenith Energy | Premium Solar Solutions for Homes in Hyderabad',
+  description: 'Power your home with clean solar energy. Save on electricity bills with reliable solar solutions for houses and apartments in Hyderabad.',
 };
 
 export default function RootLayout({
@@ -13,13 +12,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body antialiased selection:bg-primary/20">{children}</body>
+      <body className="font-body selection:bg-secondary/20">{children}</body>
     </html>
   );
 }
