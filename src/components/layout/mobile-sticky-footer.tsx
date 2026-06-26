@@ -10,14 +10,14 @@ export function MobileStickyFooter() {
       <div className="flex items-center gap-4 max-w-md mx-auto">
         <Button 
           variant="outline" 
-          className="flex-1 h-14 border-primary text-primary font-bold rounded-2xl hover:bg-primary/5 transition-all text-base border-2"
+          className="flex-1 h-14 border-primary text-primary font-bold rounded-full hover:bg-primary/5 transition-all text-base border-2"
           asChild
         >
           <Link href="#contact">Get Free Quote</Link>
         </Button>
         <Button 
           variant="outline" 
-          className="flex-1 h-14 border-primary text-primary font-bold rounded-2xl hover:bg-primary/5 transition-all text-base flex items-center justify-center gap-2 border-2"
+          className="flex-1 h-14 border-primary text-primary font-bold rounded-full hover:bg-primary/5 transition-all text-base flex items-center justify-center gap-2 border-2"
           asChild
         >
           <a href="tel:+919100123456">

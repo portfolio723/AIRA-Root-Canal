@@ -131,7 +131,7 @@ export function Hero() {
                 </div>
                 
                 <div className="flex justify-start">
-                  <Button className="bg-secondary hover:bg-secondary/90 text-white h-16 px-12 text-sm font-medium uppercase tracking-widest rounded-xl shadow-xl transition-all flex items-center justify-center gap-2 w-full lg:w-auto">
+                  <Button className="bg-secondary hover:bg-secondary/90 text-white h-16 px-12 text-sm font-medium uppercase tracking-widest rounded-full shadow-xl transition-all flex items-center justify-center gap-2 w-full lg:w-auto">
                     Request Feasibility Audit 
                     <span className="text-xl">→</span>
                   </Button>

@@ -1,9 +1,9 @@
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 export function NetZero() {
   return (
-    <section className="py-12 md:py-24 bg-primary overflow-hidden relative">
+    <section className="py-8 md:py-24 bg-primary overflow-hidden relative">
       {/* Abstract Shapes */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-400/10 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2" />
@@ -29,7 +29,7 @@ export function NetZero() {
             </p>
             <Button 
               size="lg"
-              className="bg-secondary hover:bg-secondary/90 text-white h-16 px-10 text-xl font-bold rounded-[12px] shadow-2xl hover:scale-105 transition-all"
+              className="bg-secondary hover:bg-secondary/90 text-white h-16 px-10 text-xl font-bold rounded-full shadow-2xl hover:scale-105 transition-all"
             >
               Start Your Solar Journey
             </Button>

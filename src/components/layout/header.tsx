@@ -73,7 +73,7 @@ export function Header() {
           ))}
           <Button 
             className={cn(
-              "rounded-[12px] px-8 font-bold transition-all",
+              "rounded-full px-8 font-bold transition-all",
               isScrolled 
                 ? "bg-secondary hover:bg-secondary/90 text-white" 
                 : "bg-white text-primary hover:bg-secondary hover:text-white"
@@ -109,7 +109,7 @@ export function Header() {
                 {link.name}
               </Link>
             ))}
-            <Button className="bg-secondary hover:bg-secondary/90 text-white w-full h-14 mt-4 font-bold rounded-xl">
+            <Button className="bg-secondary hover:bg-secondary/90 text-white w-full h-14 mt-4 font-bold rounded-full">
               Get Free Quote
             </Button>
           </nav>

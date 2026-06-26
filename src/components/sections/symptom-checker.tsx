@@ -26,7 +26,7 @@ export function SymptomChecker() {
   }
 
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-8 md:py-24 bg-slate-50">
       <div className="container px-4 mx-auto max-w-4xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-medium text-primary mb-6 font-headline tracking-tight">
@@ -99,7 +99,7 @@ export function SymptomChecker() {
                   </div>
 
                   <div className="pt-6 border-t border-primary/10">
-                    <Button className="w-full bg-primary hover:bg-primary/90 text-white h-14 text-lg font-medium rounded-2xl">
+                    <Button className="w-full bg-primary hover:bg-primary/90 text-white h-14 text-lg font-medium rounded-full">
                       Book Your Free Consultation Now
                     </Button>
                   </div>

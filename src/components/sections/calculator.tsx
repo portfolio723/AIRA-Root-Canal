@@ -50,7 +50,7 @@ export function Calculator() {
   }, [bill, units]);
 
   return (
-    <section id="calculator" className="py-12 md:py-24 bg-white relative overflow-hidden">
+    <section id="calculator" className="py-8 md:py-24 bg-white relative overflow-hidden">
       <div className="container px-4 mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-6 font-headline tracking-tight">
@@ -210,7 +210,7 @@ export function Calculator() {
               <div className="space-y-4 pt-4">
                 <Button 
                   size="lg"
-                  className="w-full bg-[#F0153C] hover:bg-[#F0153C]/90 text-white h-16 text-lg font-bold rounded-2xl shadow-xl transition-all hover:scale-[1.02] flex items-center justify-center gap-3"
+                  className="w-full bg-[#F0153C] hover:bg-[#F0153C]/90 text-white h-16 text-lg font-bold rounded-full shadow-xl transition-all hover:scale-[1.02] flex items-center justify-center gap-3"
                 >
                   Get Detailed Savings Report
                   <ArrowRight className="h-5 w-5" />
