@@ -1,3 +1,5 @@
+'use client';
+
 import { Building2, Banknote, Activity, Zap, Leaf, Gauge } from 'lucide-react';
 import Image from 'next/image';
 import {
@@ -71,29 +73,33 @@ export function WhyChooseUs() {
           {features.map((feature, idx) => (
             <div 
               key={idx} 
-              className="group rounded-[24px] border border-[#E5E7EB] bg-white shadow-sm hover:shadow-soft transition-all duration-300 flex flex-col h-full overflow-hidden"
+              className="group rounded-[24px] border border-[#E5E7EB] bg-white shadow-[0_12px_32px_rgba(0,0,0,0.06)] hover:shadow-2xl hover:-translate-y-2 hover:border-primary transition-all duration-300 flex flex-col h-[560px] overflow-hidden"
             >
               <div className="p-8 pb-0 flex flex-col flex-grow">
-                <div className="h-12 w-12 rounded-xl bg-primary/5 flex items-center justify-center mb-8 text-primary group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+                <div className="h-12 w-12 rounded-xl bg-primary/5 flex items-center justify-center mb-8 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   <feature.icon className="h-6 w-6" />
                 </div>
                 <div className="flex-grow">
-                  <h3 className="text-xl font-semibold text-primary mb-4 font-headline leading-tight">
+                  <h3 className="text-[30px] font-semibold text-[#01153C] mb-4 font-headline leading-tight">
                     {feature.title}
                   </h3>
-                  <p className="text-[#64748B] text-base leading-relaxed font-normal mb-8">
+                  <p className="text-[#64748B] text-[18px] leading-[1.7] font-normal mb-8">
                     {feature.desc}
                   </p>
                 </div>
               </div>
-              <div className="relative w-full aspect-[16/9] transition-all duration-500 opacity-90 group-hover:opacity-100">
-                <Image
-                  src={feature.imageUrl}
-                  alt={feature.title}
-                  fill
-                  className="object-contain transition-transform duration-700 group-hover:scale-110"
-                  data-ai-hint={feature.imageHint}
-                />
+              
+              {/* Image Container with strict alignment */}
+              <div className="p-8 pt-0 mt-auto">
+                <div className="relative w-full h-[220px] rounded-[18px] overflow-hidden bg-[#F8FAFC]">
+                  <Image
+                    src={feature.imageUrl}
+                    alt={feature.title}
+                    fill
+                    className="object-cover object-center transition-transform duration-300 group-hover:scale-[1.04]"
+                    data-ai-hint={feature.imageHint}
+                  />
+                </div>
               </div>
             </div>
           ))}
@@ -111,28 +117,30 @@ export function WhyChooseUs() {
             <CarouselContent className="-ml-4">
               {features.map((feature, idx) => (
                 <CarouselItem key={idx} className="pl-4 md:basis-1/2">
-                  <div className="group rounded-[24px] border border-[#E5E7EB] bg-white shadow-sm h-full flex flex-col overflow-hidden">
+                  <div className="group rounded-[24px] border border-[#E5E7EB] bg-white shadow-[0_12px_32px_rgba(0,0,0,0.06)] h-[560px] flex flex-col overflow-hidden">
                     <div className="p-8 pb-0 flex flex-col flex-grow">
                       <div className="h-12 w-12 rounded-xl bg-primary/5 flex items-center justify-center mb-8 text-primary">
                         <feature.icon className="h-6 w-6" />
                       </div>
                       <div className="flex-grow">
-                        <h3 className="text-xl font-semibold text-primary mb-4 font-headline tracking-tight">
+                        <h3 className="text-[30px] font-semibold text-[#01153C] mb-4 font-headline tracking-tight">
                           {feature.title}
                         </h3>
-                        <p className="text-[#64748B] text-base leading-relaxed font-normal mb-8">
+                        <p className="text-[#64748B] text-[18px] leading-[1.7] font-normal mb-8">
                           {feature.desc}
                         </p>
                       </div>
                     </div>
-                    <div className="relative w-full aspect-[16/9]">
-                      <Image
-                        src={feature.imageUrl}
-                        alt={feature.title}
-                        fill
-                        className="object-contain"
-                        data-ai-hint={feature.imageHint}
-                      />
+                    <div className="p-8 pt-0 mt-auto">
+                      <div className="relative w-full h-[220px] rounded-[18px] overflow-hidden bg-[#F8FAFC]">
+                        <Image
+                          src={feature.imageUrl}
+                          alt={feature.title}
+                          fill
+                          className="object-cover object-center"
+                          data-ai-hint={feature.imageHint}
+                        />
+                      </div>
                     </div>
                   </div>
                 </CarouselItem>
