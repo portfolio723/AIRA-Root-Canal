@@ -1,10 +1,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function NetZero() {
-  const netZeroImage = PlaceHolderImages.find(img => img.id === 'net-zero-house');
-
   return (
     <section className="py-24 bg-primary overflow-hidden relative">
       {/* Abstract Shapes */}
@@ -14,15 +11,12 @@ export function NetZero() {
       <div className="container px-4 mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-square rounded-[32px] overflow-hidden shadow-2xl">
-            {netZeroImage?.imageUrl && (
-              <Image 
-                src={netZeroImage.imageUrl}
-                alt={netZeroImage.description}
-                fill
-                className="object-cover"
-                data-ai-hint="sustainable house"
-              />
-            )}
+            <Image 
+              src="/nz.jpg"
+              alt="Move Towards Net Zero Living"
+              fill
+              className="object-cover"
+            />
             {/* Visual elements could be added here to represent "House Solar Battery Trees" */}
             <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
           </div>
