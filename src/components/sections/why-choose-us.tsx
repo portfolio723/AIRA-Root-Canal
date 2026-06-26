@@ -7,42 +7,42 @@ export function WhyChooseUs() {
       title: "Home Solar Installation",
       desc: "Custom rooftop solar systems designed for maximum energy production.",
       icon: Home,
-      imageUrl: "https://picsum.photos/seed/solar-install-why/600/400",
+      imageUrl: "/w1.png",
       imageHint: "solar installation"
     },
     {
       title: "Cost Savings",
       desc: "Enjoy up to 70% savings on energy bills with solar panels and smart storage.",
       icon: Banknote,
-      imageUrl: "https://picsum.photos/seed/solar-savings-why/600/400",
+      imageUrl: "/w2.png",
       imageHint: "money savings"
     },
     {
       title: "Smart Monitoring",
       desc: "Smart monitoring and AI optimization keep your system performing 24/7.",
       icon: Activity,
-      imageUrl: "https://picsum.photos/seed/solar-monitor-why/600/400",
+      imageUrl: "/w3.png",
       imageHint: "smart monitoring"
     },
     {
       title: "Quick Installation",
       desc: "Professional installation completed by certified technicians.",
       icon: Zap,
-      imageUrl: "https://picsum.photos/seed/solar-quick-why/600/400",
+      imageUrl: "/w4.png",
       imageHint: "quick installation"
     },
     {
       title: "Sustainability",
       desc: "Clean renewable energy for a cleaner, greener and sustainable future.",
       icon: Leaf,
-      imageUrl: "https://picsum.photos/seed/solar-green-why/600/400",
+      imageUrl: "/w5.png",
       imageHint: "sustainability"
     },
     {
       title: "Energy Efficiency",
       desc: "Optimize your home energy consumption with smart solar systems.",
       icon: Gauge,
-      imageUrl: "https://picsum.photos/seed/solar-efficiency-why/600/400",
+      imageUrl: "/w6.png",
       imageHint: "energy efficiency"
     }
   ];
@@ -81,13 +81,13 @@ export function WhyChooseUs() {
                   </p>
                 </div>
 
-                {/* Minimal Illustration at Bottom */}
+                {/* Illustration at Bottom */}
                 <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden mt-auto grayscale hover:grayscale-0 transition-all duration-500 opacity-80 group-hover:opacity-100">
                   <Image
                     src={feature.imageUrl}
                     alt={feature.title}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="object-contain transition-transform duration-700 group-hover:scale-110"
                     data-ai-hint={feature.imageHint}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent" />
