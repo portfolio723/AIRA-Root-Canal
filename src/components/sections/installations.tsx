@@ -29,7 +29,7 @@ export function Installations() {
       location: "Medchal",
       size: "200 kW",
       date: "Completed Feb 2026",
-      imageUrl: "/r3.webp"
+      imageUrl: "/i5.png"
     }
   ];
 
