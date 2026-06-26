@@ -15,14 +15,14 @@ export function Installations() {
       location: "Cherlapally Industrial Area",
       size: "150 kW",
       date: "Completed Jan 2026",
-      imageUrl: "/r1.png"
+      imageUrl: "/i3.jpeg"
     },
     {
       title: "Commercial Complex",
       location: "Gachibowli",
       size: "80 kW",
       date: "Completed Feb 2026",
-      imageUrl: "/r2.png"
+      imageUrl: "/i4.jpeg"
     },
     {
       title: "Warehouse Facility",
