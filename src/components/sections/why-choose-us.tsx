@@ -14,42 +14,42 @@ export function WhyChooseUs() {
       title: "Enterprise EPC Solutions",
       desc: "Turnkey solar installations designed for industrial-scale energy production.",
       icon: Building2,
-      imageUrl: "/w1.png",
+      imageUrl: "/q1.png",
       imageHint: "industrial solar"
     },
     {
       title: "Major OPEX Reduction",
       desc: "Slash operational costs by up to 85% with grid-synchronized solar systems.",
       icon: Banknote,
-      imageUrl: "/w2.png",
+      imageUrl: "/q2.png",
       imageHint: "cost savings"
     },
     {
       title: "Real-time Monitoring",
       desc: "SCADA-integrated monitoring keeps your industrial plant performing at peak efficiency.",
       icon: Activity,
-      imageUrl: "/w3.png",
+      imageUrl: "/q3.png",
       imageHint: "industrial monitoring"
     },
     {
       title: "Tier-1 Components",
       desc: "We use only high-efficiency Tier-1 modules with 25-year performance warranties.",
       icon: Zap,
-      imageUrl: "/w4.png",
+      imageUrl: "/q4.png",
       imageHint: "premium solar"
     },
     {
       title: "ESG Compliance",
       desc: "Meet corporate sustainability goals and improve your business's ESG rating.",
       icon: Leaf,
-      imageUrl: "/w5.png",
+      imageUrl: "/q5.png",
       imageHint: "sustainability goals"
     },
     {
       title: "Grid Optimization",
       desc: "Seamlessly integrate solar with your existing HT/LT power distribution systems.",
       icon: Gauge,
-      imageUrl: "/w6.png",
+      imageUrl: "/q6.png",
       imageHint: "grid integration"
     }
   ];
