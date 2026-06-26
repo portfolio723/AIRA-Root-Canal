@@ -48,10 +48,10 @@ export function Hero() {
 
           <div className="flex flex-col gap-8 mb-12">
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-secondary hover:bg-secondary/90 text-white h-16 px-10 text-lg font-medium rounded-[12px] shadow-2xl hover:scale-105 transition-all">
+              <Button className="bg-secondary hover:bg-secondary/90 text-white h-12 px-8 text-base font-medium rounded-full shadow-2xl hover:scale-105 transition-all">
                 Get Commercial Quote
               </Button>
-              <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary h-16 px-10 text-lg font-medium rounded-[12px] transition-all">
+              <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary h-12 px-8 text-base font-medium rounded-full transition-all">
                 ROI Calculator
               </Button>
             </div>
