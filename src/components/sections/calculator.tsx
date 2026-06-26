@@ -1,145 +1,269 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Calculator as CalcIcon, Zap, Wallet, Leaf, RefreshCcw } from 'lucide-react';
+import { Slider } from '@/components/ui/slider';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent } from '@/components/ui/card';
+import { 
+  Zap, 
+  Wallet, 
+  Leaf, 
+  RefreshCcw, 
+  Building2, 
+  Factory, 
+  Warehouse, 
+  Hospital, 
+  School, 
+  ShoppingBag,
+  TrendingDown,
+  ArrowRight,
+  ShieldCheck
+} from 'lucide-react';
+import { cn } from '@/lib/utils';
+
+const propertyTypes = [
+  { id: 'factory', label: 'Factory', icon: Factory },
+  { id: 'warehouse', label: 'Warehouse', icon: Warehouse },
+  { id: 'hospital', label: 'Hospital', icon: Hospital },
+  { id: 'apartment', label: 'Apartment', icon: Building2 },
+  { id: 'commercial', label: 'Commercial', icon: ShoppingBag },
+  { id: 'institution', label: 'Institution', icon: School },
+];
 
 export function Calculator() {
-  const [bill, setBill] = useState('');
-  const [propertyType, setPropertyType] = useState('independent');
-  const [results, setResults] = useState<{
-    size: string;
-    savings: string;
-    payback: string;
-    carbon: string;
-  } | null>(null);
+  const [bill, setBill] = useState([250000]);
+  const [units, setUnits] = useState([12000]);
+  const [selectedProperty, setSelectedProperty] = useState('factory');
 
-  const handleCalculate = () => {
-    if (!bill) return;
-    const billNum = parseFloat(bill);
-    // Simple mock logic for demonstration
-    const units = billNum / 8; // Assuming 8 per unit
-    const size = (units / 120).toFixed(1); // Assuming 1kW produces 120 units
-    const annualSavings = (billNum * 12 * 0.9).toLocaleString();
-    const payback = "3.5 Years";
-    const carbon = (units * 12 * 0.8).toFixed(0);
+  const stats = useMemo(() => {
+    const monthlyBill = bill[0];
+    const monthlyUnits = units[0];
+    
+    // Logic: 85% bill reduction on average for commercial
+    const monthlySavings = monthlyBill * 0.85;
+    const annualSavings = monthlySavings * 12;
+    
+    // Payback calculation (estimated cost at 60k/kW, 1kW produces 120 units)
+    const systemSize = monthlyUnits / 120;
+    const estimatedCost = systemSize * 65000;
+    const paybackYears = (estimatedCost / annualSavings).toFixed(1);
+    
+    const lifetimeSavings = annualSavings * 25;
+    
+    // Environmental
+    const co2Reduced = (monthlyUnits * 12 * 0.8) / 1000; // Tons
+    const treesSaved = Math.round(co2Reduced * 50);
 
-    setResults({
-      size: `${size} kW`,
-      savings: `₹${annualSavings}`,
-      payback,
-      carbon: `${carbon} kg`
-    });
-  };
+    return {
+      monthlySavings: Math.round(monthlySavings).toLocaleString('en-IN'),
+      annualSavings: Math.round(annualSavings).toLocaleString('en-IN'),
+      payback: paybackYears,
+      lifetime: (lifetimeSavings / 10000000).toFixed(2), // Cr
+      co2: co2Reduced.toFixed(1),
+      trees: treesSaved,
+      afterSolar: Math.round(monthlyBill * 0.15).toLocaleString('en-IN'),
+      beforeSolar: monthlyBill.toLocaleString('en-IN')
+    };
+  }, [bill, units]);
 
   return (
-    <section className="py-24 bg-white relative">
-      <div className="container px-4 mx-auto max-w-6xl">
+    <section id="calculator" className="py-24 bg-white relative overflow-hidden">
+      <div className="container px-4 mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6 font-headline tracking-tighter">
-            Instant Solar Calculator
+          <Badge className="bg-[#01153C]/5 text-[#01153C] border-none mb-6 px-4 py-1.5 rounded-full text-sm font-medium">
+            ⚡ Instant Savings Calculator
+          </Badge>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#01153C] mb-6 font-headline tracking-tight">
+            Calculate Your Solar Savings
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Get a personalized estimate of your solar potential in seconds.
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto font-body">
+            Move the sliders to estimate your potential savings and discover the ROI of switching to Zenith Energy.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          {/* Input Form */}
-          <Card className="rounded-[20px] shadow-soft border-[#E7E9EE] overflow-hidden">
-            <CardHeader className="bg-primary/5 p-8">
-              <div className="flex items-center gap-3 mb-2">
-                <CalcIcon className="text-primary h-6 w-6" />
-                <CardTitle className="text-2xl font-bold text-primary font-headline">Estimate Your Potential</CardTitle>
-              </div>
-              <CardDescription className="text-muted-foreground">Fill in your details for an instant calculation.</CardDescription>
-            </CardHeader>
-            <CardContent className="p-8 space-y-6">
-              <div className="space-y-2">
-                <Label htmlFor="property">Property Type</Label>
-                <Select value={propertyType} onValueChange={setPropertyType}>
-                  <SelectTrigger className="h-12 rounded-xl">
-                    <SelectValue placeholder="Select type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="independent">Independent House</SelectItem>
-                    <SelectItem value="apartment">Apartment / Penthouse</SelectItem>
-                    <SelectItem value="villa">Villa</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="bill">Monthly Electricity Bill (₹)</Label>
-                <Input 
-                  id="bill" 
-                  type="number" 
-                  placeholder="e.g. 5000" 
-                  className="h-12 rounded-xl"
-                  value={bill}
-                  onChange={(e) => setBill(e.target.value)}
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="location">Location</Label>
-                <Input id="location" value="Hyderabad" disabled className="h-12 rounded-xl bg-muted" />
-              </div>
-
-              <Button 
-                onClick={handleCalculate}
-                className="w-full bg-secondary hover:bg-secondary/90 text-white h-14 text-lg font-bold rounded-xl shadow-lg mt-4"
-              >
-                Calculate Savings
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Results Display */}
-          <div className="space-y-6">
-            {!results ? (
-              <div className="h-full min-h-[400px] flex flex-col items-center justify-center border-2 border-dashed border-[#E7E9EE] rounded-[20px] bg-[#F7F8FA] p-8 text-center group">
-                <div className="h-20 w-20 rounded-full bg-white flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
-                  <Zap className="h-10 w-10 text-primary/20" />
-                </div>
-                <h3 className="text-xl font-bold text-primary mb-2 font-headline">Results will appear here</h3>
-                <p className="text-muted-foreground max-w-xs">Enter your bill details and click calculate to see your solar potential.</p>
-              </div>
-            ) : (
-              <div className="animate-in fade-in slide-in-from-right-10 duration-500 space-y-6">
-                <div className="grid grid-cols-2 gap-6">
-                  {[
-                    { label: "System Size", value: results.size, icon: Zap },
-                    { label: "Annual Savings", value: results.savings, icon: Wallet },
-                    { label: "Payback Period", value: results.payback, icon: RefreshCcw },
-                    { label: "CO₂ Reduction", value: results.carbon, icon: Leaf },
-                  ].map((stat, i) => (
-                    <div key={i} className="bg-white p-6 rounded-[20px] shadow-soft border border-[#E7E9EE]">
-                      <div className="h-10 w-10 rounded-xl bg-primary/5 flex items-center justify-center mb-4 text-primary">
-                        <stat.icon className="h-5 w-5" />
-                      </div>
-                      <p className="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-1">{stat.label}</p>
-                      <p className="text-2xl font-bold text-primary font-headline">{stat.value}</p>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Controls Column */}
+          <div className="lg:col-span-7 space-y-10">
+            <Card className="rounded-[28px] border-none bg-[#F8FAFC] p-8 md:p-12 shadow-sm">
+              <div className="space-y-12">
+                {/* Monthly Bill Slider */}
+                <div className="space-y-6">
+                  <div className="flex justify-between items-end">
+                    <div className="space-y-1">
+                      <Label className="text-lg font-bold text-[#01153C]">Monthly Electricity Bill</Label>
+                      <p className="text-sm text-slate-500">Total average expense</p>
                     </div>
-                  ))}
+                    <div className="bg-white px-4 py-2 rounded-xl border border-slate-100 shadow-sm text-xl font-bold text-[#01153C]">
+                      ₹ {bill[0].toLocaleString('en-IN')}
+                    </div>
+                  </div>
+                  <Slider
+                    value={bill}
+                    onValueChange={setBill}
+                    min={20000}
+                    max={2000000}
+                    step={5000}
+                    className="py-4 cursor-pointer"
+                  />
+                  <div className="flex justify-between text-xs font-bold text-slate-400 uppercase tracking-widest">
+                    <span>₹20K</span>
+                    <span>₹20L</span>
+                  </div>
                 </div>
 
-                <div className="bg-primary p-8 rounded-[20px] text-white shadow-2xl relative overflow-hidden">
-                  <div className="absolute top-0 right-0 p-4 opacity-10">
-                    <CalcIcon className="h-24 w-24" />
+                {/* Monthly Units Slider */}
+                <div className="space-y-6">
+                  <div className="flex justify-between items-end">
+                    <div className="space-y-1">
+                      <Label className="text-lg font-bold text-[#01153C]">Monthly Energy Consumption</Label>
+                      <p className="text-sm text-slate-500">Units in kWh</p>
+                    </div>
+                    <div className="bg-white px-4 py-2 rounded-xl border border-slate-100 shadow-sm text-xl font-bold text-[#01153C]">
+                      {units[0].toLocaleString('en-IN')} kWh
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 font-headline">Ready to start saving?</h3>
-                  <p className="text-white/80 mb-8 max-w-md">Our experts can provide a more detailed assessment for your specific home needs.</p>
-                  <Button className="bg-secondary hover:bg-secondary/90 text-white h-12 px-8 rounded-xl font-bold">
-                    Book Free Consultation
-                  </Button>
+                  <Slider
+                    value={units}
+                    onValueChange={setUnits}
+                    min={500}
+                    max={50000}
+                    step={100}
+                    className="py-4 cursor-pointer"
+                  />
+                  <div className="flex justify-between text-xs font-bold text-slate-400 uppercase tracking-widest">
+                    <span>500 kWh</span>
+                    <span>50,000 kWh</span>
+                  </div>
+                </div>
+
+                {/* Property Type Grid */}
+                <div className="space-y-6">
+                  <Label className="text-lg font-bold text-[#01153C]">Property Type</Label>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    {propertyTypes.map((type) => (
+                      <button
+                        key={type.id}
+                        onClick={() => setSelectedProperty(type.id)}
+                        className={cn(
+                          "flex flex-col items-center justify-center p-4 rounded-2xl border transition-all duration-300 gap-3",
+                          selectedProperty === type.id
+                            ? "bg-[#01153C] border-[#01153C] text-white shadow-lg"
+                            : "bg-white border-slate-100 text-slate-600 hover:border-[#01153C]/20 hover:bg-slate-50"
+                        )}
+                      >
+                        <type.icon className={cn("h-6 w-6", selectedProperty === type.id ? "text-white" : "text-[#01153C]")} />
+                        <span className="text-sm font-bold">{type.label}</span>
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
-            )}
+            </Card>
+
+            {/* Comparison Bar */}
+            <div className="bg-[#F8FAFC] rounded-[28px] p-8 space-y-6">
+              <div className="flex items-center gap-2 mb-2">
+                <TrendingDown className="h-5 w-5 text-[#22C55E]" />
+                <h3 className="text-lg font-bold text-[#01153C]">Cost Comparison</h3>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <div className="flex justify-between text-sm font-bold text-slate-500 uppercase tracking-tight">
+                    <span>Without Solar</span>
+                    <span>₹ {stats.beforeSolar}</span>
+                  </div>
+                  <div className="h-3 w-full bg-slate-200 rounded-full overflow-hidden">
+                    <div className="h-full w-full bg-[#F0153C]/80" />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="flex justify-between text-sm font-bold text-slate-500 uppercase tracking-tight">
+                    <span>With Zenith Solar</span>
+                    <span className="text-[#22C55E]">₹ {stats.afterSolar}</span>
+                  </div>
+                  <div className="h-3 w-full bg-slate-200 rounded-full overflow-hidden">
+                    <div className="h-full w-[15%] bg-[#22C55E]" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Results Column */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="grid grid-cols-1 gap-4">
+              {/* Main Savings Card */}
+              <Card className="rounded-[28px] border-none bg-[#01153C] text-white p-8 relative overflow-hidden shadow-2xl">
+                <div className="absolute top-0 right-0 p-4 opacity-10">
+                  <Wallet className="h-32 w-32" />
+                </div>
+                <div className="relative z-10">
+                  <p className="text-white/60 text-sm font-bold uppercase tracking-widest mb-1">Monthly Savings</p>
+                  <h3 className="text-5xl font-bold mb-8 font-headline text-[#22C55E]">
+                    ₹ {stats.monthlySavings}
+                  </h3>
+                  
+                  <div className="grid grid-cols-2 gap-8 border-t border-white/10 pt-8">
+                    <div>
+                      <p className="text-white/60 text-xs font-bold uppercase tracking-widest mb-1">Annual Savings</p>
+                      <p className="text-2xl font-bold font-headline">₹ {stats.annualSavings}</p>
+                    </div>
+                    <div>
+                      <p className="text-white/60 text-xs font-bold uppercase tracking-widest mb-1">Payback Period</p>
+                      <p className="text-2xl font-bold font-headline">{stats.payback} Years</p>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+
+              {/* Secondary Stats */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-[#F8FAFC] p-6 rounded-[24px] border border-slate-100 group hover:bg-white hover:shadow-soft transition-all duration-300">
+                  <div className="h-10 w-10 rounded-xl bg-[#01153C]/5 flex items-center justify-center mb-4 text-[#01153C] group-hover:bg-[#01153C] group-hover:text-white transition-colors">
+                    <RefreshCcw className="h-5 w-5" />
+                  </div>
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Lifetime Savings</p>
+                  <p className="text-xl font-bold text-[#01153C] font-headline">₹ {stats.lifetime} Cr</p>
+                </div>
+
+                <div className="bg-[#F8FAFC] p-6 rounded-[24px] border border-slate-100 group hover:bg-white hover:shadow-soft transition-all duration-300">
+                  <div className="h-10 w-10 rounded-xl bg-[#22C55E]/10 flex items-center justify-center mb-4 text-[#22C55E]">
+                    <Leaf className="h-5 w-5" />
+                  </div>
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">CO₂ Reduction</p>
+                  <p className="text-xl font-bold text-[#01153C] font-headline">{stats.co2} Tons</p>
+                </div>
+              </div>
+
+              {/* Impact Callout */}
+              <div className="bg-[#22C55E]/5 p-6 rounded-[24px] border border-[#22C55E]/10 flex items-center gap-4">
+                <div className="h-12 w-12 rounded-full bg-[#22C55E] flex items-center justify-center text-white shrink-0">
+                  <ShieldCheck className="h-6 w-6" />
+                </div>
+                <div>
+                  <p className="text-[#01153C] font-bold text-sm">Equivalent to planting {stats.trees} trees</p>
+                  <p className="text-slate-500 text-xs">Help the planet while saving on energy.</p>
+                </div>
+              </div>
+
+              {/* Final CTA */}
+              <div className="space-y-4 pt-4">
+                <Button 
+                  size="lg"
+                  className="w-full bg-[#F0153C] hover:bg-[#F0153C]/90 text-white h-16 text-lg font-bold rounded-2xl shadow-xl transition-all hover:scale-[1.02] flex items-center justify-center gap-3"
+                >
+                  Get Detailed Savings Report
+                  <ArrowRight className="h-5 w-5" />
+                </Button>
+                <div className="flex flex-col items-center gap-1 text-slate-400 text-xs font-medium">
+                  <p>No spam • Free consultation • No hidden charges</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
