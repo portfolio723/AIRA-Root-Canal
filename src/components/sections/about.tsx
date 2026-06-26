@@ -60,7 +60,7 @@ export function About() {
                   )}
                 </div>
                 
-                <h3 className="text-xl font-bold text-primary mb-4 font-headline uppercase tracking-tight">
+                <h3 className="text-xl font-bold text-primary mb-4 font-headline tracking-tight">
                   {card.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
