@@ -21,7 +21,7 @@ export function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero.png"
+          src="/hero-2.png"
           alt="Premium Residential Solar Installation"
           fill
           className="object-cover"
