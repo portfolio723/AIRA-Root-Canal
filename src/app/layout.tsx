@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Zenith Energy | Premium Solar Solutions for Homes in Hyderabad',
-  description: 'Power your home with clean solar energy. Save on electricity bills with reliable solar solutions for houses and apartments in Hyderabad.',
+  title: 'Zenith Energy | Commercial & Industrial Solar Solutions Hyderabad',
+  description: 'Scale your business with clean energy. Reliable EPC solar solutions for factories, warehouses, and commercial buildings in Hyderabad. Maximize ROI and ESG goals.',
 };
 
 export default function RootLayout({

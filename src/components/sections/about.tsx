@@ -1,82 +1,74 @@
-import { ShieldCheck, Zap, HeartHandshake } from 'lucide-react';
-import Image from 'next/image';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { X, CheckCircle2 } from 'lucide-react';
 
 export function About() {
-  const cards = [
-    {
-      title: "Premium Solar Installation",
-      desc: "Our expert team ensures seamless, professional solar installation for your home.",
-      icon: ShieldCheck,
-      imageUrl: "/a3.jpg",
-    },
-    {
-      title: "Fast and Reliable Repairs",
-      desc: "Make sure that any leaks or damage won't compromise your safety and efficiency.",
-      icon: Zap,
-      imageUrl: "/a4.jpeg",
-    },
-    {
-      title: "Stress-Free System Upgrade",
-      desc: "Transform your living space with a stylish new solar system that stands out!",
-      icon: HeartHandshake,
-      imageUrl: "/a1.jpg",
-    }
+  const beforeList = [
+    "Electricity bill rises 6-8% every year with tariff hikes",
+    "Peak-hour demand charges eating 30-40% of your bill",
+    "Competitors on solar already running at lower cost",
+    "No hedge against power outages or load shedding"
+  ];
+
+  const afterList = [
+    "Lock in your energy rate for 25 years — zero tariff risk",
+    "60-80% of daytime consumption met by solar generation",
+    "Earn net metering credits for excess generation",
+    "40% accelerated depreciation benefit in Year 1"
   ];
 
   return (
-    <section id="about" className="bg-white py-32 pt-[450px] lg:pt-64">
+    <section id="about" className="bg-white py-32 pt-[450px] lg:pt-72">
       <div className="container px-4 mx-auto">
-        <div className="max-w-4xl mx-auto text-center mb-24">
-          <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-8 font-headline leading-tight">
-            Protect your home with industry-leading expertise and comprehensive solar services backed by a superior warranty.
-          </h2>
-        </div>
-
         <div className="max-w-6xl mx-auto">
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-4">
-              {cards.map((card, idx) => (
-                <CarouselItem key={idx} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                  <div className="bg-[#F7F8FA] p-8 rounded-[20px] hover:shadow-soft transition-all duration-300 flex flex-col h-full group border border-border">
-                    <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 shadow-sm border border-white">
-                      {card.imageUrl && (
-                        <Image
-                          src={card.imageUrl}
-                          alt={card.title}
-                          fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
-                      )}
-                    </div>
-                    
-                    <h3 className="text-xl font-medium text-primary mb-4 font-headline tracking-tight">
-                      {card.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed text-base font-normal">
-                      {card.desc}
-                    </p>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="flex justify-center gap-4 mt-12 md:hidden">
-              <CarouselPrevious className="static translate-y-0 h-12 w-12 border-primary text-primary hover:bg-primary hover:text-white" />
-              <CarouselNext className="static translate-y-0 h-12 w-12 border-primary text-primary hover:bg-primary hover:text-white" />
+          <div className="mb-16">
+            <span className="text-secondary text-xs font-bold uppercase tracking-[0.2em] mb-4 block">
+              THE COMMERCIAL REALITY
+            </span>
+            <h2 className="text-3xl md:text-5xl font-semibold text-primary font-headline tracking-tight leading-tight">
+              What businesses with ₹3–20 lakh <br className="hidden md:block" /> monthly bills actually face
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Before Solar */}
+            <div className="bg-[#111111] p-10 md:p-12 rounded-[24px] border border-white/5 shadow-2xl relative overflow-hidden group">
+              <div className="absolute top-0 right-0 p-8 opacity-5">
+                <X className="h-32 w-32 text-secondary" />
+              </div>
+              <h3 className="text-secondary text-sm font-bold uppercase tracking-widest mb-10 border-b border-white/10 pb-6">
+                BEFORE SOLAR
+              </h3>
+              <ul className="space-y-6">
+                {beforeList.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-4">
+                    <X className="h-6 w-6 text-secondary shrink-0 mt-0.5" />
+                    <span className="text-white/80 text-lg font-light leading-relaxed italic">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </Carousel>
+
+            {/* After Solar */}
+            <div className="bg-[#F7F8FA] p-10 md:p-12 rounded-[24px] border border-primary/5 shadow-soft relative overflow-hidden group">
+              <div className="absolute top-0 right-0 p-8 opacity-5">
+                <CheckCircle2 className="h-32 w-32 text-primary" />
+              </div>
+              <h3 className="text-primary text-sm font-bold uppercase tracking-widest mb-10 border-b border-primary/10 pb-6">
+                AFTER ZENITH ENERGY SOLAR
+              </h3>
+              <ul className="space-y-6">
+                {afterList.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-4">
+                    <CheckCircle2 className="h-6 w-6 text-emerald-500 shrink-0 mt-0.5" />
+                    <span className="text-primary/90 text-lg font-medium leading-relaxed">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
