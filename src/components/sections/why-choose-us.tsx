@@ -81,12 +81,12 @@ export function WhyChooseUs() {
                   <h3 className="text-xl font-semibold text-primary mb-4 font-headline leading-tight">
                     {feature.title}
                   </h3>
-                  <p className="text-[#64748B] text-base leading-relaxed font-normal">
+                  <p className="text-[#64748B] text-base leading-relaxed font-normal mb-8">
                     {feature.desc}
                   </p>
                 </div>
               </div>
-              <div className="relative w-full aspect-[16/9] grayscale hover:grayscale-0 transition-all duration-500 opacity-80 group-hover:opacity-100">
+              <div className="relative w-full aspect-[16/9] transition-all duration-500 opacity-90 group-hover:opacity-100">
                 <Image
                   src={feature.imageUrl}
                   alt={feature.title}
@@ -120,7 +120,7 @@ export function WhyChooseUs() {
                         <h3 className="text-xl font-semibold text-primary mb-4 font-headline tracking-tight">
                           {feature.title}
                         </h3>
-                        <p className="text-[#64748B] text-base leading-relaxed font-normal">
+                        <p className="text-[#64748B] text-base leading-relaxed font-normal mb-8">
                           {feature.desc}
                         </p>
                       </div>
