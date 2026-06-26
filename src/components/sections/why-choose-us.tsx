@@ -73,7 +73,7 @@ export function WhyChooseUs() {
           {features.map((feature, idx) => (
             <div 
               key={idx} 
-              className="group rounded-[24px] border border-[#E5E7EB] bg-white shadow-[0_12px_32px_rgba(0,0,0,0.06)] hover:shadow-2xl hover:-translate-y-2 hover:border-primary transition-all duration-300 flex flex-col h-[560px] overflow-hidden"
+              className="group rounded-[24px] border border-[#E5E7EB] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(1,21,60,0.1)] hover:-translate-y-3 transition-all duration-500 flex flex-col h-[560px] overflow-hidden"
             >
               <div className="p-8 pb-0 flex flex-col flex-grow">
                 <div className="h-12 w-12 rounded-xl bg-primary/5 flex items-center justify-center mb-8 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
@@ -89,14 +89,13 @@ export function WhyChooseUs() {
                 </div>
               </div>
               
-              {/* Image Container with strict alignment */}
               <div className="p-8 pt-0 mt-auto">
                 <div className="relative w-full h-[220px] rounded-[18px] overflow-hidden bg-[#F8FAFC]">
                   <Image
                     src={feature.imageUrl}
                     alt={feature.title}
                     fill
-                    className="object-cover object-center transition-transform duration-300 group-hover:scale-[1.04]"
+                    className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.06]"
                     data-ai-hint={feature.imageHint}
                   />
                 </div>
@@ -117,7 +116,7 @@ export function WhyChooseUs() {
             <CarouselContent className="-ml-4">
               {features.map((feature, idx) => (
                 <CarouselItem key={idx} className="pl-4 md:basis-1/2">
-                  <div className="group rounded-[24px] border border-[#E5E7EB] bg-white shadow-[0_12px_32px_rgba(0,0,0,0.06)] h-[560px] flex flex-col overflow-hidden">
+                  <div className="group rounded-[24px] border border-[#E5E7EB] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-[560px] flex flex-col overflow-hidden">
                     <div className="p-8 pb-0 flex flex-col flex-grow">
                       <div className="h-12 w-12 rounded-xl bg-primary/5 flex items-center justify-center mb-8 text-primary">
                         <feature.icon className="h-6 w-6" />
