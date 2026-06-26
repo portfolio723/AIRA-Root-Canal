@@ -40,7 +40,7 @@ export function Hero() {
           <span className="text-white text-sm font-bold uppercase tracking-[0.2em] mb-6 block border-l-4 border-secondary pl-4">
             Residential Solar Solutions
           </span>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] font-headline mb-8">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] font-headline mb-8">
             Power Your Home <br />
             <span className="text-secondary">with Clean Solar Energy</span>
           </h1>
