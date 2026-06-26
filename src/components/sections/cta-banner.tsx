@@ -9,7 +9,7 @@ export function CTABanner() {
       
       <div className="container px-4 mx-auto relative z-10 text-center">
         <div className="max-w-3xl mx-auto text-white">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 font-headline leading-tight">
+          <h2 className="text-2xl md:text-4xl font-bold mb-8 font-headline leading-tight tracking-tight">
             Ready to Switch to Solar?
           </h2>
           <p className="text-xl text-white/80 mb-12 leading-relaxed font-light">
