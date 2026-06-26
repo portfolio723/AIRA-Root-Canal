@@ -46,9 +46,6 @@ export function Installations() {
               We take pride in every panel we install. Explore some of our recent residential projects across Hyderabad.
             </p>
           </div>
-          <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white px-8 h-12 rounded-xl transition-all font-medium">
-            View More Projects
-          </Button>
         </div>
 
         <div className="max-w-6xl mx-auto">
