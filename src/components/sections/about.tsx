@@ -1,33 +1,25 @@
 import { ShieldCheck, Zap, HeartHandshake } from 'lucide-react';
 import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function About() {
-  const teamImg = PlaceHolderImages.find(img => img.id === 'about-team');
-  const qualityImg = PlaceHolderImages.find(img => img.id === 'about-quality');
-  const serviceImg = PlaceHolderImages.find(img => img.id === 'about-service');
-
   const cards = [
     {
       title: "Premium Solar Installation",
       desc: "Our expert team ensures seamless, professional solar installation for your home.",
       icon: ShieldCheck,
-      imageUrl: teamImg?.imageUrl,
-      imageHint: teamImg?.imageHint
+      imageUrl: "/a3.jpg",
     },
     {
       title: "Fast and Reliable Repairs",
       desc: "Make sure that any leaks or damage won't compromise your safety and efficiency.",
       icon: Zap,
-      imageUrl: qualityImg?.imageUrl,
-      imageHint: qualityImg?.imageHint
+      imageUrl: "/a4.jpeg",
     },
     {
       title: "Stress-Free System Upgrade",
       desc: "Transform your living space with a stylish new solar system that stands out!",
       icon: HeartHandshake,
-      imageUrl: serviceImg?.imageUrl,
-      imageHint: serviceImg?.imageHint
+      imageUrl: "/a1.jpg",
     }
   ];
 
@@ -55,7 +47,6 @@ export function About() {
                       alt={card.title}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      data-ai-hint={card.imageHint}
                     />
                   )}
                 </div>
