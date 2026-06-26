@@ -10,6 +10,7 @@ import { Reviews } from '@/components/sections/reviews';
 import { FAQ } from '@/components/sections/faq';
 import { Footer } from '@/components/layout/footer';
 import { CTABanner } from '@/components/sections/cta-banner';
+import { MobileStickyFooter } from '@/components/layout/mobile-sticky-footer';
 
 export default function Home() {
   return (
@@ -30,6 +31,12 @@ export default function Home() {
       </main>
 
       <Footer />
+      
+      {/* Mobile Sticky Footer */}
+      <MobileStickyFooter />
+      
+      {/* Spacer for sticky footer on mobile */}
+      <div className="h-24 lg:hidden" />
     </div>
   );
 }
