@@ -106,7 +106,7 @@ export function WhyChooseUs() {
               className="group p-8 rounded-[24px] border border-[#E7E9EE] bg-white hover:shadow-soft transition-all duration-300 flex flex-col h-full overflow-hidden"
             >
               <div className="flex flex-col flex-grow">
-                <div className="h-10 w-10 rounded-lg bg-[#BEF264] flex items-center justify-center mb-6 text-primary shadow-sm">
+                <div className="h-10 w-10 rounded-lg bg-primary/5 flex items-center justify-center mb-6 text-primary shadow-sm">
                   <feature.icon className="h-5 w-5" />
                 </div>
                 <h3 className="text-xl font-bold text-primary mb-3 font-headline">
