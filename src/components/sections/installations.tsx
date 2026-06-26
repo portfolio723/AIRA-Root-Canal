@@ -12,23 +12,23 @@ import {
 export function Installations() {
   const projects = [
     {
-      title: "Independent House",
-      location: "Jubilee Hills",
-      size: "6 kW",
+      title: "Manufacturing Unit",
+      location: "Cherlapally Industrial Area",
+      size: "150 kW",
       date: "Completed Jan 2026",
       imageUrl: "/r1.png"
     },
     {
-      title: "Apartment",
-      location: "Kondapur",
-      size: "20 kW",
+      title: "Commercial Complex",
+      location: "Gachibowli",
+      size: "80 kW",
       date: "Completed Feb 2026",
       imageUrl: "/r2.png"
     },
     {
-      title: "Villa",
-      location: "Gachibowli",
-      size: "10 kW",
+      title: "Warehouse Facility",
+      location: "Medchal",
+      size: "200 kW",
       date: "Completed Feb 2026",
       imageUrl: "/r3.webp"
     }
@@ -37,15 +37,13 @@ export function Installations() {
   return (
     <section id="projects" className="py-24 bg-white">
       <div className="container px-4 mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <div className="max-w-2xl">
-            <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-6 font-headline tracking-tighter">
-              Recent Solar Installations
-            </h2>
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-normal">
-              We take pride in every panel we install. Explore some of our recent residential projects across Hyderabad.
-            </p>
-          </div>
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-6 font-headline tracking-tighter">
+            Recent Solar Installations
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-normal">
+            We take pride in every panel we install. Explore some of our recent commercial and industrial EPC projects across Hyderabad.
+          </p>
         </div>
 
         <div className="max-w-6xl mx-auto">
