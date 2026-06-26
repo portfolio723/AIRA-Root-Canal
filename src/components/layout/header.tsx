@@ -43,7 +43,7 @@ export function Header() {
       )}>
         <Link href="/" className="flex items-center">
           <Image 
-            src="/logo-1.png" 
+            src={isScrolled ? "/logo-1.png" : "/lg2.png"} 
             alt="Zenith Energy Logo" 
             width={280} 
             height={70} 
