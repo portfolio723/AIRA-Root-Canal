@@ -1,3 +1,4 @@
+
 {
   "placeholderImages": [
     {
@@ -35,6 +36,24 @@
       "description": "Happy homeowner",
       "imageUrl": "https://picsum.photos/seed/user1/100/100",
       "imageHint": "happy person"
+    },
+    {
+      "id": "about-team",
+      "description": "Expert solar engineering team at work",
+      "imageUrl": "https://picsum.photos/seed/team-zenith/600/400",
+      "imageHint": "professional team"
+    },
+    {
+      "id": "about-quality",
+      "description": "High-efficiency solar panels close up",
+      "imageUrl": "https://picsum.photos/seed/quality-panels/600/400",
+      "imageHint": "solar panels"
+    },
+    {
+      "id": "about-service",
+      "description": "Friendly customer support and maintenance",
+      "imageUrl": "https://picsum.photos/seed/solar-service/600/400",
+      "imageHint": "customer service"
     }
   ]
 }
