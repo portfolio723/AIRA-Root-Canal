@@ -21,10 +21,10 @@ export default function Home() {
         <Hero />
         <About />
         <WhyChooseUs />
+        <Installations />
         <NetZero />
         <Calculator />
         <Impact />
-        <Installations />
         <Reviews />
         <CTABanner />
         <FAQ />

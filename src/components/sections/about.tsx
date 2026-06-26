@@ -34,7 +34,7 @@ export function About() {
     <section id="about" className="bg-white py-32 pt-[450px] lg:pt-64">
       <div className="container px-4 mx-auto">
         <div className="max-w-4xl mx-auto text-center mb-24">
-          <h2 className="text-3xl md:text-5xl font-bold text-primary mb-8 font-headline leading-tight">
+          <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-8 font-headline leading-tight">
             Protect your home with industry-leading expertise and comprehensive solar services backed by a superior warranty.
           </h2>
         </div>
@@ -66,17 +66,17 @@ export function About() {
                       )}
                     </div>
                     
-                    <h3 className="text-xl font-bold text-primary mb-4 font-headline tracking-tight">
+                    <h3 className="text-xl font-medium text-primary mb-4 font-headline tracking-tight">
                       {card.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed text-base font-normal">
                       {card.desc}
                     </p>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="flex justify-center gap-4 mt-12">
+            <div className="flex justify-center gap-4 mt-12 md:hidden">
               <CarouselPrevious className="static translate-y-0 h-12 w-12 border-primary text-primary hover:bg-primary hover:text-white" />
               <CarouselNext className="static translate-y-0 h-12 w-12 border-primary text-primary hover:bg-primary hover:text-white" />
             </div>

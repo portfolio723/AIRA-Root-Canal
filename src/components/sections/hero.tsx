@@ -32,24 +32,24 @@ export function Hero() {
 
       <div className="container relative z-10 px-4 mx-auto pt-32 pb-[500px] lg:pb-64">
         <div className="max-w-4xl animate-in fade-in slide-in-from-left-8 duration-700">
-          <span className="text-white text-sm font-bold uppercase tracking-[0.2em] mb-6 block border-l-4 border-secondary pl-4">
+          <span className="text-white text-sm font-semibold uppercase tracking-[0.2em] mb-6 block border-l-4 border-secondary pl-4">
             Residential Solar Solutions
           </span>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] font-headline mb-8">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-[1.05] font-headline mb-8">
             Power Your Home <br />
-            <span className="text-secondary">with Clean Solar Energy</span>
+            with Clean Solar Energy
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-2xl font-body mb-10">
+          <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl font-body mb-10 font-normal">
             Save more on electricity with reliable solar solutions for homes and apartments across Hyderabad.
           </p>
 
           {/* CTAs and Trust Tags */}
           <div className="flex flex-col gap-8 mb-12">
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-secondary hover:bg-secondary/90 text-white h-16 px-10 text-lg font-bold rounded-[12px] shadow-2xl hover:scale-105 transition-all">
+              <Button className="bg-secondary hover:bg-secondary/90 text-white h-16 px-10 text-lg font-medium rounded-[12px] shadow-2xl hover:scale-105 transition-all">
                 Get Free Quote
               </Button>
-              <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary h-16 px-10 text-lg font-bold rounded-[12px] transition-all">
+              <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary h-16 px-10 text-lg font-medium rounded-[12px] transition-all">
                 Calculate Savings
               </Button>
             </div>
@@ -79,7 +79,7 @@ export function Hero() {
               {/* Left Text */}
               <div className="lg:col-span-4 space-y-8">
                 <div>
-                  <h2 className="text-3xl font-bold text-white font-headline leading-tight">
+                  <h2 className="text-2xl md:text-3xl font-semibold text-white font-headline leading-tight">
                     Let our team earn your <br />
                     trust & loyalty
                   </h2>
@@ -87,8 +87,8 @@ export function Hero() {
                 </div>
                 
                 <div className="space-y-2">
-                  <p className="text-xs font-bold text-white/40 uppercase tracking-widest">We Offer</p>
-                  <p className="text-secondary font-bold text-lg uppercase tracking-tight">
+                  <p className="text-xs font-semibold text-white/40 uppercase tracking-widest">We Offer</p>
+                  <p className="text-secondary font-semibold text-lg uppercase tracking-tight">
                     FREE SITE VISIT & CONSULTATION
                   </p>
                 </div>
@@ -99,22 +99,22 @@ export function Hero() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                   <Input 
                     placeholder="Full Name*" 
-                    className="h-14 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:ring-secondary rounded-xl" 
+                    className="h-14 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:ring-secondary rounded-xl font-normal" 
                   />
                   <Input 
                     placeholder="Phone Number*" 
-                    className="h-14 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:ring-secondary rounded-xl" 
+                    className="h-14 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:ring-secondary rounded-xl font-normal" 
                   />
                   <Input 
                     placeholder="Email Address*" 
-                    className="h-14 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:ring-secondary rounded-xl" 
+                    className="h-14 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:ring-secondary rounded-xl font-normal" 
                   />
                   <Input 
                     placeholder="Zip Code*" 
-                    className="h-14 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:ring-secondary rounded-xl" 
+                    className="h-14 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:ring-secondary rounded-xl font-normal" 
                   />
                   <Select>
-                    <SelectTrigger className="h-14 bg-white/5 border-white/10 text-white/40 rounded-xl border-white/10">
+                    <SelectTrigger className="h-14 bg-white/5 border-white/10 text-white/40 rounded-xl border-white/10 font-normal">
                       <SelectValue placeholder="Choose a Property Type" />
                     </SelectTrigger>
                     <SelectContent>
@@ -125,12 +125,12 @@ export function Hero() {
                   </Select>
                   <Input 
                     placeholder="Monthly Electricity Bill (₹)*" 
-                    className="h-14 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:ring-secondary rounded-xl" 
+                    className="h-14 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:ring-secondary rounded-xl font-normal" 
                   />
                 </div>
                 
                 <div className="flex justify-start">
-                  <Button className="bg-secondary hover:bg-secondary/90 text-white h-16 px-12 text-sm font-bold uppercase tracking-widest rounded-xl shadow-xl transition-all flex items-center gap-2">
+                  <Button className="bg-secondary hover:bg-secondary/90 text-white h-16 px-12 text-sm font-medium uppercase tracking-widest rounded-xl shadow-xl transition-all flex items-center gap-2">
                     Get A Free Quote 
                     <span className="text-xl">→</span>
                   </Button>

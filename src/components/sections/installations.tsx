@@ -39,14 +39,14 @@ export function Installations() {
       <div className="container px-4 mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="max-w-2xl">
-            <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6 font-headline tracking-tighter">
+            <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-6 font-headline tracking-tighter">
               Recent Solar Installations
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-normal">
               We take pride in every panel we install. Explore some of our recent residential projects across Hyderabad.
             </p>
           </div>
-          <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white px-8 h-12 rounded-xl transition-all">
+          <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white px-8 h-12 rounded-xl transition-all font-medium">
             View More Projects
           </Button>
         </div>
@@ -71,31 +71,31 @@ export function Installations() {
                         className="object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                       <div className="absolute top-4 left-4">
-                        <div className="bg-primary/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                        <div className="bg-primary/90 backdrop-blur-md text-white text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider">
                           {project.title}
                         </div>
                       </div>
                     </div>
                     <div className="p-8 flex-grow flex flex-col justify-between">
-                      <div className="flex items-center gap-2 text-primary font-bold text-xl mb-4 font-headline">
+                      <div className="flex items-center gap-2 text-primary font-medium text-lg md:text-xl mb-4 font-headline">
                         <MapPin className="h-5 w-5 text-secondary" />
                         {project.location}
                       </div>
                       
-                      <div className="space-y-3 border-t pt-6">
-                        <div className="flex items-center justify-between text-sm">
+                      <div className="space-y-3 border-t pt-6 font-normal text-sm">
+                        <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2 text-muted-foreground">
                             <Zap className="h-4 w-4 text-secondary" />
                             System Size
                           </div>
-                          <div className="font-bold text-primary">{project.size}</div>
+                          <div className="font-medium text-primary">{project.size}</div>
                         </div>
-                        <div className="flex items-center justify-between text-sm">
+                        <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2 text-muted-foreground">
                             <Calendar className="h-4 w-4 text-secondary" />
                             Date
                           </div>
-                          <div className="font-bold text-primary">{project.date}</div>
+                          <div className="font-medium text-primary">{project.date}</div>
                         </div>
                       </div>
                     </div>
@@ -103,7 +103,7 @@ export function Installations() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="flex justify-center gap-4 mt-12">
+            <div className="flex justify-center gap-4 mt-12 md:hidden">
               <CarouselPrevious className="static translate-y-0 h-12 w-12 border-primary text-primary hover:bg-primary hover:text-white" />
               <CarouselNext className="static translate-y-0 h-12 w-12 border-primary text-primary hover:bg-primary hover:text-white" />
             </div>

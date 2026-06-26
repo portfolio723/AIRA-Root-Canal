@@ -58,10 +58,10 @@ export function WhyChooseUs() {
     <section className="py-24 bg-[#F7F8FA]">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6 font-headline tracking-tighter">
+          <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-6 font-headline tracking-tighter">
             Why Homeowners Choose Zenith Energy
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto font-normal">
             Experience the zenith of solar energy with our premium, customer-focused approach.
           </p>
         </div>
@@ -88,10 +88,10 @@ export function WhyChooseUs() {
 
                       {/* Content Container */}
                       <div className="flex-grow">
-                        <h3 className="text-2xl md:text-[28px] font-bold text-primary mb-4 font-headline leading-tight">
+                        <h3 className="text-xl md:text-2xl font-medium text-primary mb-4 font-headline leading-tight">
                           {feature.title}
                         </h3>
-                        <p className="text-[#64748B] text-lg leading-relaxed mb-8 line-clamp-3">
+                        <p className="text-[#64748B] text-base md:text-lg leading-relaxed mb-8 line-clamp-3 font-normal">
                           {feature.desc}
                         </p>
                       </div>
@@ -112,7 +112,7 @@ export function WhyChooseUs() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="flex justify-center gap-4 mt-12">
+            <div className="flex justify-center gap-4 mt-12 md:hidden">
               <CarouselPrevious className="static translate-y-0 h-12 w-12 border-primary text-primary hover:bg-primary hover:text-white" />
               <CarouselNext className="static translate-y-0 h-12 w-12 border-primary text-primary hover:bg-primary hover:text-white" />
             </div>
