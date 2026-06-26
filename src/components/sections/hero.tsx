@@ -40,9 +40,9 @@ export function Hero() {
           <span className="text-white text-sm font-bold uppercase tracking-[0.2em] mb-6 block border-l-4 border-secondary pl-4">
             Residential Solar Solutions
           </span>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] font-headline mb-8 uppercase">
-            POWER YOUR HOME <br />
-            <span className="text-secondary">WITH CLEAN SOLAR ENERGY</span>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] font-headline mb-8">
+            Power Your Home <br />
+            <span className="text-secondary">with Clean Solar Energy</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-2xl font-body mb-10">
             Save more on electricity with reliable solar solutions for homes and apartments across Hyderabad.
