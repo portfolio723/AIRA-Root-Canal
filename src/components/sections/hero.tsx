@@ -18,15 +18,17 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[90vh] flex flex-col justify-center overflow-visible">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="https://images.unsplash.com/photo-1509391366360-fe5bb584850a?q=80&w=2000"
-          alt="Commercial Solar Installation"
-          fill
-          className="object-cover"
-          priority
-        />
+      {/* Background Video with Overlay */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/hero.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-black/70" />
       </div>
 
