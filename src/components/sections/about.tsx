@@ -19,11 +19,11 @@ export function About() {
     <section id="about" className="bg-white py-32 pt-[450px] lg:pt-72">
       <div className="container px-4 mx-auto">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
-            <span className="text-secondary text-xs font-bold uppercase tracking-[0.2em] mb-4 block text-center lg:text-left">
+          <div className="mb-16 text-center">
+            <span className="text-secondary text-xs font-bold uppercase tracking-[0.2em] mb-4 block">
               THE COMMERCIAL REALITY
             </span>
-            <h2 className="text-2xl md:text-4xl font-semibold text-primary font-headline tracking-tight leading-tight text-center lg:text-left">
+            <h2 className="text-2xl md:text-4xl font-semibold text-primary font-headline tracking-tight leading-tight max-w-3xl mx-auto">
               What businesses with ₹3–20 lakh <br className="hidden md:block" /> monthly bills actually face
             </h2>
           </div>
