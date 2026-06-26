@@ -1,5 +1,4 @@
 import { X, CheckCircle2 } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
 
 export function About() {
   const beforeList = [
@@ -21,9 +20,6 @@ export function About() {
       <div className="container px-4 mx-auto">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16 text-center">
-            <Badge className="bg-primary/5 text-primary border-none mb-6 px-4 py-1.5 rounded-full text-sm font-medium">
-              📊 The Commercial Reality
-            </Badge>
             <h2 className="text-2xl md:text-4xl font-semibold text-primary font-headline tracking-tight leading-tight max-w-3xl mx-auto">
               What businesses with ₹3–20 lakh <br className="hidden md:block" /> monthly bills actually face
             </h2>

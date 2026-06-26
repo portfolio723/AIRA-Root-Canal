@@ -9,27 +9,26 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const reviews = [
   {
     name: "Rajesh K.",
-    location: "Jubilee Hills",
-    text: "Installation was smooth and our electricity bill reduced from the very first month. Zenith Energy's team is very professional.",
+    location: "Industrialist",
+    text: "Zenith Energy transformed our factory's energy consumption. The savings were visible from the first month itself.",
     rating: 5
   },
   {
     name: "Sneha Reddy",
-    location: "Kondapur",
-    text: "Switching to solar was the best decision for our house. The government subsidy process was handled entirely by them.",
+    location: "Warehouse Owner",
+    text: "Professional team and seamless grid integration. Our operating costs are down significantly thanks to solar.",
     rating: 5
   },
   {
     name: "Amit Varma",
-    location: "Gachibowli",
-    text: "Excellent service and high-quality panels. Their post-installation support is what truly sets them apart.",
+    location: "Commercial Complex",
+    text: "The ROI was clearly explained and delivered. Highly recommend Zenith for commercial EPC projects.",
     rating: 5
   }
 ];
@@ -41,9 +40,6 @@ export function Reviews() {
     <section id="reviews" className="py-24 bg-[#F7F8FA]">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-16">
-          <Badge className="bg-primary/5 text-primary border-none mb-6 px-4 py-1.5 rounded-full text-sm font-medium">
-            💬 Client Success
-          </Badge>
           <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-6 font-headline tracking-tighter">
             What Our Customers Say
           </h2>

@@ -4,7 +4,6 @@ import { useState, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
-import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { 
   Wallet, 
@@ -54,9 +53,6 @@ export function Calculator() {
     <section id="calculator" className="py-24 bg-white relative overflow-hidden">
       <div className="container px-4 mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-16">
-          <Badge className="bg-primary/5 text-primary border-none mb-6 px-4 py-1.5 rounded-full text-sm font-medium">
-            ⚡ Instant Savings Calculator
-          </Badge>
           <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-6 font-headline tracking-tight">
             Calculate Your Solar Savings
           </h2>
