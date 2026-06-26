@@ -25,7 +25,7 @@ export function CTABanner() {
             <Button 
               variant="outline" 
               size="lg" 
-              className="border-white text-white hover:bg-white hover:text-primary h-16 px-10 rounded-[12px] text-xl transition-all w-full sm:w-auto"
+              className="bg-white border-white text-primary hover:text-secondary h-16 px-10 rounded-[12px] text-xl transition-all w-full sm:w-auto"
             >
               <Phone className="mr-3 h-5 w-5" /> Call Now
             </Button>

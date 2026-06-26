@@ -31,7 +31,7 @@ export function Header() {
     <header 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-white/90 backdrop-blur-md shadow-soft py-4" : "bg-transparent py-6"
+        isScrolled ? "bg-white/90 backdrop-blur-md shadow-soft py-4" : "bg-white/50 backdrop-blur-sm py-6"
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -39,10 +39,7 @@ export function Header() {
           <div className="h-10 w-10 bg-primary rounded-xl flex items-center justify-center overflow-hidden">
             <span className="text-white font-bold text-2xl">Z</span>
           </div>
-          <span className={cn(
-            "text-xl font-bold font-headline tracking-tighter transition-colors",
-            isScrolled ? "text-primary" : "text-primary md:text-white"
-          )}>
+          <span className="text-xl font-bold font-headline tracking-tighter text-primary">
             ZENITH ENERGY
           </span>
         </Link>
@@ -53,10 +50,7 @@ export function Header() {
             <Link 
               key={link.name} 
               href={link.href}
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-secondary",
-                isScrolled ? "text-muted-foreground" : "text-white/80"
-              )}
+              className="text-sm font-medium transition-colors text-muted-foreground hover:text-secondary"
             >
               {link.name}
             </Link>
@@ -73,7 +67,7 @@ export function Header() {
           className="lg:hidden p-2 text-primary"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X /> : <Menu className={cn(!isScrolled && "md:text-white")} />}
+          {isMobileMenuOpen ? <X /> : <Menu />}
         </button>
       </div>
 
