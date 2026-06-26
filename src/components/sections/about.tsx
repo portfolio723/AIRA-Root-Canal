@@ -35,7 +35,7 @@ export function About() {
                 {beforeList.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-4">
                     <X className="h-6 w-6 text-secondary shrink-0 mt-0.5" />
-                    <span className="text-white/80 text-lg font-light leading-relaxed italic">
+                    <span className="text-white/80 text-lg font-normal leading-relaxed">
                       {item}
                     </span>
                   </li>
