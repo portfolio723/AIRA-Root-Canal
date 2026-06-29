@@ -97,8 +97,8 @@ export function Hero() {
         </div>
 
         {/* RIGHT SECTION (FORM - 45%) */}
-        <div className="w-full lg:w-[45%] bg-[#EEF4FF] px-6 md:px-12 lg:px-16 py-16 lg:py-0 flex flex-col justify-center relative shadow-inner">
-          <div className="max-w-md mx-auto w-full">
+        <div className="w-full lg:w-[45%] bg-[#EEF4FF] px-6 md:px-10 lg:pl-10 lg:pr-16 py-16 lg:py-0 flex flex-col justify-center relative shadow-inner">
+          <div className="max-w-md w-full">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#01153C] mb-4 font-headline leading-tight">
               Book a FREE Solar Consultation
             </h2>
@@ -155,7 +155,7 @@ export function Hero() {
 
               <div className="relative pt-6">
                 <Button 
-                  className="w-all h-14 bg-[#F0153C] hover:bg-[#D01235] text-white text-lg font-bold rounded-xl shadow-2xl transition-all hover:scale-[1.02] w-full"
+                  className="h-14 bg-[#F0153C] hover:bg-[#D01235] text-white text-lg font-bold rounded-xl shadow-2xl transition-all hover:scale-[1.02] w-full"
                 >
                   Book FREE Consultation
                 </Button>
