@@ -77,7 +77,7 @@ export function Hero() {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.4] font-headline mb-8">
               Power Your Home with Solar <br />
               <span className="text-[#22C55E]">Save More</span>{" "}
-              <span className="bg-[#22C55E] text-[#01153C] px-4 py-1 rounded-xl inline-block mt-2 lg:mt-0">
+              <span className="bg-[#22C55E] text-[#01153C] px-4 py-1 inline-block mt-2 lg:mt-0">
                 Every Month
               </span>
             </h1>
