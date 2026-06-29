@@ -73,10 +73,16 @@ export function WhyChooseUs() {
                   data-ai-hint={feature.imageHint}
                 />
               </div>
-              <div className="h-12 w-12 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                <feature.icon className="h-6 w-6" />
+              
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-12 w-12 rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+                  <feature.icon className="h-6 w-6" />
+                </div>
+                <h3 className="text-lg md:text-xl font-bold text-primary font-headline leading-tight">
+                  {feature.title}
+                </h3>
               </div>
-              <h3 className="text-xl font-bold text-primary mb-4 font-headline">{feature.title}</h3>
+              
               <p className="text-slate-500 leading-relaxed font-normal">
                 {feature.desc}
               </p>
