@@ -1,15 +1,11 @@
-
 'use client';
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Sun, Zap, Leaf, ShieldCheck, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function NetZero() {
-  const netZeroImage = PlaceHolderImages.find(img => img.id === 'net-zero-house');
-
   const benefits = [
     {
       icon: Sun,
@@ -100,17 +96,15 @@ export function NetZero() {
             </div>
           </div>
 
-          {/* Right Visual - Image (25%) */}
-          <div className="lg:col-span-3 relative h-[300px] lg:h-[500px] rounded-[32px] overflow-hidden shadow-premium order-2 lg:order-3">
+          {/* Right Visual (25%) */}
+          <div className="lg:col-span-3 order-2 lg:order-3 relative h-[300px] lg:h-[500px]">
             <Image
-              src={netZeroImage?.imageUrl || "https://images.unsplash.com/photo-1594818821932-969c3623c72b"}
+              src="/nz2.png"
               alt="Net Zero Living"
               fill
-              className="object-cover"
-              data-ai-hint="sustainable house"
+              className="object-contain"
+              priority
             />
-            {/* Subtle Overlay for Premium Feel */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent pointer-events-none" />
           </div>
         </div>
       </div>
