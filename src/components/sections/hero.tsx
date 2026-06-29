@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -7,6 +8,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Star, Zap, Calculator, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function Hero() {
   const [mounted, setMounted] = useState(false);
@@ -43,24 +45,30 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen bg-white overflow-hidden pt-28 lg:pt-32">
-      <div className="flex flex-col lg:flex-row min-h-[calc(100vh-128px)]">
+      {/* Background Video - Covers full screen on mobile, 55% width on desktop as background of left section */}
+      <div className="absolute inset-0 z-0">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/hero.mp4" type="video/mp4" />
+        </video>
+        {/* Full dark overlay for mobile to make content readable */}
+        <div className="absolute inset-0 bg-black/50 lg:hidden" />
+        {/* Specific desktop overlay for left 55% as per original design */}
+        <div className="hidden lg:block absolute inset-0 bg-black/40" style={{ width: '55%' }} />
+      </div>
+
+      <div className="relative z-10 flex flex-col lg:flex-row min-h-[calc(100vh-128px)]">
         
         {/* LEFT SECTION (55%) */}
         <div className="w-full lg:w-[55%] relative px-4 md:px-8 lg:px-12 pb-12 flex flex-col justify-center overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <video 
-              autoPlay 
-              loop 
-              muted 
-              playsInline 
-              className="absolute inset-0 w-full h-full object-cover"
-            >
-              <source src="/hero.mp4" type="video/mp4" />
-            </video>
-            <div className="absolute inset-0 bg-black/40" />
-          </div>
-
-          <div className="relative z-10 flex flex-wrap items-center gap-x-4 gap-y-3 mb-8">
+          
+          {/* Mobile Specific Header Elements */}
+          <div className="lg:hidden flex flex-wrap items-center gap-x-4 gap-y-3 mb-8">
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20">
               <div className="flex items-center">
                 {[1, 2, 3, 4, 5].map((i) => (
@@ -69,11 +77,29 @@ export function Hero() {
               </div>
               <span className="text-sm font-bold text-white">4.9 Google Rating</span>
             </div>
-            <div className="w-px h-4 bg-white/30" />
             <div className="text-sm font-medium text-white/80">1,200+ Happy Customers</div>
           </div>
 
-          <div className="relative z-10 max-w-2xl mb-6">
+          {/* Mobile Title Highlight - Left side white box with recycle image stack */}
+          <div className="lg:hidden bg-white p-6 rounded-r-[40px] flex items-center gap-6 mb-10 shadow-2xl -ml-4 pr-10 border-y border-r border-slate-100">
+            <h1 className="text-2xl md:text-3xl font-extrabold text-[#01153C] leading-tight font-headline">
+              Power Your Home <br />
+              with Solar <br />
+              <span className="text-secondary">Save More</span>
+            </h1>
+            <div className="w-20 h-20 shrink-0 relative">
+              <Image 
+                src="https://picsum.photos/seed/recycle/200/200" 
+                alt="Sustainable" 
+                fill 
+                className="object-contain"
+                data-ai-hint="recycle icon"
+              />
+            </div>
+          </div>
+
+          {/* Desktop Headline (Hidden on Mobile) */}
+          <div className="hidden lg:block relative z-10 max-w-2xl mb-6">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.4] font-headline mb-8">
               Power Your Home with Solar <br />
               <span className="bg-[#22C55E] text-[#01153C] px-4 py-1 inline-block mt-2 lg:mt-0">
@@ -81,21 +107,24 @@ export function Hero() {
               </span>{" "}
               Every Month
             </h1>
-            
+          </div>
+
+          {/* Points & Industries - Visible on both but contrast adjusted for mobile bg */}
+          <div className="relative z-10 max-w-2xl mb-6">
             <div className="grid grid-cols-2 gap-x-8 gap-y-6 mb-10 max-w-xl">
               {points.map((point, idx) => (
                 <div key={idx} className="flex items-center gap-3">
                   <div className="h-6 w-6 rounded-full bg-green-500/20 flex items-center justify-center shrink-0 border border-green-500/30">
                     <Zap className="h-4 w-4 text-green-400" />
                   </div>
-                  <span className="text-base md:text-lg font-semibold text-white leading-tight">{point}</span>
+                  <span className="text-sm md:text-lg font-semibold text-white leading-tight">{point}</span>
                 </div>
               ))}
             </div>
 
             <div className="flex flex-wrap gap-2 mb-10">
               {industries.map((tag, i) => (
-                <span key={i} className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-md text-xs font-bold text-white border border-white/20 shadow-sm">
+                <span key={i} className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-md text-[10px] md:text-xs font-bold text-white border border-white/20 shadow-sm">
                   {tag}
                 </span>
               ))}
@@ -128,7 +157,7 @@ export function Hero() {
         </div>
 
         {/* RIGHT SECTION (45%) */}
-        <div className="w-full lg:w-[45%] bg-[#EEF4FF] px-6 md:px-10 lg:pl-10 lg:pr-16 py-16 lg:py-0 flex flex-col justify-center relative">
+        <div className="w-full lg:w-[45%] bg-[#EEF4FF]/95 lg:bg-[#EEF4FF] px-6 md:px-10 lg:pl-10 lg:pr-16 py-16 lg:py-0 flex flex-col justify-center relative shadow-inner lg:shadow-none">
           <div className="max-w-lg w-full">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#01153C] mb-4 font-headline leading-tight text-left">
               Book a FREE Solar Consultation

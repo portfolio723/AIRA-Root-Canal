@@ -59,6 +59,12 @@
       "description": "Friendly customer support and maintenance",
       "imageUrl": "https://picsum.photos/seed/solar-service/600/400",
       "imageHint": "customer service"
+    },
+    {
+      "id": "recycle-icon",
+      "description": "Sustainability and recycle icon",
+      "imageUrl": "https://picsum.photos/seed/recycle/100/100",
+      "imageHint": "recycle icon"
     }
   ]
 }
