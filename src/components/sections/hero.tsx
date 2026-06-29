@@ -46,6 +46,23 @@ export function Hero() {
         
         {/* LEFT SECTION (55%) */}
         <div className="w-full lg:w-[55%] relative px-4 md:px-8 lg:px-12 pb-12 flex flex-col justify-center">
+          
+          {/* Trust Row (Moved above header) */}
+          <div className="relative z-10 flex flex-wrap items-center gap-x-4 gap-y-3 mb-8 animate-in fade-in duration-1000 delay-300">
+            <div className="flex items-center gap-2">
+              <div className="flex items-center">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <span className="text-sm font-bold text-[#01153C]">4.9 Google Rating</span>
+            </div>
+            
+            <div className="hidden sm:block w-px h-4 bg-slate-300" />
+            
+            <div className="text-sm font-medium text-muted-foreground">1,200+ Happy Customers</div>
+          </div>
+
           {/* Primary Headlines */}
           <div className="relative z-10 max-w-2xl mb-6 animate-in slide-in-from-bottom-8 duration-700">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#01153C] leading-[1.1] font-headline mb-6">
@@ -77,19 +94,6 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Trust Row */}
-          <div className="relative z-10 flex flex-wrap items-center gap-x-6 gap-y-3 mb-8 animate-in fade-in duration-1000 delay-300">
-            <div className="flex items-center gap-2">
-              <div className="flex items-center">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <span className="text-sm font-bold text-[#01153C]">4.9 Google Rating</span>
-            </div>
-            <div className="text-sm font-medium text-muted-foreground">1,200+ Happy Customers</div>
-            <div className="text-sm font-medium text-muted-foreground">MNRE Compliant</div>
-          </div>
         </div>
 
         {/* RIGHT SECTION (FORM - 45%) */}
