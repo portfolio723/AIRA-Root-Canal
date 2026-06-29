@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -88,11 +87,9 @@ export function Hero() {
 
           {/* MOBILE ONLY: White Highlight Box with Side-by-Side Content */}
           <div className="lg:hidden bg-white p-6 rounded-r-[40px] flex items-center justify-between gap-6 mb-10 shadow-2xl -ml-4 pr-10 border-y border-r border-slate-100 relative z-10">
-            <h1 className="text-xl md:text-2xl font-extrabold text-[#01153C] leading-tight font-headline">
-              Power Your Home <br />
-              with Solar <br />
-              <span className="text-green-600">Save More</span> <br />
-              Every Month
+            <h1 className="text-lg font-extrabold text-[#01153C] leading-tight font-headline">
+              Power Your Home with Solar <br />
+              <span className="text-green-600">Save More</span> Every Month
             </h1>
             <div className="w-32 h-32 shrink-0 relative">
               {recycleImg && (
