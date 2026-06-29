@@ -61,6 +61,45 @@
   }
 }
 
+/* PRD Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes bg-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-orbit {
+  animation: orbit 12s linear infinite;
+}
+
+.animate-sparkle {
+  animation: sparkle 3s ease-in-out infinite;
+}
+
+.animate-bg-shift {
+  background-size: 200% 200%;
+  animation: bg-shift 15s ease infinite;
+}
+
 .shadow-soft {
   box-shadow: 0 10px 30px -10px rgba(1, 21, 60, 0.08);
 }
@@ -70,45 +109,13 @@
 }
 
 .glass-card {
-  @apply bg-white/80 backdrop-blur-md border border-white/20;
+  @apply bg-white/40 backdrop-blur-md border border-white/20 shadow-xl;
 }
 
-.glass-blue {
-  @apply bg-primary/80 backdrop-blur-xl border border-white/10;
+.net-zero-gradient {
+  background: linear-gradient(90deg, #FFFFFF 0%, #F3FAFF 35%, #EEF7FF 70%, #F8FBFF 100%);
 }
 
-@keyframes ken-burns {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.1); }
-}
-
-.animate-ken-burns {
-  animation: ken-burns 20s ease-in-out infinite alternate;
-}
-
-@keyframes reflective-sweep {
-  0% { transform: translateX(-100%) skewX(-15deg); }
-  20% { transform: translateX(200%) skewX(-15deg); }
-  100% { transform: translateX(200%) skewX(-15deg); }
-}
-
-.animate-reflective-sweep {
-  position: relative;
-  overflow: hidden;
-}
-
-.animate-reflective-sweep::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -50%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
-  animation: reflective-sweep 8s infinite;
-}
-
-.solar-pattern {
-  background-image: radial-gradient(circle at 2px 2px, rgba(1, 21, 60, 0.05) 1px, transparent 0);
-  background-size: 24px 24px;
+.text-gradient-primary {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#01153C] to-[#0EA5E9];
 }
