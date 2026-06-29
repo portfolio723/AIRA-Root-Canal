@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -72,8 +73,8 @@ export function Hero() {
         {/* LEFT SECTION (55%) */}
         <div className="w-full lg:w-[55%] relative px-4 md:px-8 lg:px-12 pb-12 flex flex-col justify-center overflow-hidden">
           
-          {/* MOBILE ONLY: Rating & Trust Header */}
-          <div className="lg:hidden flex flex-wrap items-center gap-x-4 gap-y-3 mb-8">
+          {/* Universal Rating & Trust Header - Visible on both Mobile and Desktop */}
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-3 mb-8 relative z-20">
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20">
               <div className="flex items-center">
                 {[1, 2, 3, 4, 5].map((i) => (
@@ -86,7 +87,7 @@ export function Hero() {
           </div>
 
           {/* MOBILE ONLY: White Highlight Box with Side-by-Side Content */}
-          <div className="lg:hidden bg-white p-6 rounded-r-[40px] flex items-center justify-between gap-6 mb-10 shadow-2xl -ml-4 pr-10 border-y border-r border-slate-100">
+          <div className="lg:hidden bg-white p-6 rounded-r-[40px] flex items-center justify-between gap-6 mb-10 shadow-2xl -ml-4 pr-10 border-y border-r border-slate-100 relative z-10">
             <h1 className="text-2xl md:text-3xl font-extrabold text-[#01153C] leading-tight font-headline">
               Power Your Home <br />
               with Solar <br />
