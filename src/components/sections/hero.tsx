@@ -1,12 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Star, Home, Zap, IndianRupee } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Star, Zap } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export function Hero() {
@@ -43,8 +41,8 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen lg:h-screen bg-white overflow-hidden pt-28 lg:pt-32">
-      <div className="flex flex-col lg:flex-row h-full">
+    <section className="relative min-h-screen bg-white overflow-hidden pt-28 lg:pt-32">
+      <div className="flex flex-col lg:flex-row min-h-[calc(100vh-128px)]">
         
         {/* LEFT SECTION (55%) */}
         <div className="w-full lg:w-[55%] relative px-4 md:px-8 lg:px-12 pb-12 flex flex-col justify-center">
@@ -92,59 +90,12 @@ export function Hero() {
             <div className="text-sm font-medium text-muted-foreground">1,200+ Happy Customers</div>
             <div className="text-sm font-medium text-muted-foreground">MNRE Compliant</div>
           </div>
-
-          {/* Hero Visual */}
-          <div className="relative w-full h-[320px] lg:h-[400px] rounded-[32px] overflow-hidden shadow-2xl group">
-            <Image
-              src="/a3.jpg"
-              alt="Premium solar home installation in Hyderabad"
-              fill
-              className="object-cover animate-ken-burns duration-[20s]"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent" />
-            
-            {/* Statistics Strip Overlay */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[90%] md:w-auto">
-              <div className="bg-[#01153C]/85 backdrop-blur-xl border border-white/10 rounded-2xl py-4 px-6 md:px-10 flex flex-row items-center justify-between gap-6 md:gap-12 text-white shadow-premium">
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hidden md:flex">
-                    <Home className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xl md:text-2xl font-bold font-headline">40,000+</p>
-                    <p className="text-[10px] uppercase tracking-widest font-bold opacity-60">Homes</p>
-                  </div>
-                </div>
-                <div className="w-px h-8 bg-white/20" />
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hidden md:flex">
-                    <Zap className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xl md:text-2xl font-bold font-headline">150MW+</p>
-                    <p className="text-[10px] uppercase tracking-widest font-bold opacity-60">Installed</p>
-                  </div>
-                </div>
-                <div className="w-px h-8 bg-white/20" />
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hidden md:flex">
-                    <IndianRupee className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xl md:text-2xl font-bold font-headline">₹100Cr+</p>
-                    <p className="text-[10px] uppercase tracking-widest font-bold opacity-60">Savings</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* RIGHT SECTION (FORM - 45%) */}
-        <div className="w-full lg:w-[45%] bg-[#EEF4FF] px-6 md:px-12 lg:px-16 py-16 lg:py-0 flex flex-col justify-center relative">
+        <div className="w-full lg:w-[45%] bg-[#EEF4FF] px-6 md:px-12 lg:px-16 py-16 lg:py-0 flex flex-col justify-center relative shadow-inner">
           <div className="max-w-md mx-auto w-full">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#01153C] mb-4 font-headline leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#01153C] mb-4 font-headline leading-tight">
               Book a FREE Solar Consultation
             </h2>
             <p className="text-base text-muted-foreground mb-10 font-body">
@@ -200,7 +151,7 @@ export function Hero() {
 
               <div className="relative pt-6">
                 <Button 
-                  className="w-full h-14 bg-[#F0153C] hover:bg-[#D01235] text-white text-lg font-bold rounded-xl shadow-2xl transition-all hover:scale-[1.02]"
+                  className="w-all h-14 bg-[#F0153C] hover:bg-[#D01235] text-white text-lg font-bold rounded-xl shadow-2xl transition-all hover:scale-[1.02] w-full"
                 >
                   Book FREE Consultation
                 </Button>
