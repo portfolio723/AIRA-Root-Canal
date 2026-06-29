@@ -5,7 +5,6 @@ import { WhyChooseUs } from '@/components/sections/why-choose-us';
 import { NetZero } from '@/components/sections/net-zero';
 import { Impact } from '@/components/sections/impact';
 import { Installations } from '@/components/sections/installations';
-import { InstallationVideos } from '@/components/sections/installation-videos';
 import { Process } from '@/components/sections/process';
 import { Reviews } from '@/components/sections/reviews';
 import { FAQ } from '@/components/sections/faq';
@@ -23,7 +22,6 @@ export default function Home() {
         <About />
         <WhyChooseUs />
         <Installations />
-        <InstallationVideos />
         <Process />
         <NetZero />
         <Impact />
