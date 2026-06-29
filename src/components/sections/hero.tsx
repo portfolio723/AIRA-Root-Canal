@@ -45,7 +45,7 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen bg-white overflow-hidden pt-28 lg:pt-32">
-      {/* Background Video - Covers full screen on mobile, 55% width on desktop as background of left section */}
+      {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video 
           autoPlay 
@@ -56,9 +56,9 @@ export function Hero() {
         >
           <source src="/hero.mp4" type="video/mp4" />
         </video>
-        {/* Full dark overlay for mobile to make content readable */}
+        {/* Mobile Full Overlay */}
         <div className="absolute inset-0 bg-black/50 lg:hidden" />
-        {/* Specific desktop overlay for left 55% as per original design */}
+        {/* Desktop 55% Overlay */}
         <div className="hidden lg:block absolute inset-0 bg-black/40" style={{ width: '55%' }} />
       </div>
 
@@ -67,7 +67,7 @@ export function Hero() {
         {/* LEFT SECTION (55%) */}
         <div className="w-full lg:w-[55%] relative px-4 md:px-8 lg:px-12 pb-12 flex flex-col justify-center overflow-hidden">
           
-          {/* Mobile Specific Header Elements */}
+          {/* MOBILE ONLY: Rating & Trust Header */}
           <div className="lg:hidden flex flex-wrap items-center gap-x-4 gap-y-3 mb-8">
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20">
               <div className="flex items-center">
@@ -80,36 +80,36 @@ export function Hero() {
             <div className="text-sm font-medium text-white/80">1,200+ Happy Customers</div>
           </div>
 
-          {/* Mobile Title Highlight - Left side white box with recycle image stack */}
-          <div className="lg:hidden bg-white p-6 rounded-r-[40px] flex items-center gap-6 mb-10 shadow-2xl -ml-4 pr-10 border-y border-r border-slate-100">
+          {/* MOBILE ONLY: White Highlight Box with Recycle Icon Filler */}
+          <div className="lg:hidden bg-white p-6 rounded-r-[40px] flex items-center justify-between gap-6 mb-10 shadow-2xl -ml-4 pr-10 border-y border-r border-slate-100">
             <h1 className="text-2xl md:text-3xl font-extrabold text-[#01153C] leading-tight font-headline">
               Power Your Home <br />
               with Solar <br />
               <span className="text-secondary">Save More</span>
             </h1>
-            <div className="w-20 h-20 shrink-0 relative">
+            <div className="w-20 h-20 shrink-0 relative bg-slate-50 rounded-2xl p-2">
               <Image 
                 src="https://picsum.photos/seed/recycle/200/200" 
-                alt="Sustainable" 
+                alt="Sustainability" 
                 fill 
-                className="object-contain"
+                className="object-contain p-2"
                 data-ai-hint="recycle icon"
               />
             </div>
           </div>
 
-          {/* Desktop Headline (Hidden on Mobile) */}
-          <div className="hidden lg:block relative z-10 max-w-2xl mb-6">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.4] font-headline mb-8">
+          {/* DESKTOP ONLY: Original Headline */}
+          <div className="hidden lg:block relative z-10 max-w-2xl mb-8">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.3] font-headline">
               Power Your Home with Solar <br />
-              <span className="bg-[#22C55E] text-[#01153C] px-4 py-1 inline-block mt-2 lg:mt-0">
+              <span className="bg-[#22C55E] text-white px-4 py-1 inline-block mt-2">
                 Save More
               </span>{" "}
               Every Month
             </h1>
           </div>
 
-          {/* Points & Industries - Visible on both but contrast adjusted for mobile bg */}
+          {/* Points & CTA Group (Visible on both, but adaptive) */}
           <div className="relative z-10 max-w-2xl mb-6">
             <div className="grid grid-cols-2 gap-x-8 gap-y-6 mb-10 max-w-xl">
               {points.map((point, idx) => (
