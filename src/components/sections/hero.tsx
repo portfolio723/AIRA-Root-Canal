@@ -91,7 +91,8 @@ export function Hero() {
             <h1 className="text-2xl md:text-3xl font-extrabold text-[#01153C] leading-tight font-headline">
               Power Your Home <br />
               with Solar <br />
-              <span className="text-secondary">Save More</span>
+              <span className="text-green-600">Save More</span> <br />
+              Every Month
             </h1>
             <div className="w-20 h-20 shrink-0 relative bg-slate-50 rounded-2xl p-2">
               {recycleImg && (
@@ -110,10 +111,7 @@ export function Hero() {
           <div className="hidden lg:block relative z-10 max-w-2xl mb-8">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.3] font-headline">
               Power Your Home with Solar <br />
-              <span className="bg-[#22C55E] text-white px-4 py-1 inline-block mt-2">
-                Save More
-              </span>{" "}
-              Every Month
+              <span className="text-blue-400">Save More</span> Every Month
             </h1>
           </div>
 
