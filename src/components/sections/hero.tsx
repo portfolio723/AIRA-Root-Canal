@@ -93,13 +93,13 @@ export function Hero() {
               <span className="text-green-600">Save More</span> <br />
               Every Month
             </h1>
-            <div className="w-20 h-20 shrink-0 relative bg-slate-50 rounded-2xl p-2">
+            <div className="w-28 h-28 shrink-0 relative">
               {recycleImg && (
                 <Image 
                   src={recycleImg.imageUrl} 
                   alt={recycleImg.description} 
                   fill 
-                  className="object-contain p-2"
+                  className="object-contain"
                   data-ai-hint="recycle icon"
                 />
               )}
