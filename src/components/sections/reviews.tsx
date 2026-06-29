@@ -30,6 +30,12 @@ const reviews = [
     location: "Commercial Complex",
     text: "The ROI was clearly explained and delivered. Highly recommend Zenith for commercial EPC projects.",
     rating: 5
+  },
+  {
+    name: "Priya Singh",
+    location: "Homeowner",
+    text: "Seamless installation and excellent support. Our electricity bill is now practically zero.",
+    rating: 5
   }
 ];
 
@@ -51,7 +57,7 @@ export function Reviews() {
           </div>
         </div>
 
-        <div className="max-w-5xl mx-auto px-4 md:px-12">
+        <div className="max-w-7xl mx-auto px-4 md:px-12">
           <Carousel
             opts={{
               align: "start",
@@ -61,29 +67,29 @@ export function Reviews() {
           >
             <CarouselContent>
               {reviews.map((item, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
-                  <div className="p-2">
-                    <Card className="rounded-[32px] border-[#E7E9EE] shadow-soft bg-white group hover:shadow-2xl transition-all duration-500 overflow-hidden h-full">
-                      <CardContent className="p-8 md:p-10">
-                        <Quote className="h-10 w-10 text-primary/5 mb-6 group-hover:text-secondary/10 transition-colors" />
-                        <div className="flex gap-1 mb-6">
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="p-2 h-full">
+                    <Card className="rounded-[28px] border-[#E7E9EE] shadow-soft bg-white group hover:shadow-xl transition-all duration-500 overflow-hidden h-full flex flex-col">
+                      <CardContent className="p-6 md:p-8 flex-grow flex flex-col">
+                        <Quote className="h-8 w-8 text-primary/5 mb-4 group-hover:text-secondary/10 transition-colors" />
+                        <div className="flex gap-0.5 mb-4">
                           {Array.from({ length: item.rating }).map((_, i) => (
-                            <Star key={i} className="h-4 w-4 fill-secondary text-secondary" />
+                            <Star key={i} className="h-3.5 w-3.5 fill-secondary text-secondary" />
                           ))}
                         </div>
-                        <p className="text-lg md:text-xl text-primary/80 mb-10 italic leading-relaxed font-light">
+                        <p className="text-base md:text-lg text-primary/80 mb-8 italic leading-relaxed font-light flex-grow">
                           "{item.text}"
                         </p>
-                        <div className="flex items-center gap-4">
-                          <Avatar className="h-14 w-14 border-2 border-primary/5">
+                        <div className="flex items-center gap-3 pt-4 border-t border-slate-50">
+                          <Avatar className="h-12 w-12 border-2 border-primary/5">
                             <AvatarImage src={customerImg?.imageUrl} alt={item.name} />
-                            <AvatarFallback className="bg-primary/5 text-primary font-bold">
+                            <AvatarFallback className="bg-primary/5 text-primary font-bold text-sm">
                               {item.name[0]}
                             </AvatarFallback>
                           </Avatar>
                           <div>
-                            <p className="font-bold text-primary text-lg font-headline leading-none mb-1">{item.name}</p>
-                            <p className="text-sm text-muted-foreground">{item.location}</p>
+                            <p className="font-bold text-primary text-base font-headline leading-none mb-1">{item.name}</p>
+                            <p className="text-xs text-muted-foreground">{item.location}</p>
                           </div>
                         </div>
                       </CardContent>
@@ -92,7 +98,7 @@ export function Reviews() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            {/* Navigation buttons now visible on mobile via adjusted positioning */}
+            {/* Navigation buttons */}
             <div className="flex justify-center md:block gap-4 mt-8 md:mt-0">
               <CarouselPrevious className="static md:absolute bg-white border-primary/10 text-primary hover:bg-primary hover:text-white h-12 w-12" />
               <CarouselNext className="static md:absolute bg-white border-primary/10 text-primary hover:bg-primary hover:text-white h-12 w-12" />
