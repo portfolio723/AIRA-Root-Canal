@@ -53,7 +53,7 @@ export function WhyChooseUs() {
     <section className="py-20 md:py-32 bg-[#F7F8FA]">
       <div className="container px-4 mx-auto max-w-[1280px]">
         <div className="text-center mb-16 md:mb-24">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-[#01153C] mb-6 font-headline tracking-tight">
+          <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-6 font-headline tracking-tighter">
             Why Businesses Choose Zenith Energy
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto font-body">
@@ -78,7 +78,7 @@ export function WhyChooseUs() {
                 <div className="h-12 w-12 rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
                   <feature.icon className="h-6 w-6" />
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-primary font-headline leading-tight">
+                <h3 className="text-lg md:text-xl font-semibold text-primary font-headline leading-tight">
                   {feature.title}
                 </h3>
               </div>
