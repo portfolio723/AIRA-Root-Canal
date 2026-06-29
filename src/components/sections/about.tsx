@@ -1,30 +1,29 @@
 import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function About() {
   const trustItems = [
     {
       title: "Guaranteed Savings",
       desc: "Hyderabad's most trusted solar partner with clear performance commitments and verified 85% bill reduction.",
-      image: PlaceHolderImages.find(img => img.id === 'hero-solar')?.imageUrl || "https://picsum.photos/seed/solar-save/600/600",
+      image: "/a1.jpg",
       imageHint: "solar savings"
     },
     {
       title: "Hassle-free process",
       desc: "Installation, MNRE subsidy, and service — all handled directly by our in-house experts. Zero middlemen.",
-      image: PlaceHolderImages.find(img => img.id === 'about-team')?.imageUrl || "https://picsum.photos/seed/solar-team/600/600",
+      image: "/a2.jpg",
       imageHint: "solar installation"
     },
     {
       title: "Engineered Structure",
       desc: "Heavy-duty structures designed for Hyderabad's toughest weather. Built for longevity and maximum safety.",
-      image: PlaceHolderImages.find(img => img.id === 'about-quality')?.imageUrl || "https://picsum.photos/seed/solar-struct/600/600",
+      image: "/a3.jpg",
       imageHint: "solar structure"
     },
     {
       title: "Reliable Support",
       desc: "Local maintenance teams providing proactive service for steady, year-after-year peak performance.",
-      image: PlaceHolderImages.find(img => img.id === 'about-service')?.imageUrl || "https://picsum.photos/seed/solar-service/600/600",
+      image: "/a4.jpeg",
       imageHint: "solar maintenance"
     }
   ];
