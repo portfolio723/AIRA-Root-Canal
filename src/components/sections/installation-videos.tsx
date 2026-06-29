@@ -32,9 +32,9 @@ export function InstallationVideos() {
                 </div>
               </div>
 
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-                <p className="text-white font-bold text-lg mb-1">{video.title}</p>
-                <p className="text-white/60 text-sm">{video.duration} Minutes</p>
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-left">
+                <h3 className="text-white font-semibold text-lg md:text-xl mb-1 font-headline leading-tight">{video.title}</h3>
+                <p className="text-white/60 text-sm font-normal">{video.duration} Minutes</p>
               </div>
             </div>
           ))}

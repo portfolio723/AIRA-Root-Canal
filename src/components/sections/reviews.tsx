@@ -51,7 +51,7 @@ export function Reviews() {
           </div>
         </div>
 
-        <div className="max-w-5xl mx-auto px-12">
+        <div className="max-w-5xl mx-auto px-4 md:px-12">
           <Carousel
             opts={{
               align: "start",
@@ -63,15 +63,15 @@ export function Reviews() {
               {reviews.map((item, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
                   <div className="p-2">
-                    <Card className="rounded-[32px] border-[#E7E9EE] shadow-soft bg-white group hover:shadow-2xl transition-all duration-500 overflow-hidden">
-                      <CardContent className="p-10">
+                    <Card className="rounded-[32px] border-[#E7E9EE] shadow-soft bg-white group hover:shadow-2xl transition-all duration-500 overflow-hidden h-full">
+                      <CardContent className="p-8 md:p-10">
                         <Quote className="h-10 w-10 text-primary/5 mb-6 group-hover:text-secondary/10 transition-colors" />
                         <div className="flex gap-1 mb-6">
                           {Array.from({ length: item.rating }).map((_, i) => (
                             <Star key={i} className="h-4 w-4 fill-secondary text-secondary" />
                           ))}
                         </div>
-                        <p className="text-xl text-primary/80 mb-10 italic leading-relaxed font-light">
+                        <p className="text-lg md:text-xl text-primary/80 mb-10 italic leading-relaxed font-light">
                           "{item.text}"
                         </p>
                         <div className="flex items-center gap-4">
@@ -92,9 +92,10 @@ export function Reviews() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="hidden md:block">
-              <CarouselPrevious className="bg-white border-primary/10 text-primary hover:bg-primary hover:text-white h-12 w-12" />
-              <CarouselNext className="bg-white border-primary/10 text-primary hover:bg-primary hover:text-white h-12 w-12" />
+            {/* Navigation buttons now visible on mobile via adjusted positioning */}
+            <div className="flex justify-center md:block gap-4 mt-8 md:mt-0">
+              <CarouselPrevious className="static md:absolute bg-white border-primary/10 text-primary hover:bg-primary hover:text-white h-12 w-12" />
+              <CarouselNext className="static md:absolute bg-white border-primary/10 text-primary hover:bg-primary hover:text-white h-12 w-12" />
             </div>
           </Carousel>
         </div>
