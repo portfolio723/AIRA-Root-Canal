@@ -3,8 +3,12 @@
 import { Button } from '@/components/ui/button';
 import { Sun, Zap, Leaf, ShieldCheck, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function NetZero() {
+  const netZeroImage = PlaceHolderImages.find(img => img.id === 'net-zero-house');
+
   const benefits = [
     {
       icon: Sun,
@@ -52,8 +56,8 @@ export function NetZero() {
               Move Towards <br />
               <span className="text-gradient-primary">Net Zero Living</span>
             </h2>
-            <p className="text-xl text-white/80 mb-10 leading-relaxed font-light">
-              Future-proof your business by achieving ESG goals and reducing carbon emissions with Zenith Energy's industrial solar ecosystems.
+            <p className="text-xl text-primary/80 mb-10 leading-relaxed font-light">
+              Generate clean energy, reduce electricity bills, and build a sustainable future with premium solar solutions from Zenith Energy.
             </p>
 
             <div className="pt-4 hidden lg:block">
@@ -97,7 +101,7 @@ export function NetZero() {
           {/* Right Visual - Image (25%) */}
           <div className="lg:col-span-3 relative h-[300px] lg:h-[500px] rounded-[32px] overflow-hidden shadow-premium order-2 lg:order-3">
             <Image
-              src={netZeroImage?.imageUrl || "https://images.unsplash.com/photo-1594818821932-969c3623c72b"}
+              src="/nz2.png"
               alt="Net Zero Living"
               fill
               className="object-cover"
