@@ -48,10 +48,10 @@ export function FAQ() {
               value={`item-${idx}`} 
               className="border border-[#E7E9EE] rounded-[20px] px-8 overflow-hidden"
             >
-              <AccordionTrigger className="text-left font-bold text-primary hover:no-underline py-6 text-lg md:text-xl font-headline">
+              <AccordionTrigger className="text-left font-semibold text-primary hover:no-underline py-6 text-base md:text-lg font-headline">
                 {faq.q}
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground text-lg leading-relaxed pb-6">
+              <AccordionContent className="text-muted-foreground text-base leading-relaxed pb-6">
                 {faq.a}
               </AccordionContent>
             </AccordionItem>

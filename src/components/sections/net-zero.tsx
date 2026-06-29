@@ -4,11 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Sun, Zap, Leaf, ShieldCheck, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function NetZero() {
-  const netZeroImage = PlaceHolderImages.find(img => img.id === 'net-zero-house');
-
   const benefits = [
     {
       icon: Sun,
@@ -38,9 +35,6 @@ export function NetZero() {
 
   return (
     <section className="relative py-20 lg:py-32 overflow-hidden net-zero-gradient animate-bg-shift">
-      {/* Background Decor */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-400/5 rounded-full blur-[120px] pointer-events-none" />
-
       <div className="container px-4 mx-auto max-w-[1280px]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
@@ -65,7 +59,7 @@ export function NetZero() {
                 size="lg"
                 className="bg-[#F0153C] hover:bg-[#D01235] text-white h-14 px-10 text-lg font-bold rounded-full shadow-xl transition-all hover:scale-[1.05] group"
               >
-                Start Your Net Zero Journey
+                Explore Net Zero
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
@@ -99,21 +93,18 @@ export function NetZero() {
           </div>
 
           {/* Right Visual - Image (25%) */}
-          <div className="lg:col-span-3 relative h-[300px] lg:h-[500px] rounded-[32px] overflow-hidden shadow-premium order-2 lg:order-3">
+          <div className="lg:col-span-3 relative h-[300px] lg:h-[500px] order-2 lg:order-3">
             <Image
               src="/nz2.png"
               alt="Net Zero Living"
               fill
-              className="object-cover"
+              className="object-contain"
               data-ai-hint="sustainable house"
             />
-            {/* Subtle Overlay for Premium Feel */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent pointer-events-none" />
           </div>
         </div>
       </div>
 
-      {/* Bottom Divider */}
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
     </section>
   );

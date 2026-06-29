@@ -52,7 +52,7 @@ export function Impact() {
                 <stat.icon className="h-10 w-10" strokeWidth={1.5} />
               </div>
               <div>
-                <div className="text-2xl md:text-3xl font-bold text-primary font-headline mb-2">
+                <div className="text-xl md:text-2xl font-semibold text-primary font-headline mb-2">
                   {stat.value}
                 </div>
                 <div className="text-sm md:text-base text-muted-foreground font-medium">
