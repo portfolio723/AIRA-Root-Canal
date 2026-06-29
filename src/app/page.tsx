@@ -2,6 +2,7 @@ import { Header } from '@/components/layout/header';
 import { Hero } from '@/components/sections/hero';
 import { About } from '@/components/sections/about';
 import { WhyChooseUs } from '@/components/sections/why-choose-us';
+import { Calculator } from '@/components/sections/calculator';
 import { NetZero } from '@/components/sections/net-zero';
 import { Impact } from '@/components/sections/impact';
 import { Installations } from '@/components/sections/installations';
@@ -21,6 +22,7 @@ export default function Home() {
         <Hero />
         <About />
         <WhyChooseUs />
+        <Calculator />
         <Installations />
         <Process />
         <NetZero />
