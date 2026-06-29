@@ -46,21 +46,21 @@ export function Hero() {
         
         {/* LEFT SECTION (55%) */}
         <div className="w-full lg:w-[55%] relative px-4 md:px-8 lg:px-12 pb-12 flex flex-col justify-center overflow-hidden">
-          {/* Background Video */}
+          {/* Background Video - Full opacity for clear visual */}
           <div className="absolute inset-0 z-0">
             <video 
               autoPlay 
               loop 
               muted 
               playsInline 
-              className="absolute inset-0 w-full h-full object-cover opacity-20"
+              className="absolute inset-0 w-full h-full object-cover"
             >
               <source src="/hero.mp4" type="video/mp4" />
             </video>
           </div>
 
           {/* Trust Row */}
-          <div className="relative z-10 flex flex-wrap items-center gap-x-4 gap-y-3 mb-8 animate-in fade-in duration-1000 delay-300">
+          <div className="relative z-10 flex flex-wrap items-center gap-x-4 gap-y-3 mb-8 animate-in fade-in duration-1000">
             <div className="flex items-center gap-2">
               <div className="flex items-center">
                 {[1, 2, 3, 4, 5].map((i) => (
@@ -70,7 +70,7 @@ export function Hero() {
               <span className="text-sm font-bold text-[#01153C]">4.9 Google Rating</span>
             </div>
             
-            <div className="hidden sm:block w-px h-4 bg-slate-300" />
+            <div className="w-px h-4 bg-slate-300" />
             
             <div className="text-sm font-medium text-muted-foreground">1,200+ Happy Customers</div>
           </div>
@@ -99,7 +99,7 @@ export function Hero() {
             {/* Industry Tags */}
             <div className="flex flex-wrap gap-2 mb-8">
               {industries.map((tag, i) => (
-                <span key={i} className="px-4 py-2 rounded-full bg-[#F5FAFC] text-xs font-bold text-primary border border-primary/5">
+                <span key={i} className="px-4 py-2 rounded-full bg-white/70 backdrop-blur-md text-xs font-bold text-primary border border-primary/10 shadow-sm">
                   {tag}
                 </span>
               ))}
@@ -110,11 +110,11 @@ export function Hero() {
 
         {/* RIGHT SECTION (FORM - 45%) */}
         <div className="w-full lg:w-[45%] bg-[#EEF4FF] px-6 md:px-10 lg:pl-10 lg:pr-16 py-16 lg:py-0 flex flex-col justify-center relative shadow-inner">
-          <div className="max-w-md w-full">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#01153C] mb-4 font-headline leading-tight text-left">
+          <div className="max-w-md w-full text-left">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#01153C] mb-4 font-headline leading-tight">
               Book a FREE Solar Consultation
             </h2>
-            <p className="text-base text-muted-foreground mb-10 font-body text-left">
+            <p className="text-base text-muted-foreground mb-10 font-body">
               Save up to ₹78,000 with government subsidy and reduce your monthly electricity bill.
             </p>
 
