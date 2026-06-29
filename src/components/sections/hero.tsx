@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -9,6 +8,7 @@ import { Star, Zap, Calculator, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import Image from 'next/image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Hero() {
   const [mounted, setMounted] = useState(false);
@@ -19,6 +19,8 @@ export function Hero() {
   }, []);
 
   if (!mounted) return null;
+
+  const recycleImg = PlaceHolderImages.find(img => img.id === 'recycle-icon');
 
   const billOptions = [
     "Less than ₹1,500",
@@ -52,14 +54,17 @@ export function Hero() {
           loop 
           muted 
           playsInline 
-          className="absolute inset-0 w-full h-full object-cover"
+          className={cn(
+            "absolute inset-0 h-full object-cover",
+            "w-full lg:w-[55%]" // Desktop: Video on left side only
+          )}
         >
           <source src="/hero.mp4" type="video/mp4" />
         </video>
         {/* Mobile Full Overlay */}
         <div className="absolute inset-0 bg-black/50 lg:hidden" />
-        {/* Desktop 55% Overlay */}
-        <div className="hidden lg:block absolute inset-0 bg-black/40" style={{ width: '55%' }} />
+        {/* Desktop Left-side Overlay */}
+        <div className="hidden lg:block absolute inset-y-0 left-0 bg-black/40 w-[55%]" />
       </div>
 
       <div className="relative z-10 flex flex-col lg:flex-row min-h-[calc(100vh-128px)]">
@@ -80,7 +85,7 @@ export function Hero() {
             <div className="text-sm font-medium text-white/80">1,200+ Happy Customers</div>
           </div>
 
-          {/* MOBILE ONLY: White Highlight Box with Recycle Icon Filler */}
+          {/* MOBILE ONLY: White Highlight Box with Side-by-Side Content */}
           <div className="lg:hidden bg-white p-6 rounded-r-[40px] flex items-center justify-between gap-6 mb-10 shadow-2xl -ml-4 pr-10 border-y border-r border-slate-100">
             <h1 className="text-2xl md:text-3xl font-extrabold text-[#01153C] leading-tight font-headline">
               Power Your Home <br />
@@ -88,13 +93,15 @@ export function Hero() {
               <span className="text-secondary">Save More</span>
             </h1>
             <div className="w-20 h-20 shrink-0 relative bg-slate-50 rounded-2xl p-2">
-              <Image 
-                src="https://picsum.photos/seed/recycle/200/200" 
-                alt="Sustainability" 
-                fill 
-                className="object-contain p-2"
-                data-ai-hint="recycle icon"
-              />
+              {recycleImg && (
+                <Image 
+                  src={recycleImg.imageUrl} 
+                  alt={recycleImg.description} 
+                  fill 
+                  className="object-contain p-2"
+                  data-ai-hint="recycle icon"
+                />
+              )}
             </div>
           </div>
 
@@ -109,7 +116,7 @@ export function Hero() {
             </h1>
           </div>
 
-          {/* Points & CTA Group (Visible on both, but adaptive) */}
+          {/* Points & CTA Group */}
           <div className="relative z-10 max-w-2xl mb-6">
             <div className="grid grid-cols-2 gap-x-8 gap-y-6 mb-10 max-w-xl">
               {points.map((point, idx) => (
@@ -157,7 +164,7 @@ export function Hero() {
         </div>
 
         {/* RIGHT SECTION (45%) */}
-        <div className="w-full lg:w-[45%] bg-[#EEF4FF]/95 lg:bg-[#EEF4FF] px-6 md:px-10 lg:pl-10 lg:pr-16 py-16 lg:py-0 flex flex-col justify-center relative shadow-inner lg:shadow-none">
+        <div className="w-full lg:w-[45%] bg-[#EEF4FF] px-6 md:px-10 lg:pl-10 lg:pr-16 py-16 lg:py-0 flex flex-col justify-center relative shadow-inner lg:shadow-none z-10">
           <div className="max-w-lg w-full">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#01153C] mb-4 font-headline leading-tight text-left">
               Book a FREE Solar Consultation
