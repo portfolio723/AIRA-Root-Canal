@@ -48,6 +48,23 @@ export function Hero() {
         
         {/* LEFT SECTION (55%) */}
         <div className="w-full lg:w-[55%] relative px-4 md:px-8 lg:px-12 pb-12 flex flex-col justify-center">
+          
+          {/* Trust Row (Moved above header) */}
+          <div className="relative z-10 flex flex-wrap items-center gap-x-4 gap-y-3 mb-8 animate-in fade-in duration-1000 delay-300">
+            <div className="flex items-center gap-2">
+              <div className="flex items-center">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <span className="text-sm font-bold text-[#01153C]">4.9 Google Rating</span>
+            </div>
+            
+            <div className="hidden sm:block w-px h-4 bg-slate-300" />
+            
+            <div className="text-sm font-medium text-muted-foreground">1,200+ Happy Customers</div>
+          </div>
+
           {/* Primary Headlines */}
           <div className="relative z-10 max-w-2xl mb-6 animate-in slide-in-from-bottom-8 duration-700">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#01153C] leading-[1.1] font-headline mb-6">
@@ -82,63 +99,15 @@ export function Hero() {
           {/* Trust Row */}
           <div className="relative z-10 flex flex-wrap items-center gap-x-6 gap-y-3 mb-8 animate-in fade-in duration-1000 delay-300">
             <div className="flex items-center gap-2">
->>>>>>> 1796157 (make the hero section 55% and 45% split of the sizes and fit the hero se)
               <div className="flex items-center">
                 {[1, 2, 3, 4, 5].map((i) => (
                   <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <span className="text-xs font-bold text-[#01153C]">4.9 Google Rating</span>
+              <span className="text-sm font-bold text-[#01153C]">4.9 Google Rating</span>
             </div>
             <div className="text-sm font-medium text-muted-foreground">1,200+ Happy Customers</div>
             <div className="text-sm font-medium text-muted-foreground">MNRE Compliant</div>
-          </div>
-
-          {/* Hero Visual */}
-          <div className="relative w-full h-[320px] lg:h-[400px] rounded-[32px] overflow-hidden shadow-2xl group">
-            <Image
-              src="/a3.jpg"
-              alt="Premium solar home installation in Hyderabad"
-              fill
-              className="object-cover animate-ken-burns duration-[20s]"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent" />
-            
-            {/* Statistics Strip Overlay */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[90%] md:w-auto">
-              <div className="bg-[#01153C]/85 backdrop-blur-xl border border-white/10 rounded-2xl py-4 px-6 md:px-10 flex flex-row items-center justify-between gap-6 md:gap-12 text-white shadow-premium">
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hidden md:flex">
-                    <Home className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xl md:text-2xl font-bold font-headline">40,000+</p>
-                    <p className="text-[10px] uppercase tracking-widest font-bold opacity-60">Homes</p>
-                  </div>
-                </div>
-                <div className="w-px h-8 bg-white/20" />
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hidden md:flex">
-                    <Zap className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xl md:text-2xl font-bold font-headline">150MW+</p>
-                    <p className="text-[10px] uppercase tracking-widest font-bold opacity-60">Installed</p>
-                  </div>
-                </div>
-                <div className="w-px h-8 bg-white/20" />
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hidden md:flex">
-                    <IndianRupee className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xl md:text-2xl font-bold font-headline">₹100Cr+</p>
-                    <p className="text-[10px] uppercase tracking-widest font-bold opacity-60">Savings</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
