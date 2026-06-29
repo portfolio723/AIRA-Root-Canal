@@ -49,7 +49,7 @@ export function Hero() {
         {/* LEFT SECTION (55%) */}
         <div className="w-full lg:w-[55%] relative px-4 md:px-8 lg:px-12 pb-12 flex flex-col justify-center">
           
-          {/* Trust Row (Moved above header) */}
+          {/* Trust Row */}
           <div className="relative z-10 flex flex-wrap items-center gap-x-4 gap-y-3 mb-8 animate-in fade-in duration-1000 delay-300">
             <div className="flex items-center gap-2">
               <div className="flex items-center">
@@ -67,21 +67,21 @@ export function Hero() {
 
           {/* Primary Headlines */}
           <div className="relative z-10 max-w-2xl mb-6 animate-in slide-in-from-bottom-8 duration-700">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#01153C] leading-[1.1] font-headline mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#01153C] leading-[1.1] font-headline mb-8">
               Power Your Home with Solar <br />
               <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
                 Save More Every Month
               </span>
             </h1>
             
-            {/* Checkpoints Stack */}
-            <div className="flex flex-col gap-4 mb-8">
+            {/* Checkpoints Grid (2x2) */}
+            <div className="grid grid-cols-2 gap-x-8 gap-y-6 mb-10 max-w-xl">
               {points.map((point, idx) => (
                 <div key={idx} className="flex items-center gap-3">
-                  <div className="h-6 w-6 rounded-full bg-green-500/10 flex items-center justify-center">
+                  <div className="h-6 w-6 rounded-full bg-green-500/10 flex items-center justify-center shrink-0">
                     <Zap className="h-4 w-4 text-green-600" />
                   </div>
-                  <span className="text-lg font-semibold text-[#01153C]">{point}</span>
+                  <span className="text-base md:text-lg font-semibold text-[#01153C] leading-tight">{point}</span>
                 </div>
               ))}
             </div>
