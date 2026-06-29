@@ -10,8 +10,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Geist', 'sans-serif'],
-        headline: ['Geist', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+        headline: ['Poppins', 'sans-serif'],
         secondary: ['Inter', 'sans-serif'],
         code: ['monospace'],
       },
