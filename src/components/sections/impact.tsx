@@ -51,13 +51,11 @@ export function Impact() {
               <div className={cn("h-12 w-12 flex items-center justify-center transition-transform group-hover:scale-110 duration-300", stat.color)}>
                 <stat.icon className="h-10 w-10" strokeWidth={1.5} />
               </div>
-              <div>
-                <div className="text-xl md:text-2xl font-semibold text-primary font-headline mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-sm md:text-base text-muted-foreground font-medium">
-                  {stat.label}
-                </div>
+              <div className="text-lg md:text-xl font-bold text-primary mb-1">
+                {stat.label}
+              </div>
+              <div className="text-sm text-muted-foreground">
+                {stat.suffix}
               </div>
             </div>
           ))}
