@@ -1,64 +1,66 @@
-import { X, CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function About() {
-  const beforeList = [
-    "Electricity bill rises 6-8% every year with tariff hikes",
-    "Peak-hour demand charges eating 30-40% of your bill",
-    "Competitors on solar already running at lower cost",
-    "No hedge against power outages or load shedding"
-  ];
-
-  const afterList = [
-    "Lock in your energy rate for 25 years — zero tariff risk",
-    "60-80% of daytime consumption met by solar generation",
-    "Earn net metering credits for excess generation",
-    "40% accelerated depreciation benefit in Year 1"
+  const trustItems = [
+    {
+      title: "Guaranteed Savings",
+      desc: "Hyderabad's most trusted solar partner with clear performance commitments and verified 85% bill reduction.",
+      image: PlaceHolderImages.find(img => img.id === 'hero-solar')?.imageUrl || "https://picsum.photos/seed/solar-save/600/600",
+      imageHint: "solar savings"
+    },
+    {
+      title: "Hassle-free process",
+      desc: "Installation, MNRE subsidy, and service — all handled directly by our in-house experts. Zero middlemen.",
+      image: PlaceHolderImages.find(img => img.id === 'about-team')?.imageUrl || "https://picsum.photos/seed/solar-team/600/600",
+      imageHint: "solar installation"
+    },
+    {
+      title: "Engineered Structure",
+      desc: "Heavy-duty structures designed for Hyderabad's toughest weather. Built for longevity and maximum safety.",
+      image: PlaceHolderImages.find(img => img.id === 'about-quality')?.imageUrl || "https://picsum.photos/seed/solar-struct/600/600",
+      imageHint: "solar structure"
+    },
+    {
+      title: "Reliable Support",
+      desc: "Local maintenance teams providing proactive service for steady, year-after-year peak performance.",
+      image: PlaceHolderImages.find(img => img.id === 'about-service')?.imageUrl || "https://picsum.photos/seed/solar-service/600/600",
+      imageHint: "solar maintenance"
+    }
   ];
 
   return (
-    <section id="about" className="bg-white pt-64 md:pt-80 lg:pt-24 pb-12 md:pb-24">
+    <section id="about" className="bg-white pt-24 pb-20 md:pb-32 overflow-hidden">
       <div className="container px-4 mx-auto">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-16 text-center">
-            <h2 className="text-2xl md:text-4xl font-semibold text-primary font-headline tracking-tight leading-tight max-w-3xl mx-auto">
-              What businesses with ₹3–20 lakh monthly bills actually face
-            </h2>
-          </div>
+        <div className="text-center mb-16 md:mb-20">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#01153C] font-headline tracking-tight leading-tight max-w-4xl mx-auto">
+            Why Families Across Hyderabad Trust Zenith Energy
+          </h2>
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Before Solar */}
-            <div className="bg-primary p-10 md:p-12 rounded-[24px] border border-white/10 shadow-2xl relative overflow-hidden group">
-              <h3 className="text-secondary text-sm font-bold uppercase tracking-widest mb-10 border-b border-white/10 pb-6">
-                BEFORE SOLAR
-              </h3>
-              <ul className="space-y-6">
-                {beforeList.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-4">
-                    <X className="h-6 w-6 text-secondary shrink-0 mt-0.5" />
-                    <span className="text-white/80 text-lg font-normal leading-relaxed">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* After Solar */}
-            <div className="bg-[#F7F8FA] p-10 md:p-12 rounded-[24px] border border-primary/5 shadow-soft relative overflow-hidden group">
-              <h3 className="text-primary text-sm font-bold uppercase tracking-widest mb-10 border-b border-primary/10 pb-6">
-                AFTER ZENITH ENERGY SOLAR
-              </h3>
-              <ul className="space-y-6">
-                {afterList.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-4">
-                    <CheckCircle2 className="h-6 w-6 text-emerald-500 shrink-0 mt-0.5" />
-                    <span className="text-primary/90 text-lg font-medium leading-relaxed">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12 md:gap-12">
+            {trustItems.map((item, idx) => (
+              <div key={idx} className="flex flex-col items-center text-center group">
+                <div className="relative w-full aspect-square rounded-[24px] md:rounded-[40px] overflow-hidden mb-6 md:mb-8 shadow-soft group-hover:shadow-premium transition-all duration-500 group-hover:-translate-y-2">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                    data-ai-hint={item.imageHint}
+                  />
+                </div>
+                <div className="space-y-3 px-2">
+                  <h3 className="text-lg md:text-2xl font-bold text-[#01153C] font-headline leading-tight">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm md:text-base leading-relaxed font-normal">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
