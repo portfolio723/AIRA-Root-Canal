@@ -47,8 +47,21 @@ export function Hero() {
       <div className="flex flex-col lg:flex-row h-full">
         
         {/* LEFT SECTION (55%) */}
-        <div className="w-full lg:w-[55%] relative px-4 md:px-8 lg:px-12 pb-12 flex flex-col justify-center">
-          
+        <div className="w-full lg:w-[55%] relative px-4 md:px-8 lg:px-12 pb-12 flex flex-col justify-center overflow-hidden">
+          {/* Background Video */}
+          <div className="absolute inset-0 z-0">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="absolute inset-0 w-full h-full object-cover opacity-10"
+            >
+              <source src="/hero.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-white/20" />
+          </div>
+
           {/* Trust Row */}
           <div className="relative z-10 flex flex-wrap items-center gap-x-4 gap-y-3 mb-8 animate-in fade-in duration-1000 delay-300">
             <div className="flex items-center gap-2">
