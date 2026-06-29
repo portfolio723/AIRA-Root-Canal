@@ -3,7 +3,6 @@ import { Hero } from '@/components/sections/hero';
 import { About } from '@/components/sections/about';
 import { WhyChooseUs } from '@/components/sections/why-choose-us';
 import { NetZero } from '@/components/sections/net-zero';
-import { Calculator } from '@/components/sections/calculator';
 import { Impact } from '@/components/sections/impact';
 import { Installations } from '@/components/sections/installations';
 import { InstallationVideos } from '@/components/sections/installation-videos';
@@ -22,7 +21,6 @@ export default function Home() {
       <main className="flex-grow">
         <Hero />
         <About />
-        <Calculator />
         <WhyChooseUs />
         <Installations />
         <InstallationVideos />
