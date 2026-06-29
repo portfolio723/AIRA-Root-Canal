@@ -104,7 +104,7 @@ export function Hero() {
                 className="bg-secondary hover:bg-secondary/90 text-white px-8 h-14 rounded-full text-lg font-bold shadow-xl flex items-center gap-2"
                 asChild
               >
-                <Link href="#calculator">
+                <Link href="/calculator">
                   <Calculator className="h-5 w-5" />
                   ROI Calculator
                 </Link>
