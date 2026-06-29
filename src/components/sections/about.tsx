@@ -33,7 +33,7 @@ export function About() {
     <section id="about" className="bg-white pt-24 pb-20 md:pb-32 overflow-hidden">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-3xl md:text-5xl font-bold text-[#01153C] font-headline tracking-tight leading-tight max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-6 font-headline tracking-tighter max-w-4xl mx-auto">
             Why Families Across Hyderabad Trust Zenith Energy
           </h2>
         </div>
@@ -52,7 +52,7 @@ export function About() {
                   />
                 </div>
                 <div className="space-y-3 px-2">
-                  <h3 className="text-lg md:text-2xl font-bold text-[#01153C] font-headline leading-tight">
+                  <h3 className="text-lg md:text-xl font-semibold text-[#01153C] mb-4 font-headline leading-tight">
                     {item.title}
                   </h3>
                   <p className="text-muted-foreground text-sm md:text-base leading-relaxed font-normal">
