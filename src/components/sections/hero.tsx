@@ -46,9 +46,10 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen bg-white overflow-hidden pt-28 lg:pt-32">
-      {/* Background Video */}
+    <section className="relative min-h-screen overflow-hidden">
+      {/* Background Layer - Starts from top-0 */}
       <div className="absolute inset-0 z-0">
+        {/* Background Video */}
         <video 
           autoPlay 
           loop 
@@ -61,13 +62,19 @@ export function Hero() {
         >
           <source src="/hero.mp4" type="video/mp4" />
         </video>
+
+        {/* Right side color fill for desktop - Extends to top */}
+        <div className="hidden lg:block absolute inset-y-0 right-0 w-[45%] bg-[#EEF4FF]" />
+
         {/* Mobile Full Overlay */}
         <div className="absolute inset-0 bg-black/50 lg:hidden" />
+        
         {/* Desktop Left-side Overlay */}
         <div className="hidden lg:block absolute inset-y-0 left-0 bg-black/40 w-[55%]" />
       </div>
 
-      <div className="relative z-10 flex flex-col lg:flex-row min-h-[calc(100vh-128px)]">
+      {/* Content Layer - Spaced for Header */}
+      <div className="relative z-10 pt-28 lg:pt-32 flex flex-col lg:flex-row min-h-screen">
         
         {/* LEFT SECTION (55%) */}
         <div className="w-full lg:w-[55%] relative px-4 md:px-8 lg:px-12 pb-12 flex flex-col justify-center overflow-hidden">
@@ -86,25 +93,22 @@ export function Hero() {
           </div>
 
           {/* MOBILE ONLY: White Highlight Box with Side-by-Side Content */}
-          <div className="lg:hidden bg-white p-6 rounded-r-[40px] flex items-center justify-between gap-6 mb-10 shadow-2xl -ml-4 pr-10 border-y border-r border-slate-100 relative z-10">
-            <h1 className="text-lg font-extrabold text-[#01153C] leading-tight font-headline">
+          <div className="lg:hidden bg-white p-6 rounded-r-[40px] flex items-center justify-between gap-4 mb-10 shadow-2xl -ml-4 pr-10 border-y border-r border-slate-100 relative z-10">
+            <h1 className="text-lg font-extrabold text-[#01153C] leading-tight font-headline flex-grow">
               Power Your Home with Solar <br />
               <span className="text-green-600">Save More</span> Every Month
             </h1>
-            <div className="w-32 h-32 shrink-0 relative">
-              {recycleImg && (
-                <Image 
-                  src={recycleImg.imageUrl} 
-                  alt={recycleImg.description} 
-                  fill 
-                  className="object-contain"
-                  data-ai-hint="recycle icon"
-                />
-              )}
+            <div className="w-20 h-20 shrink-0 relative">
+              <Image 
+                src="/h2.png" 
+                alt="Recycle icon" 
+                fill 
+                className="object-contain"
+              />
             </div>
           </div>
 
-          {/* DESKTOP ONLY: Headline with Green BG for Save More */}
+          {/* DESKTOP ONLY: Headline */}
           <div className="hidden lg:block relative z-10 max-w-2xl mb-8">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.3] font-headline">
               Power Your Home with Solar <br />
@@ -160,7 +164,7 @@ export function Hero() {
         </div>
 
         {/* RIGHT SECTION (45%) */}
-        <div className="w-full lg:w-[45%] bg-[#EEF4FF] px-6 md:px-10 lg:pl-10 lg:pr-16 py-16 lg:py-0 flex flex-col justify-center relative shadow-inner lg:shadow-none z-10">
+        <div className="w-full lg:w-[45%] px-6 md:px-10 lg:pl-10 lg:pr-0 py-16 lg:py-0 flex flex-col justify-center relative z-10">
           <div className="max-w-lg w-full">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#01153C] mb-4 font-headline leading-tight text-left">
               Book a FREE Solar Consultation
