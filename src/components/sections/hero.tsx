@@ -4,8 +4,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Star, Home, Zap, IndianRupee } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Star, Zap } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
@@ -59,29 +58,31 @@ export function Hero() {
             >
               <source src="/hero.mp4" type="video/mp4" />
             </video>
+            {/* Very subtle gradient overlay to ensure white text readability without blocking the video */}
+            <div className="absolute inset-0 bg-black/30" />
           </div>
 
           {/* Trust Row */}
           <div className="relative z-10 flex flex-wrap items-center gap-x-4 gap-y-3 mb-8 animate-in fade-in duration-1000">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20">
               <div className="flex items-center">
                 {[1, 2, 3, 4, 5].map((i) => (
                   <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <span className="text-sm font-bold text-[#01153C]">4.9 Google Rating</span>
+              <span className="text-sm font-bold text-white">4.9 Google Rating</span>
             </div>
             
-            <div className="w-px h-4 bg-slate-300" />
+            <div className="w-px h-4 bg-white/30" />
             
-            <div className="text-sm font-medium text-muted-foreground">1,200+ Happy Customers</div>
+            <div className="text-sm font-medium text-white/80">1,200+ Happy Customers</div>
           </div>
 
           {/* Primary Headlines */}
           <div className="relative z-10 max-w-2xl mb-6 animate-in slide-in-from-bottom-8 duration-700">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#01153C] leading-[1.1] font-headline mb-8">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1] font-headline mb-8">
               Power Your Home with Solar <br />
-              <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
+              <span className="text-blue-400">
                 Save More Every Month
               </span>
             </h1>
@@ -90,21 +91,46 @@ export function Hero() {
             <div className="grid grid-cols-2 gap-x-8 gap-y-6 mb-10 max-w-xl">
               {points.map((point, idx) => (
                 <div key={idx} className="flex items-center gap-3">
-                  <div className="h-6 w-6 rounded-full bg-green-500/10 flex items-center justify-center shrink-0">
-                    <Zap className="h-4 w-4 text-green-600" />
+                  <div className="h-6 w-6 rounded-full bg-green-500/20 flex items-center justify-center shrink-0 border border-green-500/30">
+                    <Zap className="h-4 w-4 text-green-400" />
                   </div>
-                  <span className="text-base md:text-lg font-semibold text-[#01153C] leading-tight">{point}</span>
+                  <span className="text-base md:text-lg font-semibold text-white leading-tight">{point}</span>
                 </div>
               ))}
             </div>
 
             {/* Industry Tags */}
-            <div className="flex flex-wrap gap-2 mb-8">
+            <div className="flex flex-wrap gap-2 mb-10">
               {industries.map((tag, i) => (
-                <span key={i} className="px-4 py-2 rounded-full bg-white/70 backdrop-blur-md text-xs font-bold text-primary border border-primary/10 shadow-sm">
+                <span key={i} className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-md text-xs font-bold text-white border border-white/20 shadow-sm">
                   {tag}
                 </span>
               ))}
+            </div>
+
+            {/* Added Hero Buttons */}
+            <div className="flex flex-wrap gap-4">
+              <Button 
+                size="lg"
+                className="bg-secondary hover:bg-secondary/90 text-white px-8 h-14 rounded-full text-lg font-bold shadow-xl flex items-center gap-2"
+                asChild
+              >
+                <Link href="#calculator">
+                  <Calculator className="h-5 w-5" />
+                  ROI Calculator
+                </Link>
+              </Button>
+              <Button 
+                size="lg"
+                variant="outline"
+                className="bg-white/10 backdrop-blur-md border-white text-white hover:bg-white hover:text-primary px-8 h-14 rounded-full text-lg font-bold flex items-center gap-2"
+                asChild
+              >
+                <Link href="#projects">
+                  View Recent Projects
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+              </Button>
             </div>
           </div>
 
