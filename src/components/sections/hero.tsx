@@ -76,7 +76,7 @@ export function Hero() {
           <div className="relative z-10 max-w-2xl mb-6">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1] font-headline mb-8">
               Power Your Home with Solar <br />
-              <span className="text-secondary">Save More</span> Every Month
+              <span className="text-[#22C55E]">Save More</span> Every Month
             </h1>
             
             <div className="grid grid-cols-2 gap-x-8 gap-y-6 mb-10 max-w-xl">
