@@ -48,13 +48,6 @@ export function Hero() {
         
         {/* LEFT SECTION (55%) */}
         <div className="w-full lg:w-[55%] relative px-4 md:px-8 lg:px-12 pb-12 flex flex-col justify-center">
-          {/* Telugu Regional Tag */}
-          <div className="relative z-10 mb-4 animate-in fade-in duration-1000">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-primary/10 select-none pointer-events-none font-headline">
-              నమ్మకంతో మీ ఇంటికి సౌరశక్తి
-            </h2>
-          </div>
-
           {/* Primary Headlines */}
           <div className="relative z-10 max-w-2xl mb-6 animate-in slide-in-from-bottom-8 duration-700">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#01153C] leading-[1.1] font-headline mb-6">
