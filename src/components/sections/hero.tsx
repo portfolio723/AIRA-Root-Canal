@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -93,7 +94,7 @@ export function Hero() {
               <span className="text-green-600">Save More</span> <br />
               Every Month
             </h1>
-            <div className="w-28 h-28 shrink-0 relative">
+            <div className="w-32 h-32 shrink-0 relative">
               {recycleImg && (
                 <Image 
                   src={recycleImg.imageUrl} 
