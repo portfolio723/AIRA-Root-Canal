@@ -8,42 +8,42 @@ const features = [
     title: "Enterprise EPC Solutions",
     desc: "Turnkey solar installations designed for industrial-scale energy production and facility load profiles.",
     icon: Building2,
-    imageUrl: "https://picsum.photos/seed/epc-solar/600/400",
+    imageUrl: "/q1.png",
     imageHint: "industrial solar"
   },
   {
     title: "Major OPEX Reduction",
     desc: "Slash operational costs by up to 85% with grid-synchronized solar systems tailored for business.",
     icon: Banknote,
-    imageUrl: "https://picsum.photos/seed/savings/600/400",
+    imageUrl: "/q2.png",
     imageHint: "cost savings"
   },
   {
     title: "Real-time Monitoring",
     desc: "SCADA-integrated monitoring keeps your industrial plant performing at peak efficiency 24/7.",
     icon: Activity,
-    imageUrl: "https://picsum.photos/seed/monitoring/600/400",
+    imageUrl: "/q3.png",
     imageHint: "industrial monitoring"
   },
   {
     title: "Tier-1 Components",
     desc: "We use only high-efficiency Tier-1 modules with 25-year performance warranties for businesses.",
     icon: Zap,
-    imageUrl: "https://picsum.photos/seed/premium-solar/600/400",
+    imageUrl: "/q4.png",
     imageHint: "premium solar"
   },
   {
     title: "ESG Compliance",
     desc: "Meet corporate sustainability goals and improve your business's ESG rating with clean energy.",
     icon: Leaf,
-    imageUrl: "https://picsum.photos/seed/green-energy/600/400",
+    imageUrl: "/q5.png",
     imageHint: "sustainability goals"
   },
   {
     title: "Grid Optimization",
     desc: "Seamlessly integrate solar with your existing HT/LT power distribution systems without downtime.",
     icon: Gauge,
-    imageUrl: "https://picsum.photos/seed/grid-tech/600/400",
+    imageUrl: "/q6.png",
     imageHint: "grid integration"
   }
 ];
