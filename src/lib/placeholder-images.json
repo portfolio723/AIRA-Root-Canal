@@ -63,7 +63,7 @@
     {
       "id": "recycle-icon",
       "description": "Sustainability and recycle icon",
-      "imageUrl": "https://picsum.photos/seed/recycle/100/100",
+      "imageUrl": "/h1.png",
       "imageHint": "recycle icon"
     }
   ]
