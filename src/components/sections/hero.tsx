@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Star, Zap, Calculator, ArrowRight } from 'lucide-react';
+import { Star, Home, Zap, IndianRupee } from 'lucide-react';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
@@ -42,7 +43,7 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative min-h-[calc(100vh-80px)] lg:h-[calc(100vh-80px)] bg-white overflow-hidden pt-20 lg:pt-0">
+    <section className="relative min-h-screen lg:h-screen bg-white overflow-hidden pt-28 lg:pt-32">
       <div className="flex flex-col lg:flex-row h-full">
         
         {/* LEFT SECTION (55%) */}
@@ -112,15 +113,14 @@ export function Hero() {
                     <Home className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-lg font-bold font-headline">40,000+</p>
-                    <p className="text-[8px] uppercase tracking-widest font-semibold opacity-60">Homes</p>
+                    <p className="text-xl md:text-2xl font-bold font-headline">40,000+</p>
+                    <p className="text-[10px] uppercase tracking-widest font-bold opacity-60">Homes</p>
                   </div>
-                  <span className="text-base md:text-lg font-semibold text-white leading-tight">{point}</span>
                 </div>
-                <div className="w-px h-6 bg-white/20" />
-                <div className="flex items-center gap-2">
-                  <div className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center hidden md:flex">
-                    <Zap className="h-4 w-4 text-white" />
+                <div className="w-px h-8 bg-white/20" />
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hidden md:flex">
+                    <Zap className="h-5 w-5 text-white" />
                   </div>
                   <div>
                     <p className="text-xl md:text-2xl font-bold font-headline">150MW+</p>
@@ -143,9 +143,9 @@ export function Hero() {
         </div>
 
         {/* RIGHT SECTION (FORM - 45%) */}
-        <div className="w-full lg:w-[45%] bg-[#EEF4FF] px-6 md:px-12 lg:px-16 py-16 lg:py-0 flex flex-col justify-center relative">
+        <div className="w-full lg:w-[45%] bg-[#EEF4FF] px-6 md:px-12 lg:px-16 py-16 lg:py-0 flex flex-col justify-center relative shadow-inner">
           <div className="max-w-md mx-auto w-full">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#01153C] mb-2 font-headline leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#01153C] mb-4 font-headline leading-tight">
               Book a FREE Solar Consultation
             </h2>
             <p className="text-base text-muted-foreground mb-10 font-body">
@@ -206,7 +206,7 @@ export function Hero() {
                   </div>
                 </div>
                 <Button 
-                  className="w-full h-12 bg-[#F0153C] hover:bg-[#D01235] text-white text-base font-bold rounded-xl shadow-xl transition-all"
+                  className="w-full h-14 bg-[#F0153C] hover:bg-[#D01235] text-white text-lg font-bold rounded-xl shadow-2xl transition-all hover:scale-[1.02]"
                 >
                   Book FREE Consultation
                 </Button>
