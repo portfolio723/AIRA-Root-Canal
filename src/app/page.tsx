@@ -11,6 +11,7 @@ import { FAQ } from '@/components/sections/faq';
 import { Footer } from '@/components/layout/footer';
 import { CTABanner } from '@/components/sections/cta-banner';
 import { MobileStickyFooter } from '@/components/layout/mobile-sticky-footer';
+import { Calculator } from '@/components/sections/calculator';
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <WhyChooseUs />
         <Installations />
         <Process />
+        <Calculator />
         <NetZero />
         <Impact />
         <Reviews />

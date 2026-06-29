@@ -1,228 +1,215 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Slider } from '@/components/ui/slider';
-import { Card } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { 
-  Wallet, 
-  Leaf, 
-  RefreshCcw, 
-  TrendingDown,
-  ArrowRight,
-  ShieldCheck
-} from 'lucide-react';
+  Dialog, 
+  DialogContent, 
+  DialogHeader, 
+  DialogTitle, 
+  DialogClose 
+} from "@/components/ui/dialog";
+import { Calculator as CalcIcon, X, Zap, Leaf, TrendingUp, ShieldCheck } from 'lucide-react';
 
 export function Calculator() {
-  const [bill, setBill] = useState([250000]);
-  const [units, setUnits] = useState([12000]);
+  const [location, setLocation] = useState('Hyderabad');
+  const [bill, setBill] = useState('4000');
+  const [area, setArea] = useState('300');
+  const [result, setResult] = useState<any>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const stats = useMemo(() => {
-    const monthlyBill = bill[0];
-    const monthlyUnits = units[0];
+  const cities = [
+    'Hyderabad', 'Bangalore', 'Delhi', 'Mumbai', 'Chennai', 'Pune', 'Ahmedabad', 'Kolkata'
+  ];
+
+  const handleCalculate = (e: React.FormEvent) => {
+    e.preventDefault();
+    const monthlyBill = parseFloat(bill) || 0;
+    const rooftopArea = parseFloat(area) || 0;
     
-    // Logic: 85% bill reduction on average for commercial
-    const monthlySavings = monthlyBill * 0.85;
+    // Solar Math Logic
+    const systemSize = rooftopArea / 100;
+    const annualGeneration = systemSize * 1200;
+    const monthlyGeneration = annualGeneration / 12;
+    const unitRate = 8.5;
+    const monthlySavings = monthlyGeneration * unitRate;
+    const totalCost = systemSize * 65000;
+    const subsidy = Math.min(systemSize, 3) * 18000;
+    const costAfterSubsidy = totalCost - subsidy;
     const annualSavings = monthlySavings * 12;
-    
-    // Payback calculation (estimated cost at 65k/kW, 1kW produces 120 units)
-    const systemSize = monthlyUnits / 120;
-    const estimatedCost = systemSize * 65000;
-    const paybackYears = (estimatedCost / annualSavings).toFixed(1);
-    
-    const lifetimeSavings = annualSavings * 25;
-    
-    // Environmental
-    const co2Reduced = (monthlyUnits * 12 * 0.8) / 1000; // Tons
-    const treesSaved = Math.round(co2Reduced * 50);
+    const payback = costAfterSubsidy / annualSavings;
+    const totalSavings25 = annualSavings * 25;
+    const co2Avoided = (annualGeneration * 0.8) / 1000;
 
-    return {
+    setResult({
+      location,
+      bill: monthlyBill.toLocaleString('en-IN'),
+      area: rooftopArea,
+      systemSize: systemSize.toFixed(2),
       monthlySavings: Math.round(monthlySavings).toLocaleString('en-IN'),
-      annualSavings: Math.round(annualSavings).toLocaleString('en-IN'),
-      payback: paybackYears,
-      lifetime: (lifetimeSavings / 10000000).toFixed(2), // Cr
-      co2: co2Reduced.toFixed(1),
-      trees: treesSaved,
-      afterSolar: Math.round(monthlyBill * 0.15).toLocaleString('en-IN'),
-      beforeSolar: monthlyBill.toLocaleString('en-IN')
-    };
-  }, [bill, units]);
+      costAfterSubsidy: Math.round(costAfterSubsidy).toLocaleString('en-IN'),
+      annualGeneration: Math.round(annualGeneration).toLocaleString('en-IN'),
+      payback: payback.toFixed(1),
+      totalSavings25: Math.round(totalSavings25).toLocaleString('en-IN'),
+      co2Avoided: co2Avoided.toFixed(1),
+      trees: Math.round(co2Avoided * 50)
+    });
+    setIsDialogOpen(true);
+  };
 
   return (
-    <section id="calculator" className="py-8 md:py-24 bg-white relative overflow-hidden">
-      <div className="container px-4 mx-auto max-w-6xl relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-6 font-headline tracking-tight">
-            Calculate Your Solar Savings
+    <section id="calculator" className="py-20 md:py-32 bg-slate-50 relative overflow-hidden">
+      <div className="container px-4 mx-auto">
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6 font-headline tracking-tight">
+            Solar ROI Calculator
           </h2>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto font-body">
-            Move the sliders to estimate your potential savings and discover the ROI of switching to Zenith Energy.
+          <p className="text-lg text-muted-foreground font-body">
+            Estimate your monthly savings, installation cost, and environmental impact in seconds.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Controls Column */}
-          <div className="lg:col-span-7 space-y-10">
-            <Card className="rounded-[28px] border-none bg-[#F8FAFC] p-8 md:p-12 shadow-sm">
-              <div className="space-y-12">
-                {/* Monthly Bill Slider */}
-                <div className="space-y-6">
-                  <div className="flex justify-between items-end">
-                    <div className="space-y-1">
-                      <Label className="text-lg font-bold text-[#01153C]">Monthly Electricity Bill</Label>
-                      <p className="text-sm text-slate-500">Total average expense</p>
-                    </div>
-                    <div className="bg-white px-4 py-2 rounded-xl border border-slate-100 shadow-sm text-xl font-bold text-[#01153C]">
-                      ₹ {bill[0].toLocaleString('en-IN')}
-                    </div>
-                  </div>
-                  <Slider
+        <div className="max-w-2xl mx-auto">
+          <Card className="rounded-[32px] overflow-hidden border-none shadow-premium bg-white">
+            <CardContent className="p-8 md:p-12">
+              <form onSubmit={handleCalculate} className="space-y-8">
+                <div className="space-y-2">
+                  <Label className="text-slate-700 font-bold">Select Your City</Label>
+                  <Select value={location} onValueChange={setLocation}>
+                    <SelectTrigger className="h-14 rounded-2xl bg-slate-50 border-slate-200 text-base">
+                      <SelectValue placeholder="Select City" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {cities.map(city => (
+                        <SelectItem key={city} value={city}>{city}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className="space-y-2">
+                  <Label className="text-slate-700 font-bold">Average Monthly Bill (₹)</Label>
+                  <Input 
+                    type="number"
                     value={bill}
-                    onValueChange={setBill}
-                    min={20000}
-                    max={2000000}
-                    step={5000}
-                    className="py-4 cursor-pointer"
+                    onChange={(e) => setBill(e.target.value)}
+                    className="h-14 rounded-2xl bg-slate-50 border-slate-200 text-lg"
+                    placeholder="e.g. 4000"
+                    required
                   />
-                  <div className="flex justify-between text-xs font-bold text-slate-400 uppercase tracking-widest">
-                    <span>₹20K</span>
-                    <span>₹20L</span>
-                  </div>
-                </div>
-
-                {/* Monthly Units Slider */}
-                <div className="space-y-6">
-                  <div className="flex justify-between items-end">
-                    <div className="space-y-1">
-                      <Label className="text-lg font-bold text-[#01153C]">Monthly Energy Consumption</Label>
-                      <p className="text-sm text-slate-500">Units in kWh</p>
-                    </div>
-                    <div className="bg-white px-4 py-2 rounded-xl border border-slate-100 shadow-sm text-xl font-bold text-[#01153C]">
-                      {units[0].toLocaleString('en-IN')} kWh
-                    </div>
-                  </div>
-                  <Slider
-                    value={units}
-                    onValueChange={setUnits}
-                    min={500}
-                    max={50000}
-                    step={100}
-                    className="py-4 cursor-pointer"
-                  />
-                  <div className="flex justify-between text-xs font-bold text-slate-400 uppercase tracking-widest">
-                    <span>500 kWh</span>
-                    <span>50,000 kWh</span>
-                  </div>
-                </div>
-              </div>
-            </Card>
-
-            {/* Comparison Bar */}
-            <div className="bg-[#F8FAFC] rounded-[28px] p-8 space-y-6">
-              <div className="flex items-center gap-2 mb-2">
-                <TrendingDown className="h-5 w-5 text-[#22C55E]" />
-                <h3 className="text-lg font-bold text-[#01153C]">Cost Comparison</h3>
-              </div>
-              
-              <div className="space-y-4">
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm font-bold text-slate-500 uppercase tracking-tight">
-                    <span>Without Solar</span>
-                    <span>₹ {stats.beforeSolar}</span>
-                  </div>
-                  <div className="h-3 w-full bg-slate-200 rounded-full overflow-hidden">
-                    <div className="h-full w-full bg-[#F0153C]/80" />
-                  </div>
                 </div>
 
                 <div className="space-y-2">
-                  <div className="flex justify-between text-sm font-bold text-slate-500 uppercase tracking-tight">
-                    <span>With Zenith Solar</span>
-                    <span className="text-[#22C55E]">₹ {stats.afterSolar}</span>
-                  </div>
-                  <div className="h-3 w-full bg-slate-200 rounded-full overflow-hidden">
-                    <div className="h-full w-[15%] bg-[#22C55E]" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Results Column */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="grid grid-cols-1 gap-4">
-              {/* Main Savings Card */}
-              <Card className="rounded-[28px] border-none bg-[#01153C] text-white p-8 relative overflow-hidden shadow-2xl">
-                <div className="absolute top-0 right-0 p-4 opacity-10">
-                  <Wallet className="h-32 w-32" />
-                </div>
-                <div className="relative z-10">
-                  <p className="text-white/60 text-sm font-bold uppercase tracking-widest mb-1">Monthly Savings</p>
-                  <h3 className="text-5xl font-bold mb-8 font-headline text-[#22C55E]">
-                    ₹ {stats.monthlySavings}
-                  </h3>
-                  
-                  <div className="grid grid-cols-2 gap-8 border-t border-white/10 pt-8">
-                    <div>
-                      <p className="text-white/60 text-xs font-bold uppercase tracking-widest mb-1">Annual Savings</p>
-                      <p className="text-2xl font-bold font-headline">₹ {stats.annualSavings}</p>
-                    </div>
-                    <div>
-                      <p className="text-white/60 text-xs font-bold uppercase tracking-widest mb-1">Payback Period</p>
-                      <p className="text-2xl font-bold font-headline">{stats.payback} Years</p>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-
-              {/* Secondary Stats */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-[#F8FAFC] p-6 rounded-[24px] border border-slate-100 group hover:bg-white hover:shadow-soft transition-all duration-300">
-                  <div className="h-10 w-10 rounded-xl bg-[#01153C]/5 flex items-center justify-center mb-4 text-[#01153C] group-hover:bg-[#01153C] group-hover:text-white transition-colors">
-                    <RefreshCcw className="h-5 w-5" />
-                  </div>
-                  <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Lifetime Savings</p>
-                  <p className="text-xl font-bold text-[#01153C] font-headline">₹ {stats.lifetime} Cr</p>
+                  <Label className="text-slate-700 font-bold">Available Rooftop Area (Sq. Ft.)</Label>
+                  <Input 
+                    type="number"
+                    value={area}
+                    onChange={(e) => setArea(e.target.value)}
+                    className="h-14 rounded-2xl bg-slate-50 border-slate-200 text-lg"
+                    placeholder="e.g. 300"
+                    required
+                  />
                 </div>
 
-                <div className="bg-[#F8FAFC] p-6 rounded-[24px] border border-slate-100 group hover:bg-white hover:shadow-soft transition-all duration-300">
-                  <div className="h-10 w-10 rounded-xl bg-[#22C55E]/10 flex items-center justify-center mb-4 text-[#22C55E]">
-                    <Leaf className="h-5 w-5" />
-                  </div>
-                  <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">CO₂ Reduction</p>
-                  <p className="text-xl font-bold text-[#01153C] font-headline">{stats.co2} Tons</p>
-                </div>
-              </div>
-
-              {/* Impact Callout */}
-              <div className="bg-[#22C55E]/5 p-6 rounded-[24px] border border-[#22C55E]/10 flex items-center gap-4">
-                <div className="h-12 w-12 rounded-full bg-[#22C55E] flex items-center justify-center text-white shrink-0">
-                  <ShieldCheck className="h-6 w-6" />
-                </div>
-                <div>
-                  <p className="text-[#01153C] font-bold text-sm">Equivalent to planting {stats.trees} trees</p>
-                  <p className="text-slate-500 text-xs">Help the planet while saving on energy.</p>
-                </div>
-              </div>
-
-              {/* Final CTA */}
-              <div className="space-y-4 pt-4">
                 <Button 
-                  size="lg"
-                  className="w-full bg-[#F0153C] hover:bg-[#F0153C]/90 text-white h-14 text-lg font-bold rounded-full shadow-xl transition-all hover:scale-[1.02] flex items-center justify-center gap-3"
+                  type="submit"
+                  className="w-full h-16 bg-[#F0153C] hover:bg-[#D01235] text-white text-xl font-bold rounded-2xl shadow-xl transition-all hover:scale-[1.01]"
                 >
-                  Get Detailed Savings Report
-                  <ArrowRight className="h-5 w-5" />
+                  Calculate My Savings
                 </Button>
-                <div className="flex flex-col items-center gap-1 text-slate-400 text-xs font-medium">
-                  <p>No spam • Free consultation • No hidden charges</p>
-                </div>
-              </div>
-            </div>
-          </div>
+              </form>
+            </CardContent>
+          </Card>
         </div>
       </div>
+
+      {/* Result Dialog */}
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="sm:max-w-2xl p-0 rounded-[32px] overflow-hidden border-none bg-white shadow-2xl">
+          <DialogHeader className="bg-[#01153C] text-white p-8 relative">
+            <DialogTitle className="text-2xl md:text-3xl font-bold font-headline">
+              Your Solar Savings Estimate
+            </DialogTitle>
+            <DialogClose className="absolute right-6 top-6 text-white/60 hover:text-white transition-colors">
+              <X className="h-8 w-8" />
+            </DialogClose>
+          </DialogHeader>
+          
+          <div className="p-8 md:p-10 space-y-8">
+            {result && (
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="p-6 rounded-3xl bg-emerald-50 border border-emerald-100 space-y-2">
+                    <p className="text-xs font-bold text-emerald-600 uppercase tracking-widest">Monthly Savings</p>
+                    <h4 className="text-3xl font-extrabold text-[#01153C] font-headline">₹ {result.monthlySavings}</h4>
+                  </div>
+                  <div className="p-6 rounded-3xl bg-blue-50 border border-blue-100 space-y-2">
+                    <p className="text-xs font-bold text-blue-600 uppercase tracking-widest">System Size Needed</p>
+                    <h4 className="text-3xl font-extrabold text-[#01153C] font-headline">{result.systemSize} kW</h4>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center border-y border-slate-100 py-8">
+                  <div>
+                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Payback Period</p>
+                    <p className="text-lg font-bold text-emerald-600">{result.payback} Years</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Annual Gen</p>
+                    <p className="text-lg font-bold text-[#01153C]">{result.annualGeneration} kWh</p>
+                  </div>
+                  <div className="col-span-2 md:col-span-1">
+                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Installation Cost</p>
+                    <p className="text-lg font-bold text-[#01153C]">₹ {result.costAfterSubsidy}*</p>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="bg-[#01153C] p-6 rounded-3xl text-white flex items-center justify-between">
+                    <div>
+                      <p className="text-white/60 text-xs font-bold uppercase tracking-widest mb-1">Total Savings (25 Years)</p>
+                      <h4 className="text-2xl font-bold font-headline">₹ {result.totalSavings25}</h4>
+                    </div>
+                    <TrendingUp className="h-10 w-10 text-emerald-400 opacity-50" />
+                  </div>
+
+                  <div className="flex items-center gap-4 p-4 bg-emerald-50 rounded-2xl border border-emerald-100">
+                    <div className="h-10 w-10 rounded-full bg-emerald-500 flex items-center justify-center text-white shrink-0">
+                      <Leaf className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold text-[#01153C]">Environmental Impact</p>
+                      <p className="text-xs text-emerald-700">Avoids {result.co2Avoided} tons of CO2 annually. Equivalent to {result.trees} trees.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-4 flex flex-col gap-4">
+                  <Button 
+                    className="w-full h-14 bg-[#F0153C] hover:bg-[#D01235] text-white font-bold rounded-2xl shadow-xl text-lg"
+                    onClick={() => setIsDialogOpen(false)}
+                  >
+                    Get Detailed Engineering Quote
+                  </Button>
+                  <p className="text-[10px] text-center text-slate-400 italic">
+                    *Estimated cost after PM Surya Ghar subsidy. Prices may vary based on structural requirements.
+                  </p>
+                </div>
+              </>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }

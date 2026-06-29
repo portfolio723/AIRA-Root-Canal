@@ -20,8 +20,6 @@ export function Hero() {
 
   if (!mounted) return null;
 
-  const recycleImg = PlaceHolderImages.find(img => img.id === 'recycle-icon');
-
   const billOptions = [
     "Less than ₹1,500",
     "₹1,500–₹2,500",
@@ -94,11 +92,11 @@ export function Hero() {
 
           {/* MOBILE ONLY: White Highlight Box with Side-by-Side Content */}
           <div className="lg:hidden bg-white p-6 rounded-r-[40px] flex items-center justify-between gap-4 mb-10 shadow-2xl -ml-4 pr-10 border-y border-r border-slate-100 relative z-10">
-            <h1 className="text-lg font-extrabold text-[#01153C] leading-tight font-headline flex-grow">
+            <h1 className="text-xl font-extrabold text-[#01153C] leading-tight font-headline flex-grow">
               Power Your Home with Solar <br />
-              <span className="text-green-600">Save More</span> Every Month
+              <span className="text-green-600">Save More Every Month</span>
             </h1>
-            <div className="w-20 h-20 shrink-0 relative">
+            <div className="w-24 h-24 shrink-0 relative">
               <Image 
                 src="/h2.png" 
                 alt="Recycle icon" 
@@ -143,7 +141,7 @@ export function Hero() {
                 className="bg-secondary hover:bg-secondary/90 text-white px-8 h-14 rounded-full text-lg font-bold shadow-xl flex items-center gap-2"
                 asChild
               >
-                <Link href="/calculator">
+                <Link href="#calculator">
                   <Calculator className="h-5 w-5" />
                   ROI Calculator
                 </Link>
