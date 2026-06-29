@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -73,7 +72,7 @@ export function Hero() {
         {/* LEFT SECTION (55%) */}
         <div className="w-full lg:w-[55%] relative px-4 md:px-8 lg:px-12 pb-12 flex flex-col justify-center overflow-hidden">
           
-          {/* Universal Rating & Trust Header - Visible on both Mobile and Desktop */}
+          {/* Universal Rating & Trust Header */}
           <div className="flex flex-wrap items-center gap-x-4 gap-y-3 mb-8 relative z-20">
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20">
               <div className="flex items-center">
@@ -107,11 +106,11 @@ export function Hero() {
             </div>
           </div>
 
-          {/* DESKTOP ONLY: Original Headline */}
+          {/* DESKTOP ONLY: Headline with Green BG for Save More */}
           <div className="hidden lg:block relative z-10 max-w-2xl mb-8">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.3] font-headline">
               Power Your Home with Solar <br />
-              <span className="text-blue-400">Save More</span> Every Month
+              <span className="bg-[#22C55E] text-[#01153C] px-3 py-1 inline-block">Save More</span> Every Month
             </h1>
           </div>
 
