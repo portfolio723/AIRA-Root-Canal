@@ -74,9 +74,12 @@ export function Hero() {
           </div>
 
           <div className="relative z-10 max-w-2xl mb-6">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1] font-headline mb-8">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.4] font-headline mb-8">
               Power Your Home with Solar <br />
-              <span className="text-[#22C55E]">Save More</span> Every Month
+              <span className="text-[#22C55E]">Save More</span>{" "}
+              <span className="bg-[#22C55E] text-[#01153C] px-4 py-1 rounded-xl inline-block mt-2 lg:mt-0">
+                Every Month
+              </span>
             </h1>
             
             <div className="grid grid-cols-2 gap-x-8 gap-y-6 mb-10 max-w-xl">
