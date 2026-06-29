@@ -1,6 +1,3 @@
-'use client';
-
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Sun, Zap, Leaf, ShieldCheck, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -53,58 +50,15 @@ export function NetZero() {
               Move Towards <br />
               <span className="text-gradient-primary">Net Zero Living</span>
             </h2>
-
-            <p className="text-lg lg:text-[18px] text-slate-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
-              Generate clean energy, reduce electricity bills, and build a sustainable future with premium solar solutions from Zenith Energy.
+            <p className="text-xl text-white/80 mb-10 leading-relaxed font-light">
+              Future-proof your business by achieving ESG goals and reducing carbon emissions with Zenith Energy's industrial solar ecosystems.
             </p>
-
-            <div className="pt-4 hidden lg:block">
-              <Button 
-                size="lg"
-                className="bg-[#F0153C] hover:bg-[#D01235] text-white h-14 px-10 text-lg font-bold rounded-full shadow-xl transition-all hover:scale-[1.05] group"
-              >
-                Start Your Net Zero Journey
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </div>
-          </div>
-
-          {/* Center Content - Benefits (35%) */}
-          <div className="lg:col-span-4 space-y-10 order-3 lg:order-2">
-            <div className="grid grid-cols-1 gap-8">
-              {benefits.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-4 group">
-                  <div className={cn("mt-1 p-2 rounded-xl bg-white shadow-sm border border-slate-100 group-hover:scale-110 transition-transform", item.color)}>
-                    <item.icon className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-[#01153C] mb-1 font-headline">{item.title}</h3>
-                    <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            {/* Mobile CTA */}
-            <div className="lg:hidden pt-4 text-center">
-              <Button 
-                size="lg"
-                className="bg-[#F0153C] hover:bg-[#D01235] text-white h-14 px-10 text-lg font-bold rounded-full shadow-xl w-full"
-              >
-                Start Your Net Zero Journey
-              </Button>
-            </div>
-          </div>
-
-          {/* Right Visual (25%) */}
-          <div className="lg:col-span-3 order-2 lg:order-3 relative h-[300px] lg:h-[500px]">
-            <Image
-              src="/nz2.png"
-              alt="Net Zero Living"
-              fill
-              className="object-contain"
-              priority
-            />
+            <Button 
+              size="lg"
+              className="bg-secondary hover:bg-secondary/90 text-white h-14 px-10 text-xl font-bold rounded-full shadow-2xl hover:scale-105 transition-all"
+            >
+              Start Your Solar Journey
+            </Button>
           </div>
         </div>
       </div>
