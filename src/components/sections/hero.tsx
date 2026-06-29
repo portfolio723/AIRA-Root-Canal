@@ -188,7 +188,7 @@ export function Hero() {
                   </div>
                 </div>
                 <Button 
-                  className="w-full h-14 bg-[#F0153C] hover:bg-[#D01235] text-white text-lg font-bold rounded-xl shadow-2xl transition-all hover:scale-[1.02]"
+                  className="w-full h-14 bg-[#F0153C] hover:bg-[#D01235] text-white text-lg font-bold rounded-full shadow-2xl transition-all hover:scale-[1.02]"
                 >
                   Book FREE Consultation
                 </Button>
